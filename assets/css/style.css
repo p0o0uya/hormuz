@@ -243,11 +243,19 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.9rem;
 }
 
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .footer-logo {
   width: 32px;
   height: 32px;
   object-fit: contain;
-  margin: 0 auto 4px;
+  flex: 0 0 auto;
+  margin: 0;
 }
 
 /* ---------- Responsive ---------- */
