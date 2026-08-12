@@ -73,7 +73,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-text);
 }
 
-.brand-logo { width: 44px; height: 44px; object-fit: contain; }
+.brand-logo { width: 44px; height: 44px; object-fit: contain; border-radius: 10px; }
 
 .brand-name { font-weight: 700; font-size: 1.25rem; }
 
