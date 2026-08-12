@@ -8,7 +8,7 @@
     var isFa = lang === 'fa';
     document.documentElement.lang = lang;
     document.documentElement.dir = isFa ? 'rtl' : 'ltr';
-    document.title = isFa ? 'مرکز داده هرمز' : 'Hormuz Data Center';
+    document.title = 'Hormuz | هرمز';
 
     document.querySelectorAll('[data-en]').forEach(function (el) {
       var text = el.getAttribute(isFa ? 'data-fa' : 'data-en');

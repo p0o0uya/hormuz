@@ -211,19 +211,13 @@ img { max-width: 100%; height: auto; display: block; }
 
 .member-card:hover { transform: translateY(-4px); }
 
-.member-monogram {
-  display: grid;
-  place-items: center;
-  width: 88px;
-  height: 88px;
+.member-photo {
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   margin: 0 auto 18px;
-  background: var(--color-primary);
-  color: var(--color-text);
   border: 4px solid #fff4d8;
-  font-family: Arial, sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
+  object-fit: cover;
 }
 
 .member-name { font-size: 1.15rem; font-weight: 700; }
@@ -245,15 +239,15 @@ img { max-width: 100%; height: auto; display: block; }
   background: #29251d;
   color: #e8ddc8;
   text-align: center;
-  padding: 24px 0;
+  padding: 14px 0;
   font-size: 0.9rem;
 }
 
 .footer-logo {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
-  margin: 0 auto 8px;
+  margin: 0 auto 4px;
 }
 
 /* ---------- Responsive ---------- */
