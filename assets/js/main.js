@@ -1,14 +1,14 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'nonex-lang';
+  var STORAGE_KEY = 'hodc-lang';
   var toggle = document.getElementById('lang-toggle');
 
   function applyLang(lang) {
     var isFa = lang === 'fa';
     document.documentElement.lang = lang;
     document.documentElement.dir = isFa ? 'rtl' : 'ltr';
-    document.title = isFa ? 'نونکس | Nonex' : 'Nonex | نونکس';
+    document.title = isFa ? 'مرکز داده هرمز | HODC' : 'Hormuz Data Center | HODC';
 
     document.querySelectorAll('[data-en]').forEach(function (el) {
       var text = el.getAttribute(isFa ? 'data-fa' : 'data-en');
