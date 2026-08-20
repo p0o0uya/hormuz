@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Virtual private servers connected to the cloud">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1430"/>
+      <stop offset="1" stop-color="#173058"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fe3ff"/>
+      <stop offset="1" stop-color="#3f8fd2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="400" fill="url(#bg)"/>
+
+  <!-- faint grid -->
+  <g stroke="#24457a" stroke-width="1" opacity="0.5">
+    <line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="200" x2="640" y2="200"/><line x1="0" y1="300" x2="640" y2="300"/>
+    <line x1="160" y1="0" x2="160" y2="400"/><line x1="320" y1="0" x2="320" y2="400"/><line x1="480" y1="0" x2="480" y2="400"/>
+  </g>
+
+  <!-- connection lines -->
+  <g stroke="#4cc9ff" stroke-width="2" opacity="0.8">
+    <line x1="320" y1="195" x2="140" y2="290"/>
+    <line x1="320" y1="195" x2="320" y2="290"/>
+    <line x1="320" y1="195" x2="500" y2="290"/>
+  </g>
+  <g fill="#4cc9ff">
+    <circle cx="232" cy="242" r="4"/><circle cx="320" cy="242" r="4"/><circle cx="408" cy="242" r="4"/>
+  </g>
+
+  <!-- cloud -->
+  <g filter="none" opacity="0.97">
+    <circle cx="258" cy="150" r="52" fill="url(#cloud)"/>
+    <circle cx="322" cy="126" r="64" fill="url(#cloud)"/>
+    <circle cx="388" cy="152" r="50" fill="url(#cloud)"/>
+    <rect x="246" y="140" width="156" height="58" rx="29" fill="url(#cloud)"/>
+  </g>
+  <g stroke="#e8fbff" stroke-width="3" opacity="0.85" fill="none">
+    <path d="M290 150 h60 M320 135 v30"/>
+  </g>
+
+  <!-- server stacks -->
+  <g>
+    <!-- stack 1 -->
+    <g transform="translate(95,292)">
+      <rect width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect y="24" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect y="48" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect x="8" y="8" width="8" height="4" rx="2" fill="#4cc9ff"/>
+      <rect x="8" y="32" width="8" height="4" rx="2" fill="#ffc24c"/>
+      <rect x="8" y="56" width="8" height="4" rx="2" fill="#4cc9ff"/>
+      <line x1="24" y1="10" x2="78" y2="10" stroke="#2a4a80" stroke-width="3"/>
+      <line x1="24" y1="34" x2="78" y2="34" stroke="#2a4a80" stroke-width="3"/>
+      <line x1="24" y1="58" x2="78" y2="58" stroke="#2a4a80" stroke-width="3"/>
+    </g>
+    <!-- stack 2 -->
+    <g transform="translate(275,292)">
+      <rect width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect y="24" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect y="48" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect x="8" y="8" width="8" height="4" rx="2" fill="#ffc24c"/>
+      <rect x="8" y="32" width="8" height="4" rx="2" fill="#4cc9ff"/>
+      <rect x="8" y="56" width="8" height="4" rx="2" fill="#ffc24c"/>
+      <line x1="24" y1="10" x2="78" y2="10" stroke="#2a4a80" stroke-width="3"/>
+      <line x1="24" y1="34" x2="78" y2="34" stroke="#2a4a80" stroke-width="3"/>
+      <line x1="24" y1="58" x2="78" y2="58" stroke="#2a4a80" stroke-width="3"/>
+    </g>
+    <!-- stack 3 -->
+    <g transform="translate(455,292)">
+      <rect width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect y="24" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect y="48" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+      <rect x="8" y="8" width="8" height="4" rx="2" fill="#4cc9ff"/>
+      <rect x="8" y="32" width="8" height="4" rx="2" fill="#4cc9ff"/>
+      <rect x="8" y="56" width="8" height="4" rx="2" fill="#ffc24c"/>
+      <line x1="24" y1="10" x2="78" y2="10" stroke="#2a4a80" stroke-width="3"/>
+      <line x1="24" y1="34" x2="78" y2="34" stroke="#2a4a80" stroke-width="3"/>
+      <line x1="24" y1="58" x2="78" y2="58" stroke="#2a4a80" stroke-width="3"/>
+    </g>
+  </g>
+
+  <!-- floating data dots -->
+  <g fill="#9fdcff" opacity="0.8">
+    <circle cx="120" cy="90" r="3"/><circle cx="520" cy="70" r="3"/><circle cx="470" cy="140" r="2.5"/><circle cx="170" cy="170" r="2.5"/>
+  </g>
+</svg>

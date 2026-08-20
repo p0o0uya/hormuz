@@ -195,6 +195,43 @@ img { max-width: 100%; height: auto; display: block; }
   text-align: center;
 }
 
+/* ---------- Services ---------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.service-card:hover { transform: translateY(-4px); }
+
+.service-photo {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+}
+
+.service-body { padding: 20px 22px 26px; }
+
+.service-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.service-body p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
 /* ---------- Board ---------- */
 .board-grid {
   display: grid;
@@ -272,6 +309,7 @@ img { max-width: 100%; height: auto; display: block; }
   .header-inner { flex-wrap: wrap; gap: 12px; }
   .main-nav { margin-inline-start: 0; order: 3; width: 100%; justify-content: center; }
   .board-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
   .hero-text h1 { font-size: 1.8rem; }
   .section { padding: 48px 0; }
 }

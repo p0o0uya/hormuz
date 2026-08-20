@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Colocation data center aisle">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1430"/>
+      <stop offset="1" stop-color="#16294f"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d3a6b"/>
+      <stop offset="1" stop-color="#0a1430"/>
+    </linearGradient>
+    <linearGradient id="door" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fe3ff"/>
+      <stop offset="1" stop-color="#2f7fc4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="400" fill="url(#bg)"/>
+
+  <!-- ceiling light strip -->
+  <polygon points="292,36 348,36 430,220 210,220" fill="#0e1e3d"/>
+  <rect x="292" y="36" width="56" height="7" rx="3.5" fill="#bfefff" opacity="0.95"/>
+  <rect x="300" y="52" width="40" height="4" rx="2" fill="#7fd4ff" opacity="0.6"/>
+
+  <!-- floor -->
+  <polygon points="0,400 640,400 480,220 160,220" fill="url(#floor)"/>
+  <polygon points="312,400 328,400 324,220 316,220" fill="#9fdcff" opacity="0.25"/>
+
+  <!-- end door glow -->
+  <rect x="296" y="166" width="48" height="60" rx="4" fill="url(#door)" opacity="0.9"/>
+  <rect x="290" y="160" width="60" height="72" rx="6" fill="none" stroke="#9fdcff" stroke-width="2" opacity="0.6"/>
+
+  <!-- left racks -->
+  <g>
+    <polygon points="0,90 130,120 130,340 0,400" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+    <polygon points="140,125 220,150 220,300 140,335" fill="#102142" stroke="#25436f" stroke-width="2"/>
+    <polygon points="230,152 285,170 285,262 230,292" fill="#0e1d3b" stroke="#203a63" stroke-width="2"/>
+    <!-- LEDs left -->
+    <g fill="#4cc9ff">
+      <rect x="20" y="120" width="10" height="4" rx="2"/><rect x="20" y="150" width="10" height="4" rx="2"/><rect x="20" y="210" width="10" height="4" rx="2"/><rect x="20" y="270" width="10" height="4" rx="2"/>
+      <rect x="152" y="150" width="8" height="3" rx="1.5"/><rect x="152" y="190" width="8" height="3" rx="1.5"/><rect x="152" y="250" width="8" height="3" rx="1.5"/>
+      <rect x="240" y="175" width="6" height="3" rx="1.5"/><rect x="240" y="220" width="6" height="3" rx="1.5"/>
+    </g>
+    <g fill="#ffc24c">
+      <rect x="20" y="180" width="10" height="4" rx="2"/><rect x="20" y="310" width="10" height="4" rx="2"/>
+      <rect x="152" y="220" width="8" height="3" rx="1.5"/><rect x="240" y="250" width="6" height="3" rx="1.5"/>
+    </g>
+    <!-- rack slot lines left -->
+    <g stroke="#2a4a80" stroke-width="1.5" opacity="0.7">
+      <line x1="0" y1="140" x2="130" y2="162"/><line x1="0" y1="190" x2="130" y2="204"/><line x1="0" y1="240" x2="130" y2="246"/><line x1="0" y1="290" x2="130" y2="288"/><line x1="0" y1="340" x2="130" y2="320"/>
+      <line x1="140" y1="165" x2="220" y2="184"/><line x1="140" y1="210" x2="220" y2="222"/><line x1="140" y1="255" x2="220" y2="260"/>
+    </g>
+  </g>
+
+  <!-- right racks -->
+  <g>
+    <polygon points="640,90 510,120 510,340 640,400" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
+    <polygon points="500,125 420,150 420,300 500,335" fill="#102142" stroke="#25436f" stroke-width="2"/>
+    <polygon points="410,152 355,170 355,262 410,292" fill="#0e1d3b" stroke="#203a63" stroke-width="2"/>
+    <g fill="#4cc9ff">
+      <rect x="610" y="130" width="10" height="4" rx="2"/><rect x="610" y="200" width="10" height="4" rx="2"/><rect x="610" y="260" width="10" height="4" rx="2"/>
+      <rect x="480" y="170" width="8" height="3" rx="1.5"/><rect x="480" y="240" width="8" height="3" rx="1.5"/>
+      <rect x="394" y="190" width="6" height="3" rx="1.5"/><rect x="394" y="230" width="6" height="3" rx="1.5"/>
+    </g>
+    <g fill="#ffc24c">
+      <rect x="610" y="165" width="10" height="4" rx="2"/><rect x="610" y="300" width="10" height="4" rx="2"/>
+      <rect x="480" y="205" width="8" height="3" rx="1.5"/><rect x="394" y="255" width="6" height="3" rx="1.5"/>
+    </g>
+    <g stroke="#2a4a80" stroke-width="1.5" opacity="0.7">
+      <line x1="640" y1="140" x2="510" y2="162"/><line x1="640" y1="190" x2="510" y2="204"/><line x1="640" y1="240" x2="510" y2="246"/><line x1="640" y1="290" x2="510" y2="288"/><line x1="640" y1="340" x2="510" y2="320"/>
+      <line x1="500" y1="165" x2="420" y2="184"/><line x1="500" y1="210" x2="420" y2="222"/><line x1="500" y1="255" x2="420" y2="260"/>
+    </g>
+  </g>
+</svg>
