@@ -195,6 +195,9 @@ img { max-width: 100%; height: auto; display: block; }
   text-align: center;
 }
 
+#about .section-text { text-align: right; }
+html[dir="ltr"] #about .section-text { text-align: left; }
+
 /* ---------- Services ---------- */
 .services-grid {
   display: grid;
