@@ -4,7 +4,7 @@
 
 ### 1.1. En
 
-As a small, specialized data center in Ilam Province, Hormuz Data Center provides a reliable environment for hosting and maintaining the digital infrastructure of businesses and organizations. Our focus is on server and equipment hosting, providing a stable and suitable environment for deploying computing and network infrastructure, ensuring reliable connectivity, and delivering responsive technical support. At Hormuz Data Center, we combine technical expertise, dependable infrastructure, and an approach tailored to each organization’s needs to ensure the stable and reliable operation of IT services. We help businesses in Ilam Province and across the country establish a dependable foundation for developing and expanding their digital services.
+Hormuz Data Center is operated by Rayka Dan Trade & Technology Company. Established in 2025, the company began its activities with a focus on developing IT infrastructure and providing data center services. Today, Hormuz operates as a small, specialized data center in Eilam Province, providing a reliable environment for hosting and maintaining the digital infrastructure of businesses and organizations. Our services focus on server and equipment hosting, providing a stable environment for computing and network infrastructure, reliable connectivity, and responsive technical support. By combining technical expertise with dependable infrastructure and solutions tailored to each organization’s needs, we help businesses in Eilam Province and across Iran build a reliable foundation for operating and expanding their digital services.
 
 ### 1.2. Fa
 
