@@ -1,90 +1,69 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Research and development lab with monitors">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0a1430"/>
-      <stop offset="1" stop-color="#182c52"/>
+      <stop offset="0" stop-color="#FFFDF6"/>
+      <stop offset="1" stop-color="#FFF3D6"/>
     </linearGradient>
-    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#16325e"/>
-      <stop offset="1" stop-color="#0c1a38"/>
-    </linearGradient>
+    <g id="sparkle">
+      <path d="M0 -11 L2.8 -2.8 L11 0 L2.8 2.8 L0 11 L-2.8 2.8 L-11 0 L-2.8 -2.8 Z"/>
+    </g>
   </defs>
 
   <rect width="640" height="400" fill="url(#bg)"/>
+  <circle cx="306" cy="200" r="152" fill="#FFE9BD"/>
 
-  <!-- desk -->
-  <rect x="0" y="300" width="640" height="100" fill="#0d1c3a"/>
-  <rect x="0" y="300" width="640" height="4" fill="#2a4a80"/>
-
-  <!-- big gear -->
-  <g transform="translate(520,90)" opacity="0.9">
-    <g fill="#2a4a80">
-      <rect x="-8" y="-52" width="16" height="24" rx="4"/>
-      <rect x="-8" y="28" width="16" height="24" rx="4"/>
-      <rect x="-52" y="-8" width="24" height="16" rx="4"/>
-      <rect x="28" y="-8" width="24" height="16" rx="4"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(45)"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(135)"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(225)"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(315)"/>
+  <!-- gear -->
+  <g transform="translate(516,92)">
+    <g fill="#FFC24C">
+      <rect x="-7" y="-50" width="14" height="22" rx="5"/>
+      <rect x="-7" y="-50" width="14" height="22" rx="5" transform="rotate(45)"/>
+      <rect x="-7" y="-50" width="14" height="22" rx="5" transform="rotate(90)"/>
+      <rect x="-7" y="-50" width="14" height="22" rx="5" transform="rotate(135)"/>
+      <rect x="-7" y="-50" width="14" height="22" rx="5" transform="rotate(180)"/>
+      <rect x="-7" y="-50" width="14" height="22" rx="5" transform="rotate(225)"/>
+      <rect x="-7" y="-50" width="14" height="22" rx="5" transform="rotate(270)"/>
+      <rect x="-7" y="-50" width="14" height="22" rx="5" transform="rotate(315)"/>
     </g>
-    <circle r="40" fill="#12264d" stroke="#4cc9ff" stroke-width="2.5"/>
-    <circle r="14" fill="#0a1430" stroke="#ffc24c" stroke-width="2"/>
+    <circle r="34" fill="#FFC24C" stroke="#29251D" stroke-width="5"/>
+    <circle r="12" fill="#FFF3D6" stroke="#29251D" stroke-width="4"/>
   </g>
 
-  <!-- small gear -->
-  <g transform="translate(430,140) scale(0.6)" opacity="0.85">
-    <g fill="#2a4a80">
-      <rect x="-8" y="-52" width="16" height="24" rx="4"/>
-      <rect x="-8" y="28" width="16" height="24" rx="4"/>
-      <rect x="-52" y="-8" width="24" height="16" rx="4"/>
-      <rect x="28" y="-8" width="24" height="16" rx="4"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(45)"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(135)"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(225)"/>
-      <rect x="-8" y="-52" width="16" height="24" rx="4" transform="rotate(315)"/>
-    </g>
-    <circle r="40" fill="#12264d" stroke="#4cc9ff" stroke-width="3"/>
+  <!-- ground shadows -->
+  <ellipse cx="238" cy="312" rx="96" ry="10" fill="#EFDCB0"/>
+  <ellipse cx="478" cy="312" rx="56" ry="9" fill="#EFDCB0"/>
+
+  <!-- monitor -->
+  <rect x="122" y="106" width="232" height="146" rx="14" fill="#FFFFFF" stroke="#29251D" stroke-width="6"/>
+  <g stroke="#F0E4C6" stroke-width="3" stroke-linecap="round">
+    <line x1="144" y1="152" x2="332" y2="152"/>
+    <line x1="144" y1="188" x2="332" y2="188"/>
+    <line x1="144" y1="224" x2="332" y2="224"/>
+  </g>
+  <polyline points="146,222 182,184 216,198 254,148 292,162 330,124"
+            fill="none" stroke="#FFC24C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#FFC24C" stroke="#29251D" stroke-width="3.5">
+    <circle cx="182" cy="184" r="6"/>
+    <circle cx="254" cy="148" r="6"/>
+    <circle cx="330" cy="124" r="6"/>
+  </g>
+  <!-- monitor stand -->
+  <path d="M226 252 h24 l7 30 h-38 z" fill="#FFFFFF" stroke="#29251D" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="198" y="282" width="80" height="13" rx="6.5" fill="#FFFFFF" stroke="#29251D" stroke-width="5"/>
+
+  <!-- flask -->
+  <g transform="translate(478,206)">
+    <path d="M-15 0 h30 v22 l21 42 a11 11 0 0 1 -10 15 h-52 a11 11 0 0 1 -10 -15 l21 -42 z"
+          fill="#FFFFFF" stroke="#29251D" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M-27 44 h54 l9 20 a11 11 0 0 1 -10 15 h-52 a11 11 0 0 1 -10 -15 z" fill="#FFC24C"/>
+    <rect x="-21" y="-7" width="42" height="11" rx="5.5" fill="#FFFFFF" stroke="#29251D" stroke-width="5"/>
+    <circle cx="-9" cy="60" r="4" fill="#FFF3D5"/>
+    <circle cx="9" cy="54" r="3" fill="#FFF3D5"/>
+    <circle cx="1" cy="70" r="3" fill="#FFF3D5"/>
   </g>
 
-  <!-- left monitor: chart -->
-  <g transform="translate(90,120)">
-    <rect width="180" height="120" rx="10" fill="url(#screen)" stroke="#2a4a80" stroke-width="2.5"/>
-    <polyline points="20,95 55,70 85,82 120,45 160,30" fill="none" stroke="#ffc24c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <g fill="#4cc9ff">
-      <circle cx="55" cy="70" r="4"/><circle cx="85" cy="82" r="4"/><circle cx="120" cy="45" r="4"/>
-    </g>
-    <g stroke="#24457a" stroke-width="1">
-      <line x1="20" y1="40" x2="160" y2="40"/><line x1="20" y1="70" x2="160" y2="70"/><line x1="20" y1="100" x2="160" y2="100"/>
-    </g>
-    <rect x="70" y="120" width="40" height="22" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-    <rect x="45" y="142" width="90" height="8" rx="4" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-  </g>
-
-  <!-- right monitor: code -->
-  <g transform="translate(300,110)">
-    <rect width="180" height="120" rx="10" fill="url(#screen)" stroke="#2a4a80" stroke-width="2.5"/>
-    <g stroke-linecap="round" stroke-width="5">
-      <line x1="20" y1="28" x2="90" y2="28" stroke="#4cc9ff"/>
-      <line x1="100" y1="28" x2="130" y2="28" stroke="#ffc24c"/>
-      <line x1="32" y1="48" x2="120" y2="48" stroke="#35619f"/>
-      <line x1="32" y1="66" x2="80" y2="66" stroke="#4cc9ff"/>
-      <line x1="20" y1="86" x2="150" y2="86" stroke="#35619f"/>
-      <line x1="32" y1="104" x2="105" y2="104" stroke="#ffc24c"/>
-    </g>
-    <rect x="70" y="120" width="40" height="32" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-    <rect x="45" y="152" width="90" height="8" rx="4" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-  </g>
-
-  <!-- lab flask -->
-  <g transform="translate(540,220)">
-    <path d="M-14 0 h28 v18 l16 32 a8 8 0 0 1 -7 12 h-46 a8 8 0 0 1 -7 -12 l16 -32 z" fill="#12264d" stroke="#4cc9ff" stroke-width="2.5"/>
-    <path d="M-22 42 h44 l8 16 a8 8 0 0 1 -7 12 h-46 a8 8 0 0 1 -7 -12 z" fill="#ffc24c" opacity="0.85"/>
-    <circle cx="-8" cy="52" r="3" fill="#fff3d5"/><circle cx="8" cy="46" r="2.5" fill="#fff3d5"/>
-  </g>
-
-  <!-- floating idea dots -->
-  <g fill="#9fdcff" opacity="0.8">
-    <circle cx="150" cy="60" r="3"/><circle cx="230" cy="40" r="2.5"/><circle cx="350" cy="50" r="3"/>
-  </g>
+  <!-- accents -->
+  <use href="#sparkle" transform="translate(94,84)" fill="#FFC24C"/>
+  <use href="#sparkle" transform="translate(408,150) scale(0.7)" fill="#D9971E"/>
+  <circle cx="86" cy="180" r="5" fill="#FFC24C"/>
+  <circle cx="560" cy="200" r="4" fill="#D9971E"/>
 </svg>

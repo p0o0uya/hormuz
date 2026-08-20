@@ -1,86 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Virtual private servers connected to the cloud">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0a1430"/>
-      <stop offset="1" stop-color="#173058"/>
+      <stop offset="0" stop-color="#FFFDF6"/>
+      <stop offset="1" stop-color="#FFF3D6"/>
     </linearGradient>
-    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8fe3ff"/>
-      <stop offset="1" stop-color="#3f8fd2"/>
-    </linearGradient>
+    <g id="cloudShape">
+      <circle cx="266" cy="146" r="34"/>
+      <circle cx="322" cy="124" r="44"/>
+      <circle cx="382" cy="146" r="34"/>
+      <rect x="252" y="140" width="144" height="42" rx="21"/>
+    </g>
+    <g id="sparkle">
+      <path d="M0 -11 L2.8 -2.8 L11 0 L2.8 2.8 L0 11 L-2.8 2.8 L-11 0 L-2.8 -2.8 Z"/>
+    </g>
   </defs>
 
   <rect width="640" height="400" fill="url(#bg)"/>
+  <circle cx="320" cy="196" r="152" fill="#FFE9BD"/>
 
-  <!-- faint grid -->
-  <g stroke="#24457a" stroke-width="1" opacity="0.5">
-    <line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="200" x2="640" y2="200"/><line x1="0" y1="300" x2="640" y2="300"/>
-    <line x1="160" y1="0" x2="160" y2="400"/><line x1="320" y1="0" x2="320" y2="400"/><line x1="480" y1="0" x2="480" y2="400"/>
+  <!-- connectors -->
+  <g stroke="#29251D" stroke-width="5" stroke-linecap="round">
+    <line x1="272" y1="180" x2="170" y2="272"/>
+    <line x1="322" y1="186" x2="322" y2="272"/>
+    <line x1="376" y1="180" x2="470" y2="272"/>
   </g>
-
-  <!-- connection lines -->
-  <g stroke="#4cc9ff" stroke-width="2" opacity="0.8">
-    <line x1="320" y1="195" x2="140" y2="290"/>
-    <line x1="320" y1="195" x2="320" y2="290"/>
-    <line x1="320" y1="195" x2="500" y2="290"/>
-  </g>
-  <g fill="#4cc9ff">
-    <circle cx="232" cy="242" r="4"/><circle cx="320" cy="242" r="4"/><circle cx="408" cy="242" r="4"/>
+  <g fill="#FFC24C" stroke="#29251D" stroke-width="3.5">
+    <circle cx="228" cy="220" r="6"/>
+    <circle cx="322" cy="226" r="6"/>
+    <circle cx="416" cy="220" r="6"/>
   </g>
 
-  <!-- cloud -->
-  <g filter="none" opacity="0.97">
-    <circle cx="258" cy="150" r="52" fill="url(#cloud)"/>
-    <circle cx="322" cy="126" r="64" fill="url(#cloud)"/>
-    <circle cx="388" cy="152" r="50" fill="url(#cloud)"/>
-    <rect x="246" y="140" width="156" height="58" rx="29" fill="url(#cloud)"/>
-  </g>
-  <g stroke="#e8fbff" stroke-width="3" opacity="0.85" fill="none">
-    <path d="M290 150 h60 M320 135 v30"/>
+  <!-- cloud (ink underlay creates the outline without inner seams) -->
+  <use href="#cloudShape" fill="#29251D" stroke="#29251D" stroke-width="12" stroke-linejoin="round"/>
+  <use href="#cloudShape" fill="#FFFFFF"/>
+
+  <!-- sync badge -->
+  <circle cx="404" cy="102" r="21" fill="#FFC24C" stroke="#29251D" stroke-width="5"/>
+  <g stroke="#29251D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M396 96 h12 m-4 -4 4 4 -4 4"/>
+    <path d="M412 110 h-12 m4 -4 -4 4 4 4"/>
   </g>
 
-  <!-- server stacks -->
+  <!-- ground shadows -->
+  <ellipse cx="170" cy="346" rx="58" ry="9" fill="#EFDCB0"/>
+  <ellipse cx="322" cy="346" rx="58" ry="9" fill="#EFDCB0"/>
+  <ellipse cx="470" cy="346" rx="58" ry="9" fill="#EFDCB0"/>
+
+  <!-- servers -->
   <g>
-    <!-- stack 1 -->
-    <g transform="translate(95,292)">
-      <rect width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect y="24" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect y="48" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect x="8" y="8" width="8" height="4" rx="2" fill="#4cc9ff"/>
-      <rect x="8" y="32" width="8" height="4" rx="2" fill="#ffc24c"/>
-      <rect x="8" y="56" width="8" height="4" rx="2" fill="#4cc9ff"/>
-      <line x1="24" y1="10" x2="78" y2="10" stroke="#2a4a80" stroke-width="3"/>
-      <line x1="24" y1="34" x2="78" y2="34" stroke="#2a4a80" stroke-width="3"/>
-      <line x1="24" y1="58" x2="78" y2="58" stroke="#2a4a80" stroke-width="3"/>
-    </g>
-    <!-- stack 2 -->
-    <g transform="translate(275,292)">
-      <rect width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect y="24" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect y="48" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect x="8" y="8" width="8" height="4" rx="2" fill="#ffc24c"/>
-      <rect x="8" y="32" width="8" height="4" rx="2" fill="#4cc9ff"/>
-      <rect x="8" y="56" width="8" height="4" rx="2" fill="#ffc24c"/>
-      <line x1="24" y1="10" x2="78" y2="10" stroke="#2a4a80" stroke-width="3"/>
-      <line x1="24" y1="34" x2="78" y2="34" stroke="#2a4a80" stroke-width="3"/>
-      <line x1="24" y1="58" x2="78" y2="58" stroke="#2a4a80" stroke-width="3"/>
-    </g>
-    <!-- stack 3 -->
-    <g transform="translate(455,292)">
-      <rect width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect y="24" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect y="48" width="90" height="20" rx="5" fill="#12264d" stroke="#2a4a80" stroke-width="2"/>
-      <rect x="8" y="8" width="8" height="4" rx="2" fill="#4cc9ff"/>
-      <rect x="8" y="32" width="8" height="4" rx="2" fill="#4cc9ff"/>
-      <rect x="8" y="56" width="8" height="4" rx="2" fill="#ffc24c"/>
-      <line x1="24" y1="10" x2="78" y2="10" stroke="#2a4a80" stroke-width="3"/>
-      <line x1="24" y1="34" x2="78" y2="34" stroke="#2a4a80" stroke-width="3"/>
-      <line x1="24" y1="58" x2="78" y2="58" stroke="#2a4a80" stroke-width="3"/>
-    </g>
+    <rect x="115" y="272" width="110" height="64" rx="12" fill="#FFFFFF" stroke="#29251D" stroke-width="6"/>
+    <rect x="265" y="272" width="110" height="64" rx="12" fill="#FFFFFF" stroke="#29251D" stroke-width="6"/>
+    <rect x="415" y="272" width="110" height="64" rx="12" fill="#FFFFFF" stroke="#29251D" stroke-width="6"/>
+  </g>
+  <g stroke="#E3D5B4" stroke-width="5" stroke-linecap="round">
+    <line x1="149" y1="292" x2="207" y2="292"/>
+    <line x1="133" y1="316" x2="207" y2="316"/>
+    <line x1="299" y1="292" x2="357" y2="292"/>
+    <line x1="283" y1="316" x2="357" y2="316"/>
+    <line x1="449" y1="292" x2="507" y2="292"/>
+    <line x1="433" y1="316" x2="507" y2="316"/>
+  </g>
+  <g fill="#FFC24C" stroke="#29251D" stroke-width="3">
+    <circle cx="133" cy="292" r="5"/>
+    <circle cx="283" cy="292" r="5"/>
+    <circle cx="433" cy="292" r="5"/>
   </g>
 
-  <!-- floating data dots -->
-  <g fill="#9fdcff" opacity="0.8">
-    <circle cx="120" cy="90" r="3"/><circle cx="520" cy="70" r="3"/><circle cx="470" cy="140" r="2.5"/><circle cx="170" cy="170" r="2.5"/>
-  </g>
+  <!-- accents -->
+  <use href="#sparkle" transform="translate(150,90)" fill="#FFC24C"/>
+  <use href="#sparkle" transform="translate(512,150) scale(0.75)" fill="#D9971E"/>
+  <circle cx="120" cy="170" r="5" fill="#FFC24C"/>
+  <circle cx="530" cy="220" r="4" fill="#D9971E"/>
 </svg>
