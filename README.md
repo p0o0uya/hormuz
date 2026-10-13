@@ -1,5 +1,7 @@
 # Hormuz Data Center Specification
 
+The [four-rack temperature and humidity monitoring proposal](docs/rack-monitoring-proposal.md) includes the architecture, implementation procedure, one-person schedule, sourced hardware prices and an estimate in Iranian tomans. Its [itemized materials estimate](docs/rack-monitoring-estimate.csv) is available as CSV.
+
 ## 1. About US
 
 ### 1.1. En

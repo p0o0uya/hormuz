@@ -1,0 +1,15 @@
+item,quantity,source_currency,source_unit_price,unit_irt,line_irt,price_basis,source_url,notes,checked_date,usd_to_irt
+Uno R3 CH340,5,IRR,7740000,774000,3870000,Supplier listing,https://eshop.eca.ir/بردهای-خانواده-آردوینو-arduino/3975-برد-آردوینو-arduino-uno-ch340.html,4 installed + 1 spare,2026-10-13,270000
+SHT31-D module,14,IRR,6200000,620000,8680000,Supplier listing,https://eshop.eca.ir/ماژول-دما-و-رطوبت/5330-ماژول-سنسور-دما-و-رطوبت-sht31-d.html,12 installed + 2 spares,2026-10-13,270000
+W5500 Ethernet module,4,IRR,10200000,1020000,4080000,Supplier listing,https://eshop.eca.ir/ماژول-شبکه-و-wifi/10821-ماژول-شبکه-w5500-دارای-ارتباط-spi.html,Complete regulated module required,2026-10-13,270000
+TCA9548A multiplexer,4,USD,6.95,1876500,7506000,USD supplier fallback,https://www.adafruit.com/product/2717,International freight and import charges excluded,2026-10-13,270000
+5V USB adapter CY-0530,4,IRR,9500000,950000,3800000,Supplier listing,https://eshop.eca.ir/آداپتور/10738-آداپتور-5-ولت-3a-با-خروجی-usb-مدل-cy-0530.html,Rated 3A; load-test actual units,2026-10-13,270000
+USB power/programming cables,5,USD,0.75,202500,1012500,Planning allowance,,Not a supplier quotation,2026-10-13,270000
+Controller enclosures,4,USD,2.00,540000,2160000,Planning allowance,,Not a supplier quotation,2026-10-13,270000
+Perfboard terminals headers protection decoupling,4,USD,1.50,405000,1620000,Planning allowance,,Per rack set,2026-10-13,270000
+Sensor harnesses mounts ties labels,4,USD,2.00,540000,2160000,Planning allowance,,Per rack set; short branches,2026-10-13,270000
+Ethernet patch cables,4,USD,1.50,405000,1620000,Planning allowance,,Existing switch ports assumed,2026-10-13,270000
+Domestic shipping,1,USD,3.00,810000,810000,Planning allowance,,Domestic only,2026-10-13,270000
+Materials subtotal,,,,,37318500,Calculated,,,2026-10-13,270000
+Contingency,,,,,7463700,Calculated,,20% of materials subtotal,2026-10-13,270000
+Hardware/materials budget,,,,,44782200,Calculated,,Existing VM switch UPS and tools assumed; labor and recurring services excluded,2026-10-13,270000
