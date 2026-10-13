@@ -131,3 +131,31 @@ Recurring costs are planning allowances, not published tariffs. Replace them wit
 | **First-year total before tax** | **78,483,600** |
 
 Excluded: tax, a staffed monitoring contract, new UPS/network infrastructure, optional VM integration, major containment/duct/civil changes, full building or large battery-room coverage, additional sounders/batteries after engineering checks, aspirating detection, suppression and new door-release hardware already budgeted in the security proposal. Reconcile shared interfaces between quotations. The **73,083,600 IRT** installation total pays for the specified parts and services; contingency does not fund excluded scope.
+
+## One-page summary
+
+**Recommended decision:** install two combined smoke/heat detectors for the 18 m² rack room, with a third for an adjacent UPS/electrical room if a survey supports it. Any detector or manual call-point alarm immediately activates local sounders and triggers recorded warning calls to the owner, on-call operator and backup contact.
+
+| What to buy | Quantity and purpose |
+| --- | --- |
+| ZITEX ZI-HSD 1015 detectors and compatible bases | 2–3; detect smoke or heat, with alarm behavior confirmed before purchase |
+| Compatible conventional fire panel | 1; estimate uses ZX-1800-12; seek a smaller supported panel quote |
+| ZI-SS 81 sounder/beacons and ZI-CP 95 call point | 2 sounders, inside/outside the entrance; 1 manual call point at the exit |
+| Panel backup batteries | 2 matched 12 V 7.2 Ah batteries in series; verify required autonomy |
+| Cellular recorded-voice dialer and isolated trigger interface | 1 each; N1 is a candidate subject to manual review and call testing |
+| Dialer backup supply | Separate 12 V PSU/charger, battery, fuse, enclosure, antenna and active SIM |
+| Installation materials/services | Approximately 60 m fire-alarm cable, supports, conduit, EOL parts, protected mains feed, installation and commissioning |
+
+**Placement:** D1 goes on an unobstructed ceiling over the general/cold-side room; D2 goes beneath the highest smoke-collecting surface inside the contained hot aisle. D3, if used, goes in the surveyed adjacent electrical room. Avoid direct ventilation jets; initially allow 0.5 m from walls/major obstructions and 1 m from supply inlets. Final locations require installer review of ducts, containment and airflow. One detector is only an option for an approved open-room layout. If smoke cannot reliably reach point detectors, obtain a separate air-sampling design.
+
+**What to do:** obtain a site survey and matched-package quotation; confirm detector/panel compatibility and cellular voice coverage; bench-test the relay, dialer message and retries; then have a specialist install and label the supervised circuits. Allow 2–3 working days after delivery plus a 72-hour observation period. Commission every detector and call point, test sound levels with fans running and doors shut, confirm calls reach all contacts, and demonstrate battery operation and circuit-fault indications. Record the site address in the Persian warning message.
+
+| Budget option | Total IRT before tax |
+| --- | ---: |
+| 1 detector, approved open-room layout only | 69,846,000 |
+| **2 detectors, recommended rack-room scope** | **71,464,800** |
+| 3 detectors, including surveyed adjacent-room detection | 73,083,600 |
+| Annual SIM and inspection/testing allowance | 5,400,000 |
+| **3-detector first-year total** | **78,483,600** |
+
+Installed totals include 20% contingency; prices are planning references and allowances requiring fresh quotations. Detection and local sound operate without Internet/LAN; warning calls require working cellular service and dialer power. Check panel status daily and SIM credit/expiry and test calls monthly. This scope provides warning; suppression, staffed monitoring, full building/battery-room coverage, optional VM integration and major construction changes are excluded.
