@@ -266,3 +266,29 @@ For a starting replacement budget, assume four coarse-stage changes and two fine
 8. Observe the complete system over at least 72 hours including high load, and retain balancing readings, fan curves, filter test reports, drawings and replacement instructions. Allow roughly **2–3 weeks for fabrication/installation after parts arrive**, plus laboratory lead time and the approximately 30-day coupon exposure. Do not declare corrosion acceptance before results return.
 
 Before procurement, the decisive inputs are measured peak IT kW, cooling-source details, actual rack widths/depths, ceiling clearance and duty-point supplier quotations. These can change both dimensions and the budget materially.
+
+## One-page summary
+
+Build a filtered cold-supply and contained hot-return system for the **4.5 m × 4 m room and four 42U racks**. Feed the racks in parallel from their fronts; return rear exhaust to cooling equipment outside the room. Assume **20 kW IT heat (5 kW/rack)** and existing cooling with approximately **25 kW usable sensible capacity**, subject to final calculations.
+
+| Design item | Baseline specification |
+| --- | --- |
+| Layout | Four assumed 600 × 1,200 mm cabinets; 1.60 m cold aisle, 1.20 m hot aisle, 1.05 m access at each row end |
+| Supply / return airflow | 7,200 / 7,500 m³/h total; 1,800 / 1,875 m³/h per rack |
+| Main ducts | Supply 800 × 500 mm; return 850 × 500 mm; 6 m each |
+| Branch ducts | Four 400 × 300 mm supply branches and four 450 × 300 mm return branches; 1 m each |
+| Materials / fans | 57 m² galvanized duct/fittings; 28 m² cold-duct insulation; variable-speed supply fan at 650 Pa and return fan at 200 Pa, at the flows above |
+| DIY filters | Separate coarse and pleated fine stages; four 600 × 600 mm cassettes per stage. Buy 2 m² coarse and 12 m² fine media, support mesh/backing, eight reusable frames and seals. Target tested MERV 13. |
+| Air quality / clearance | Initial inlet policy: 22°C, 40–50% RH, dew point ≤15°C; ISO Class 8 cleanliness target. Assume 3.20 m ceiling; fans/filter housing outside the room. |
+
+| Budget / operation | Iranian tomans (IRT) |
+| --- | ---: |
+| Equipment/materials with 20% contingency | **311,496,000** |
+| Installed, including commissioning, provisional filter testing and 20% contingency | **383,496,000** |
+| Installed procurement sensitivity range | **353,736,000–520,680,000** |
+| Annual raw-media replacement, excluding service costs | **32,400,000** |
+| Annual fan electricity | Approximately **25,100 kWh × tariff in IRT/kWh**; cooling additional |
+
+**Before procurement:** Confirm peak rack power, cabinet dimensions, ceiling clearance, cooling capacity and supplier quotations. Prices include explicit planning allowances. Cooling equipment, humidity control, outdoor-air hardware, gas treatment and redundancy are excluded. **50 kW IT heat needs larger ducts, filters and fans and a revised budget.**
+
+**Delivery and acceptance:** Allow approximately 2–3 weeks after parts arrive, plus laboratory lead time and about 30 days for corrosion coupons. Verify airflow balance, loaded inlet conditions, homemade-filter performance, particle/corrosion results and alarms; observe operation for 72 hours. Apply the cited ASHRAE, ISO and ISA guidance and equipment limits; this proposal does not certify compliance.
