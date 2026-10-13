@@ -153,3 +153,49 @@ Start with one rack and establish the full sensor-to-notification path before as
 - Complete a 72-hour run with no unexplained resets or gaps, export a history slice, and restore a backup into a separate database. Record all findings before operational handover.
 
 Keep the wiring map, purchased module variants, firmware versions and notification settings with the project. Inspect connectors and dust periodically, compare probes every six months and after suspected drift, and retest alerts after changing software or service credentials.
+
+## Alternative connections: G10 server serial, USB and other peripherals
+
+**Yes: a monitoring VM on your own server can collect sensor readings through physical serial or USB devices assigned by the hypervisor.** A rented remote VPS cannot directly access your rack's physical ports; it needs a local collector or network gateway that forwards readings. The exact server model, hypervisor and guest OS must be confirmed before writing configuration instructions.
+
+If “G10” means an HPE ProLiant Gen10, check the installed hardware rather than assuming every model has a COM port. For example, HPE lists the rear serial port on the DL380 Gen10 as optional and lists rear USB ports. This does not establish the configuration of your particular server. [HPE DL380 Gen10 rear-panel guide](https://support.hpe.com/hpesc/public/docDisplay?docId=a00018787en_us&page=GUID-94403017-2038-4EEE-B43A-F40ABC05B1DF.html).
+
+| Connection | Hardware path | VM collection method | Suitability for these four racks |
+| --- | --- | --- | --- |
+| Arduino USB serial | Local SHT31 sensors → Uno → USB data cable → server | Assign each USB device to the VM; collector reads its serial stream | Simplest Arduino pilot when rack-to-server cable runs are short; four rack nodes mean four USB devices |
+| Server RS-232 COM port | Sensors → Arduino/controller → RS-232 transceiver → server COM port | Map the physical host serial device to a guest serial port | Possible, but typically a point-to-point connection to one controller; not a direct connection for 12 bare sensors |
+| Native USB temperature/RH module | USB sensor module → server or powered USB hub | USB passthrough plus manufacturer SDK or documented protocol | Can eliminate Arduino; verify continuous live readings and Linux support before choosing a device |
+| RS-485 / Modbus RTU | Addressed industrial temperature/RH transmitters → daisy-chain bus → isolated USB-to-RS-485 adapter | Pass the adapter to the VM and poll each sensor's registers | Worth considering for longer cable runs and many sensing points; separate sensor power is usually required |
+| Ethernet environmental gateway or sensors | Sensor inputs → network gateway → monitoring VLAN | VM polls a documented API, Modbus TCP or SNMP, or receives MQTT where supported | Avoids physical-port passthrough and allows the VM to move between hosts; protocol support depends on the product |
+| Compatible PDU/UPS environmental input | Matching vendor probes → management module → LAN | Read the documented management API/SNMP interface | Useful if existing equipment already supports ambient temperature/RH probes; verify compatibility and sensor count |
+
+### Using an Uno over USB
+
+The Uno's existing USB interface can carry serial measurements; a separate Ethernet module is unnecessary for this alternative. The official Uno has a USB-to-serial bridge, while the budget CH340 clone uses its own bridge/driver. Program each node to send one structured record per sensor, with rack ID, position, temperature, RH, quality status, sequence and boot ID. The VM's collector reads these records and feeds the same database, filtering and notification pipeline described above. [Arduino USB serial example](https://docs.arduino.cc/tutorials/uno-rev3/AnalogReadSerial), [Arduino USB-to-serial documentation](https://support.arduino.cc/hc/en-us/articles/4408887452434-Flash-the-USB-to-serial-firmware-for-UNO-Rev3-and-earlier-and-Mega-boards).
+
+Use USB **data** cables, and a powered hub if port count or available power requires it. Keep passive cable runs short and qualify the actual cables/hub during the prototype; use suitable active extenders or change to RS-485/Ethernet for longer runs. Do not run a single long I2C cable from the server across all racks. Mount the Arduino near its sensor branches as in the baseline design.
+
+In a Linux guest, a bridge may appear as `/dev/ttyUSB0` or `/dev/ttyACM0`, depending on hardware and driver. Do not rely on enumeration numbers remaining constant. Prefer device serial numbers where available; otherwise map physical USB port paths and verify the rack ID in each incoming record. Identical low-cost adapters may lack unique USB serial numbers. The collector needs permission to access the device and must reconnect after unplugging, node reset or host/VM reboot. Opening an Uno serial connection can reset the board, so the collector must tolerate startup messages and a new boot ID.
+
+### Using the physical serial port
+
+The server's conventional COM interface is **RS-232**, while the Uno's D0/RX and D1/TX pins use **5 V TTL UART**. They require a suitable transceiver, such as a MAX232-based interface, with correctly wired transmit, receive and ground. Select straight-through or null-modem wiring based on the endpoints' documented pinouts. Do not wire the COM port directly to the Uno pins or to an SHT31 sensor. The SHT31 uses I2C and still needs a controller to translate its readings into serial records. [TI MAX232 interface specification](https://www.ti.com/product/MAX232).
+
+One RS-232 port does not directly provide a multi-drop sensor bus. For several rack controllers, use independent serial ports, a controller that aggregates their readings, or an RS-485 design. An RS-485 adapter is a distinct peripheral, not an ordinary RS-232 cable. For example, ATEN documents a USB-to-RS-422/485 adapter; a purchased temperature/RH transmitter must additionally have a documented register map and configurable bus address. Follow the actual devices' instructions for supply, topology, termination and biasing. [ATEN USB-to-RS-485 adapter](https://www.aten.com/eu/en/products/usb-peripherals/usb-converters/uc485/).
+
+### Native USB sensors exist
+
+One documented example is **Yoctopuce Yocto-Meteo-V2-C**, a USB-C module measuring temperature, relative humidity and pressure, with a Python API. Its manufacturer describes it as a component requiring an enclosure. It demonstrates that Arduino-free USB sensing is possible; Iranian availability and pricing have not been verified for this alternative. A USB connector alone does not prove live acquisition support: some products only use USB for power or downloading historical logs. [Yoctopuce module and API manual](https://www.yoctopuce.com/EN/products/yocto-meteo-v2-c/doc/MTEOMK2C.usermanual.html).
+
+### VM setup and verification procedure
+
+1. Identify the server model, installed physical ports, hypervisor and VM placement. Check whether a host console or another service already owns the serial port.
+2. Test one sensor/controller on a separate bench computer first. Establish its driver, serial settings or SDK, record format and unique identity.
+3. Assign that USB device or physical serial port to the monitoring VM using the hypervisor's supported mechanism. For KVM/libvirt, documented mechanisms include USB `hostdev` assignment and a serial device backed by a host character-device path. This is not an automatic privilege available to every VPS tenant. [libvirt device assignment documentation](https://libvirt.org/formatdomain.html).
+4. Run one collector service with device access permissions. Preserve raw records, processing timestamps, node IDs and sequence gaps, and route them into the existing recording/alerting pipeline.
+5. Test unplug/replug, host reboot, VM reboot and stale-data notifications. A device assigned to one VM should have a single reader; coordinate any host-side collector accordingly.
+6. Document that physical-port assignment ties collection to that host. Host migration or failover requires reattaching the hardware, forwarding readings from a separate collector, or selecting network-connected acquisition.
+
+For this project, **pilot one Uno connected by USB to a local monitoring VM** if the racks are near the server. If rack distances or VM mobility make USB awkward, retain the Ethernet baseline or price industrial Modbus RTU probes and an isolated RS-485 interface. Keep acquisition outside the hypervisor host where practical, using either a dedicated VM or a separate gateway.
+
+The earlier Ethernet budget remains the baseline. Switching four Uno nodes to USB removes four W5500 modules: **4,080,000 IRT of listed materials**, or **4,896,000 IRT including the associated 20% contingency**, before adding any USB hub, extension cables or revised power arrangements. A native-USB or RS-485 sensor design requires a new itemized quote and must not be assumed to cost the same as bare SHT31 modules.
