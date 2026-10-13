@@ -99,7 +99,7 @@ Select the lowest graphite fraction that passes **all** checks reliably. If 30% 
 
 ## Copper layout and homemade grounding points
 
-Use an estimated perimeter loop, one lengthwise center strip and one cross strip. Lay tape on the cured bonding primer and completely cover it with the graphite collector. Adhesive below foil may be insulating if the coating contacts its bare upper face; **electrical joints between foil pieces must then be soldered or mechanically clamped**, not merely adhesive-overlapped. Conductive-adhesive tape is convenient if affordable; ordinary copper foil is viable with qualified joints. Keep flux residue off the coating surface and verify continuity before covering.
+Use a **trial** perimeter loop, one lengthwise center strip and one cross strip; retain it only after the largest tape-free span and completed floor pass the tests in the answers section below. Lay tape on the cured bonding primer and completely cover it with the graphite collector. Adhesive below foil may be insulating if the coating contacts its bare upper face; **electrical joints between foil pieces must then be soldered or mechanically clamped**, not merely adhesive-overlapped. Conductive-adhesive tape is convenient if affordable; ordinary copper foil is viable with qualified joints. Keep flux residue off the coating surface and verify continuity before covering.
 
 ```text
                   4.5 m
@@ -208,3 +208,95 @@ Exclusions: tax if charged, rack relocation/downtime, weak mosaic replacement, f
 | **Total** | **40–56 h** | **About 2–4 weeks after materials arrive**, longer for failed trials or remediation |
 
 Do not borrow the factory ESD product's pot life, humidity limits or four-day cure for this formulation. The raw binder data and our qualified panels determine those values. The recipe can be made affordably; successful electrical and mechanical tests determine whether the resulting floor is ready for the datacenter.
+
+## Answers to the meter, footwear, wire and tape questions
+
+### Can an ordinary multimeter prove that the finished floor meets ESD standards?
+
+**No. It can help find wiring faults, but it cannot establish ESD compliance.** Use its resistance/continuity function on an isolated, de-energized copper network to check for broken tape joints, disconnected wires or gross changes. Account for test-lead resistance. A continuity buzzer on copper does not test the coating. Do not measure resistance on energized circuits or lift a building protective-earth connection while equipment is operating.
+
+Floor qualification needs a calibrated high-resistance meter with the specified test voltages, electrodes, positioning and timing. An ordinary multimeter usually has a low test voltage and insufficient high-resistance range; sharp probes also give an uncontrolled contact area. An “OL” reading can mean the meter is out of range, not necessarily that the floor fails. A low reading from improvised probes does not establish a pass. [EOS/ESD measurement-equipment guidance](https://www.esda.org/esd-overview/esd-fundamentals/part-4-training-and-auditing/) describes 10/100 V measurement capability and high-resistance ranges.
+
+| Measurement | Appropriate equipment / procedure | What it establishes |
+| --- | --- | --- |
+| Copper tape and terminal continuity | Low-resistance instrument; a multimeter can screen for opens | Connection integrity, not floor ESD performance |
+| Floor-to-ground and point-to-point resistance | ESD resistance meter with standard weighted conductive electrodes, following STM7.1 or applicable IEC method | Electrical behavior of the installed surface |
+| Person through footwear/floor to ground | Meter and hand electrode configured for STM97.1 or applicable IEC method | Actual personnel grounding path |
+| Walking body voltage | Body-voltage measuring system meeting STM97.2 or applicable IEC requirements | Charge generated during walking; both resistance and this test must pass |
+
+For the ANSI floor resistance procedure, the cited [EOS/ESD test-voltage explanation](https://forum.esda.org/t/tr53-test-voltage-for-surface-rtg-measurements/1018) describes 10 V below 10⁶ Ω and 100 V at/above 10⁶ Ω. Follow the chosen current method for switching, dwell time and electrode geometry. A generic insulation tester fixed at 250/500/1,000 V is not a substitute; a suitable instrument must support the required ESD settings and range. Never improvise a person test with a high-voltage insulation tester. Borrow/hire the ESD instruments or commission a measurement service, as already budgeted.
+
+### What are ESD footwear and affordable alternatives?
+
+**ESD footwear provides a controlled path from the wearer, through the shoe sole, to the ESD floor.** Ordinary insulating rubber soles may leave a person electrically isolated even on a good floor. ESD shoes are designed and tested for charge control; a generic “antistatic” description alone does not qualify a shoe/floor combination. ESD footwear is not electrical-insulating footwear for live electrical work.
+
+A lower-cost alternative is a reusable heel or full-foot grounder fitted to each ordinary shoe. The conductive tab is placed inside the shoe in contact with the wearer according to its instructions, while the exterior conductive pad contacts the floor. **Wear one on each foot** so contact remains available as the other foot lifts. Do not substitute bare copper straps. [Desco's foot-grounder guide](https://www.desco.com/PDF/Desco_FootGrounder_Selection_Chart.pdf) explains the inside tab and use on both feet.
+
+Qualify the actual footwear or grounders with our cured floor: person/system resistance <10⁹ Ω and walking voltage <100 V. Keep soles clean, verify grounders before use with a suitable footwear tester, and repeat qualification after changing footwear types. The current budget includes two pairs of ESD shoes; replacing those with grounders requires local prices and the same system tests, not an assumed saving. [EOS/ESD personnel-grounding requirements](https://www.esda.org/esd-overview/esd-fundamentals/part-3-basic-esd-control-procedures-and-materials/).
+
+### What wire size should connect the floor terminals?
+
+For this small room, **retain the planning choice of one 4 mm² insulated green/yellow copper conductor from each of the two floor terminals to the common verified bonding bar**, protected in conduit, with properly crimped compatible lugs. The allowance is 15 m combined, not 15 m per point. The size is conductor cross-sectional area, not diameter. A solid circular 4 mm² conductor has an equivalent diameter of about 2.26 mm; stranded cable is sold by total copper area.
+
+This is a practical preliminary size for the floor connections, **not a universal ESD or Iranian code requirement**. The [Sika conductive-primer installation sheet](https://usa.sika.com/content/dam/dms/us01/4/sikafloor_-220_wconductive.pdf) gives an example using No. 10 or No. 12 copper wire. This supports using robust copper connections, but does not approve our site or DIY assembly. [Schneider's protective-conductor guidance](https://www.electrical-installation.org/enwiki/Sizing_of_protective_earthing_conductor) gives mechanical minima of 2.5 mm² protected or 4 mm² unprotected for a separate PE conductor, alongside fault-duty sizing; those PE rules are not themselves an ESD-floor cable specification.
+
+The electrician must determine the conductor's function, local requirements, terminal capacity, fault exposure and protective arrangements, and increase the size if those require it. Do not use this 4 mm² floor lead as the main building earthing conductor or rack PE. There is no benefit in calculating its size from tiny normal static discharge current alone: robustness, reliable connections and electrical safety matter. Tape and terminal contacts must also be checked; a larger wire cannot correct a poor coating-to-copper interface.
+
+### Are a perimeter and two center lines sufficient, or is 15–25 cm spacing required?
+
+**The perimeter plus cross is a reasonable trial layout for a continuously conductive collector layer; its sufficiency for our DIY coating has not been demonstrated.** I cannot guarantee it before measurement. Our earlier sparse layout is now explicitly conditional on the full-stack pilot and installed-floor results. The copper is a collector network: the graphite-filled layer must carry charge from the surface to that network. Dense tape reduces the lateral travel distance but cannot repair an insulating top surface, missing through-thickness conduction, brittle coating or poor grounding.
+
+I double-checked manufacturer instructions as evidence about layout principles, not as an instruction to purchase their coatings:
+
+| Primary reference | What it actually says | What can be concluded |
+| --- | --- | --- |
+| [Flowcrete Flowfresh application manual, June 2022, printed page 62](https://www.flowcrete.eu/media/25797/fc_aig_flowfresh_application_manual_int_20220602.pdf) | Its tested ESD system uses a conductive primer, copper about **150 mm from borders**, grids of **8 × 8 m or at most 10 × 10 m**, and no floor point more than 5 m from tape. | The 150 mm is a border offset, **not 150 mm grid spacing**. Its performance cannot be transferred directly to our homemade collector. |
+| [Sika ESD/ECF earthing brochure, printed page 9](https://grc.sika.com/dam/dms/gr01/a/Brochure_Sika%20Technology_Concepts_for%20ESD_Conductive%20Flooring.pdf) | Describes grounding-point distances on a metre scale and additional copper for longer distances. | Dense 15–25 cm tape spacing is not universal across conductive resin systems. Our formulation still needs its own tests. |
+
+**Decision for affordability:** first trial the perimeter/cross with the qualified conductive collector. If it passes with operating margin at the largest tape-free spans, retain it. If readings rise excessively between collectors, compare 50 cm and 25 cm grids on the same full stack before installing the room. A 25 cm grid is a conservative optional layout if we choose to spend more copper; 15 cm is not established as necessary by the sources reviewed. Do not treat either dense option as an automatic ESD pass.
+
+A 1 m² pilot alone cannot reproduce the sparse room layout's approximately 1 m maximum distance to tape. Before choosing sparse tape, additionally test a **2.25 × 2.0 m full-stack panel/bay** or an equivalent representative floor trial with collectors around its boundary, measuring its center and remote positions. In the room, the cross creates four bays of that size; each bay center is approximately 1 m from the nearest idealized tape centerline. Account for actual wall offsets and tape width. If this larger trial is newly built, it requires extra materials beyond the original 1 m² pilot reserve; use measured coverage and add its test cost. Alternatively make and qualify one actual room bay first, then decide whether to extend or rework it, following the binder's recoat/joint procedures.
+
+| Layout for 4.5 × 4 m, idealized tape at boundaries | Maximum geometric distance to a tape line | Net tape excluding terminal tails | Tape with 2 m tails and 10% allowance | 50 m rolls / purchase | Tape cost at 45,000 IRT/m |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Perimeter + two crossed centers, budget baseline | About 1 m | 25.5 m | 30.25 m | 1 / 50 m | 2,250,000 |
+| Grid at ≤50 cm | 25 cm | 80.5 m | 90.75 m | 2 / 100 m | 4,500,000 |
+| Grid at ≤25 cm | 12.5 cm | 152.5 m | 169.95 m | 4 / 200 m | 9,000,000 |
+| Grid at ≤15 cm | 7.5 cm | 250.0 m | 277.20 m | 6 / 300 m | 13,500,000 |
+
+For a complete boundary-to-boundary grid with maximum pitch `s`, net length is `W × [ceil(L/s)+1] + L × [ceil(W/s)+1]`; shortened edge cells are allowed. A real inset perimeter has different lengths and small outside strips: recalculate from its actual drawing. These cost comparisons include extra tape purchase only; dense grids also add joint-making time and inspection. Keep every intersection electrically continuous by the selected qualified joint method.
+
+| Layout option | Revised base cash, tape-only adjustment | Revised total including 20% contingency |
+| --- | ---: | ---: |
+| Sparse baseline, if validated | 43,500,000 IRT | 52,200,000 IRT |
+| 50 cm grid | 45,750,000 IRT | 54,900,000 IRT |
+| 25 cm grid | 50,250,000 IRT | 60,300,000 IRT |
+| 15 cm grid | 54,750,000 IRT | 65,700,000 IRT |
+
+The additional larger-span qualification, any extra labor and remediation are excluded from these tape-only adjustments. Test the cured collector before the wearing coat and test the final surface at bay centers, seams, doorways and repairs; record all readings. Select pitch from passing results and cost, not from confidence in the sketch.
+
+<div style="page-break-before: always;"></div>
+
+## One-page project summary
+
+**Purpose:** finish the 18 m² Hormuz mosaic floor using ordinary raw epoxy, graphite and copper collectors. Make the conductive layers ourselves. The proposed formulations remain trial recipes until the actual materials and installed surface pass electrical and mechanical checks.
+
+| Item | Working design / quantity |
+| --- | --- |
+| Layer sequence | Prepared/repaired mosaic → neat epoxy primer → copper collectors → graphite collector → graphite wearing layer |
+| Primer | About 0.30 kg/m² neat A+B |
+| Collector | Trial **40 wt% graphite**, 0.25 mm cured thickness |
+| Wearing layer | Screen 30/35/40%; budget **35 wt% graphite**, 1.0 mm cured thickness |
+| Purchase allowance | **35 kg matched A+B binder, 15 kg fine graphite, 5 kg repair quartz**; no quartz in conductive layers |
+| Grounding | **Two terminals, each with protected 4 mm² copper to the common bonding bar**; 15 m cable combined, subject to electrician review |
+| Copper baseline | Perimeter/cross, **50 m roll**, conditional on largest-span validation |
+| Denser options | 50 cm: 100 m purchase; 25 cm: 200 m; 15 cm: 300 m; all still require tests |
+| Cash estimate | Sparse baseline **52.2 million IRT** including 20% contingency; tape-only 25 cm alternative **60.3 million IRT** |
+
+**Recipe:** graphite percentage is of **A+B+graphite total mass**. For 1 kg total at 35%, use 650 g A+B and 350 g graphite; at 40%, use 600 g A+B and 400 g graphite. Split A+B using its own supplier's weight ratio. Disperse powder into A, add the correct B, remix and spread within qualified working time. Keep one powder grade/lot and repeatable mixing; add no solvent or insulating topcoat.
+
+**Implementation:** make repeat trial batches; check cure, adhesion, wear, slip and electrical behavior. Validate the largest tape-free span before selecting pitch. Empty the room, grind and vacuum, verify moisture, repair, prime, install/check copper and terminals, apply/test collector, apply wearing layer, fully cure and commission before returning racks. Follow the raw binder's actual cure and recoat instructions. Plan about 2–4 weeks, longer for repeat trials or remediation.
+
+**Verification:** an ordinary multimeter can screen copper continuity; it cannot prove floor ESD compliance. Borrow/hire a calibrated **10/100 V ESD resistance meter with standard electrodes** and a suitable walking-voltage system. Measure at least 10 distributed floor-to-ground points plus point-to-point tests, including places farthest from tape. Preferred project floor range is 10⁶–10⁸ Ω; qualify the actual person/footwear/floor at **<10⁹ Ω and walking voltage <100 V**. Use ESD shoes or tested grounders on both feet; ordinary insulating shoes may defeat the floor.
+
+**Limits and upkeep:** prices are planning allowances except the cited graphite retail reference. Additional large-span trial material/testing, relocation, major repairs and tax are excluded. Dense copper cannot fix insulating or shedding epoxy. Keep rack PE, clean without wax, inspect wear and recheck after repairs, cleaner or footwear changes.
