@@ -1,5 +1,7 @@
 # Hormuz Data Center Specification
 
+The [50 kW datacenter electrical earthing proposal](docs/earthing-proposal.md) compares driven rods, a shallow ring with rods, and a copper-plate pit. It includes Persian price sources, itemized material and labor budgets in Iranian tomans, implementation procedures, and schedules for one owner with the required specialists. Its [editable financial estimate](docs/earthing-estimate.csv) is available as CSV.
+
 The [four-rack temperature and humidity monitoring proposal](docs/rack-monitoring-proposal.md) includes the architecture, implementation procedure, one-person schedule, sourced hardware prices and an estimate in Iranian tomans. Its [itemized materials estimate](docs/rack-monitoring-estimate.csv) is available as CSV.
 
 ## 1. About US
