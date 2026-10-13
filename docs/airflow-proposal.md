@@ -8,7 +8,7 @@ For the **4.5 m × 4 m room with four 42U racks**, use one row of four racks, al
 
 At the provisional **20 kW IT load (5 kW/rack)**, budget **311,496,000 IRT for equipment/materials with 20% contingency**, or **383,496,000 IRT including installation, commissioning and a provisional filter-test allowance**. A sensitivity range is **354–521 million IRT installed**, explained below. This pays for airflow distribution, two fans and filters made from separate raw materials; **it excludes the machine that produces cold air**. Existing cooling must provide approximately **25 kW of usable sensible cooling** for this example, subject to a site heat-load calculation.
 
-The actual rack load, cold-air source, rack dimensions, ceiling height, doors, cooling capacity and duct route are unconfirmed. The repository's earlier [earthing proposal](earthing-proposal.md) mentions a 50 kW facility: that is not evidence of 50 kW IT heat. A 50 kW IT sizing case appears below, but the cost table covers the 20 kW case only.
+The actual rack load, cold-air source, rack dimensions, ceiling height, doors, cooling capacity and duct route are unconfirmed. The repository's earlier [earthing proposal](../assets/park/earthing-proposal.md) mentions a 50 kW facility: that is not evidence of 50 kW IT heat. A 50 kW IT sizing case appears below, but the cost table covers the 20 kW case only.
 
 ## International guidance used
 

@@ -218,7 +218,7 @@ The reference OEM's third-party interface requires instantaneous battery protect
 4. Select cable ampacity after all derating, then coordinate `Ib ≤ In ≤ Iz` and the protective device's conventional operating current with cable thermal limits. Check allowable voltage drop, terminals, mechanical protection and `S ≥ sqrt(I²t)/k_material` for short-circuit withstand. Obtain device let-through data; do not infer `I²t` from nameplate current.
 5. Panel builder creates reviewed schematics, component layout, bar supports, barriers, segregation and labels. Complete design verification and routine inspection/testing of the assembly. No breaker may be selected solely because it fits physically in the cabinet.
 
-The [Schneider UPS cable guide](https://www.electrical-installation.org/enwiki/Installation%2C_connection_and_sizing_of_cables_with_UPS) explains the need to consider charging current, conductor heating and drop separately. Final earthing coordinates with the site's [earthing proposal](earthing-proposal.md); retain continuous circuit PE and common bonding rather than a separate battery “clean earth.”
+The [Schneider UPS cable guide](https://www.electrical-installation.org/enwiki/Installation%2C_connection_and_sizing_of_cables_with_UPS) explains the need to consider charging current, conductor heating and drop separately. Final earthing coordinates with the site's [earthing proposal](../assets/park/earthing-proposal.md); retain continuous circuit PE and common bonding rather than a separate battery “clean earth.”
 
 ## 7. Cable and rack distribution calculations
 

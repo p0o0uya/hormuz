@@ -50,22 +50,22 @@ Before any ground work, obtain landowner permission, locate buried power, water,
 
 Each option includes **one copy of the following common list**, plus its own list below. The tables include materials, tools and paid human resources. Rows shown as “$… allowance” are **unquoted estimating assumptions**, converted at the requested rate, not researched US retail prices. They cover items/services for which a reliable comparable local quote was not established. Obtain written Ilam quotes before purchase; currency conversion does not establish local labor rates.
 
-| Item | Quantity | Unit IRT | Line IRT | Price basis |
-| --- | ---: | ---: | ---: | --- |
-| 50 mm² insulated green/yellow copper electrode feeder | 20 m | 1,620,000 | 32,400,000 | $6 allowance |
-| 16 mm² insulated copper supplementary rack bonding | 20 m | 540,000 | 10,800,000 | $2 allowance |
-| Main earthing bar with supports and enclosure | 1 set | 4,050,000 | 4,050,000 | $15 allowance |
-| Accessible test-link box | 1 each | 960,000 | 960,000 | [Persian listing](https://elabkhand.com/product-category/well-art/) |
-| 50 mm² copper lugs | 4 each | 235,000 | 940,000 | [Persian listing](https://elabkhand.com/product-category/well-art/) |
-| Rack lugs and bonding bolts/washers | 1 lot | 3,240,000 | 3,240,000 | $12 allowance |
-| Protective conduit and route fixings | 20 m | 270,000 | 5,400,000 | $1 allowance |
-| Labels and corrosion-compatible joint protection | 1 lot | 2,160,000 | 2,160,000 | $8 allowance |
-| Hand tools and PPE purchase allowance | 1 lot | 9,450,000 | 9,450,000 | $35 allowance |
-| Hydraulic crimper and torque tool hire | 1 lot | 5,400,000 | 5,400,000 | $20 allowance |
-| Freight and local transport | 1 lot | 4,050,000 | 4,050,000 | $15 allowance |
-| Electrical survey and soil resistivity design | 1 visit | 16,200,000 | 16,200,000 | $60 allowance |
-| Electrical integration under isolation | 1 visit | 10,800,000 | 10,800,000 | $40 allowance |
-| Commissioning test equipment and written report | 1 visit | 16,200,000 | 16,200,000 | $60 allowance |
+| Item | Quantity | Unit IRT | Line IRT | Price basis  Resource type | Notes |
+| --- | ---: | ---: | ---: | ---  --- | --- |
+| 50 mm² insulated green/yellow copper electrode feeder | 20 m | 1,620,000 | 32,400,000 | $6 allowance  Material | 20 m route including slack; verify burial/routing suitability and final size |
+| 16 mm² insulated copper supplementary rack bonding | 20 m | 540,000 | 10,800,000 | $2 allowance  Material | Four existing racks; supplements existing circuit PE; final sizes by designer |
+| Main earthing bar with supports and enclosure | 1 set | 4,050,000 | 4,050,000 | $15 allowance  Material | Sized for fault duty and terminal count |
+| Accessible test-link box | 1 each | 960,000 | 960,000 | [Persian listing](https://elabkhand.com/product-category/well-art/)  Material | Confirm supplied copper link and terminal capacity |
+| 50 mm² copper lugs | 4 each | 235,000 | 940,000 | [Persian listing](https://elabkhand.com/product-category/well-art/)  Material | — |
+| Rack lugs and bonding bolts/washers | 1 lot | 3,240,000 | 3,240,000 | $12 allowance  Material | — |
+| Protective conduit and route fixings | 20 m | 270,000 | 5,400,000 | $1 allowance  Material | — |
+| Labels and corrosion-compatible joint protection | 1 lot | 2,160,000 | 2,160,000 | $8 allowance  Material | — |
+| Hand tools and PPE purchase allowance | 1 lot | 9,450,000 | 9,450,000 | $35 allowance  Tool/service | Spade/pick/hammer/wheelbarrow share or hire; gloves boots eye/ear protection barriers |
+| Hydraulic crimper and torque tool hire | 1 lot | 5,400,000 | 5,400,000 | $20 allowance  Tool/service | — |
+| Freight and local transport | 1 lot | 4,050,000 | 4,050,000 | $15 allowance  Tool/service | — |
+| Electrical survey and soil resistivity design | 1 visit | 16,200,000 | 16,200,000 | $60 allowance  Labor/service | About 4 specialist hours; includes utility-location allowance; confirm actual survey scope |
+| Electrical integration under isolation | 1 visit | 10,800,000 | 10,800,000 | $40 allowance  Labor/service | About 4 electrician hours; UPS generator and bypass checks |
+| Commissioning test equipment and written report | 1 visit | 16,200,000 | 16,200,000 | $60 allowance  Labor/service | About 4 specialist hours; earth tester low-resistance continuity loop/RCD tests as applicable |
 
 **Shared cash subtotal: 122,050,000 IRT**, before contingency. The two cable allowances are deliberately distinct: insulated feeder on the route to the MET, and supplementary rack bonds. Electrode conductor buried in soil is costed separately in each method. Existing rack/PDU circuit PE is assumed present and will be tested. Increase quantities if the measured route exceeds 20 m or rack bonding exceeds 20 m.
 
@@ -75,15 +75,15 @@ The main-bar allowance includes its enclosure/supports; the separate test-link b
 
 Allow a roughly triangular area with 6 m sides, subject to access and clearances. Three 3 m rods give an extensible starting layout. Rod spacing is intentional: closely clustered rods interfere with each other's earth-current paths; three rods do not simply divide resistance by three. Use the measured soil model to predict performance before choosing the final count.
 
-| Item | Quantity | Unit IRT | Line IRT | Price basis |
-| --- | ---: | ---: | ---: | --- |
-| 3 m × 16 mm copper-coated steel earth rod | 3 each | 230,000 | 690,000 | [Persian listing](https://coppersland.ir/product/میله-ارت-روکش-مس/) |
-| 50 mm² bare copper conductor | 25 m | 1,575,000 | 39,375,000 | [Persian listing](https://elabkhand.com/product/copper-wire-50/) |
-| Approved rod clamps and conductor splice connectors | 1 lot | 5,400,000 | 5,400,000 | $20 allowance |
-| Concrete inspection chamber and lid | 3 each | 1,700,000 | 5,100,000 | [Persian listing](https://elabkhand.com/product-category/well-art/) |
-| Rod driver rental and compatible drive head | 1 lot | 8,100,000 | 8,100,000 | $30 allowance |
-| Screened backfill and minor reinstatement | 1 lot | 5,400,000 | 5,400,000 | $20 allowance |
-| Rod installation contractor allowance | 3 rod | 2,000,000 | 6,000,000 | [Service midpoint](https://sanjagh.pro/price/اجرای-چاه-ارت-و-سیستم-ارتینگ) |
+| Item | Quantity | Unit IRT | Line IRT | Price basis  Resource type | Notes |
+| --- | ---: | ---: | ---: | ---  --- | --- |
+| 3 m × 16 mm copper-coated steel earth rod | 3 each | 230,000 | 690,000 | [Persian listing](https://coppersland.ir/product/میله-ارت-روکش-مس/)  Material | Undated catalog; coating thickness/certification unverified; get accepted product quote |
+| 50 mm² bare copper conductor | 25 m | 1,575,000 | 39,375,000 | [Persian listing](https://elabkhand.com/product/copper-wire-50/)  Material | Assumed sale unit per metre; confirm with seller; 18 m triangle plus tails/slack |
+| Approved rod clamps and conductor splice connectors | 1 lot | 5,400,000 | 5,400,000 | $20 allowance  Material | 3 rod clamps plus feeder splice; approved for direct burial where buried |
+| Concrete inspection chamber and lid | 3 each | 1,700,000 | 5,100,000 | [Persian listing](https://elabkhand.com/product-category/well-art/)  Material | — |
+| Rod driver rental and compatible drive head | 1 lot | 8,100,000 | 8,100,000 | $30 allowance  Tool/service | — |
+| Screened backfill and minor reinstatement | 1 lot | 5,400,000 | 5,400,000 | $20 allowance  Tool/service | — |
+| Rod installation contractor allowance | 3 rod | 2,000,000 | 6,000,000 | [Service midpoint](https://sanjagh.pro/price/اجرای-چاه-ارت-و-سیستم-ارتینگ)  Labor/service | Range 1.5–2.5m IRT/rod excluding excavation/welding; excludes survey/testing; owner handles trench |
 
 The rod supplier displays **230,000 IRT for a 3 m × 16 mm copper-coated rod**, but the catalog is undated and does not establish coating thickness or certification. This is a provisional price, **not approval of that product**. Require certified copper-bonded rods to the designer's accepted specification; update costs if the listing is unsuitable. The bare-wire listing is treated as **per metre**, consistent with its 450 g description, but confirm sale unit and actual 50 mm² copper section with the supplier. [Local rod specification/price table](https://coppersland.ir/product/میله-ارت-روکش-مس/), [local copper-wire listing](https://elabkhand.com/product/copper-wire-50/).
 
@@ -102,15 +102,15 @@ Owner time allocation: survey coordination/procurement 8 h, shallow trench/reins
 
 Use a surveyed perimeter around an accessible yard/building, for example a 10 m × 5 m rectangle with **30 m perimeter**, provided foundation and utility clearances permit it. Place rods at well-spaced points selected by the designer. This provides a distributed electrode and expansion points; it still requires testing and does not guarantee the resistance goal.
 
-| Item | Quantity | Unit IRT | Line IRT | Price basis |
-| --- | ---: | ---: | ---: | --- |
-| 50 mm² bare copper ring conductor | 35 m | 1,575,000 | 55,125,000 | [Persian listing](https://elabkhand.com/product/copper-wire-50/) |
-| 3 m × 16 mm copper-coated steel earth rod | 4 each | 230,000 | 920,000 | [Persian listing](https://coppersland.ir/product/میله-ارت-روکش-مس/) |
-| Approved buried ring/rod/feeder connectors | 1 lot | 8,100,000 | 8,100,000 | $30 allowance |
-| Concrete inspection chamber and lid | 4 each | 1,700,000 | 6,800,000 | [Persian listing](https://elabkhand.com/product-category/well-art/) |
-| Rod driver rental and drive head | 1 lot | 8,100,000 | 8,100,000 | $30 allowance |
-| Screened backfill and reinstatement | 1 lot | 10,800,000 | 10,800,000 | $40 allowance |
-| Rod installation contractor allowance | 4 rod | 2,000,000 | 8,000,000 | [Service midpoint](https://sanjagh.pro/price/اجرای-چاه-ارت-و-سیستم-ارتینگ) |
+| Item | Quantity | Unit IRT | Line IRT | Price basis  Resource type | Notes |
+| --- | ---: | ---: | ---: | ---  --- | --- |
+| 50 mm² bare copper ring conductor | 35 m | 1,575,000 | 55,125,000 | [Persian listing](https://elabkhand.com/product/copper-wire-50/)  Material | 30 m perimeter plus tails/slack |
+| 3 m × 16 mm copper-coated steel earth rod | 4 each | 230,000 | 920,000 | [Persian listing](https://coppersland.ir/product/میله-ارت-روکش-مس/)  Material | Same procurement qualification as A |
+| Approved buried ring/rod/feeder connectors | 1 lot | 8,100,000 | 8,100,000 | $30 allowance  Material | Includes ring closure; replace with qualified exothermic joints if design requires |
+| Concrete inspection chamber and lid | 4 each | 1,700,000 | 6,800,000 | [Persian listing](https://elabkhand.com/product-category/well-art/)  Material | — |
+| Rod driver rental and drive head | 1 lot | 8,100,000 | 8,100,000 | $30 allowance  Tool/service | — |
+| Screened backfill and reinstatement | 1 lot | 10,800,000 | 10,800,000 | $40 allowance  Tool/service | — |
+| Rod installation contractor allowance | 4 rod | 2,000,000 | 8,000,000 | [Service midpoint](https://sanjagh.pro/price/اجرای-چاه-ارت-و-سیستم-ارتینگ)  Labor/service | Same scope as A; owner handles ring and trench installation |
 
 Procedure:
 
@@ -126,17 +126,17 @@ Owner allocation: planning/materials 12 h, trench and reinstatement 56 h, ring/r
 
 Use this only after soil measurements justify a deeper electrode. The **4 m depth is a cost assumption**, not a depth inferred from the 50 kW load. Do not keep deepening a pit blindly to chase a resistance value. Budgeted plate is 600 × 600 × 5 mm solid copper; verify purity, dimensions and approximately 16.1 kg theoretical mass rather than accepting a cheaper cast/alloy substitute.
 
-| Item | Quantity | Unit IRT | Line IRT | Price basis |
-| --- | ---: | ---: | ---: | --- |
-| 600 × 600 × 5 mm copper plate | 1 each | 45,600,000 | 45,600,000 | [Persian listing](https://elabkhand.com/product-category/well-art/) |
-| 50 mm² bare copper pit tail | 10 m | 1,575,000 | 15,750,000 | [Persian listing](https://elabkhand.com/product/copper-wire-50/) |
-| 15 kg earthing backfill bag (local GEM-labelled product) | 20 bag | 520,000 | 10,400,000 | [Persian listing](https://elabkhand.com/product-category/well-art/) |
-| Concrete inspection chamber and lid | 1 each | 1,700,000 | 1,700,000 | [Persian listing](https://elabkhand.com/product-category/well-art/) |
-| Approved buried tail-to-feeder connector | 1 each | 2,160,000 | 2,160,000 | $8 allowance |
-| Water mixing containers screened backfill and reinstatement | 1 lot | 8,100,000 | 8,100,000 | $30 allowance |
-| Specialist machine excavation crew and mobilization | 1 job | 40,500,000 | 40,500,000 | $150 allowance |
-| Plate installation | 1 plate | 2,250,000 | 2,250,000 | [Service midpoint](https://sanjagh.pro/price/اجرای-چاه-ارت-و-سیستم-ارتینگ) |
-| Exothermic plate joint service including consumables | 1 joint | 1,620,000 | 1,620,000 | $6 allowance |
+| Item | Quantity | Unit IRT | Line IRT | Price basis  Resource type | Notes |
+| --- | ---: | ---: | ---: | ---  --- | --- |
+| 600 × 600 × 5 mm copper plate | 1 each | 45,600,000 | 45,600,000 | [Persian listing](https://elabkhand.com/product-category/well-art/)  Material | Solid copper purity verification; about 16.1 kg theoretical mass |
+| 50 mm² bare copper pit tail | 10 m | 1,575,000 | 15,750,000 | [Persian listing](https://elabkhand.com/product/copper-wire-50/)  Material | — |
+| 15 kg earthing backfill bag (local GEM-labelled product) | 20 bag | 520,000 | 10,400,000 | [Persian listing](https://elabkhand.com/product-category/well-art/)  Material | 300 kg provisional; not verified as nVent GEM; obtain composition corrosion and yield data |
+| Concrete inspection chamber and lid | 1 each | 1,700,000 | 1,700,000 | [Persian listing](https://elabkhand.com/product-category/well-art/)  Material | — |
+| Approved buried tail-to-feeder connector | 1 each | 2,160,000 | 2,160,000 | $8 allowance  Material | — |
+| Water mixing containers screened backfill and reinstatement | 1 lot | 8,100,000 | 8,100,000 | $30 allowance  Tool/service | — |
+| Specialist machine excavation crew and mobilization | 1 job | 40,500,000 | 40,500,000 | $150 allowance  Labor/service | 3 people × 8 h planning; approx 0.8 m diameter × 4 m depth; non-entry lowering and backfill; no human entry budgeted |
+| Plate installation | 1 plate | 2,250,000 | 2,250,000 | [Service midpoint](https://sanjagh.pro/price/اجرای-چاه-ارت-و-سیستم-ارتینگ)  Labor/service | Range 1.5–3m IRT excluding excavation/welding; no double count of excavation |
+| Exothermic plate joint service including consumables | 1 joint | 1,620,000 | 1,620,000 | $6 allowance  Labor/service | About 2 specialist hours including setup; qualified mold and charge for actual plate/tail |
 
 The 300 kg backfill amount is a **provisional envelope around the electrode**, not the entire shaft fill. Determine actual material volume from the approved envelope and manufacturer's yield/mixing instructions. Remaining excavation is backfilled with suitable soil. A Persian product labeled “GEM” has not been established as nVent-branded or technically equivalent; obtain its composition, corrosion performance and installation instructions. Plain bentonite may shrink away from an electrode in dry conditions. [nVent technical handbook](https://www.nvent.com/sites/default/files/acquiadam/assets/E907W-WWEN.pdf), [nVent enhancement-material selection guidance](https://blog.nvent.com/lower-your-grounding-system-resistance-with-ground-enhancement-material-gem/).
 
@@ -151,6 +151,16 @@ Procedure:
 Deep excavation is not suitable for a lone person with hand tools. Cave-in protection and a competent excavation assessment are essential; even shallow excavation can be unstable. [OSHA trench/excavation safety reference](https://www.osha.gov/sites/default/files/publications/TRENCH_EXCAVATION_FS.pdf).
 
 Owner allocation: planning/scheduling 12 h, above-ground route preparation 12 h, specialist attendance and records 8 h: **32 h base**, typically **24–40 h**. Paid resources: **12 common specialist hours**, an excavation crew allowance of **3 people × 8 h = 24 person-hours**, approximately **4 plate-installation hours**, and **2 exothermic-joint hours**. The excavation package includes its machinery and crew; these person-hours are descriptive and are not charged again. Restricted access, rock, dewatering or extensive casing need a new quote.
+
+### Owner labor estimate
+
+Owner time is valued separately from the cash budget. The following base hours use the same assumed 500,000 IRT/hour rate for each method; the working-time ranges are given in the procedures above.
+
+| Method | Resource | Base hours | Unit IRT/hour | Time value IRT | Basis and treatment |
+| --- | --- | ---: | ---: | ---: | --- |
+| A — rods | Owner coordination preparation civil work and records | 48 | 500,000 | 24,000,000 | Unquoted opportunity-cost assumption; Separately shown; exclude from cash budget when self-managed |
+| B — ring | Owner coordination preparation civil work and records | 96 | 500,000 | 48,000,000 | Unquoted opportunity-cost assumption; Separately shown; exclude from cash budget when self-managed |
+| C — plate pit | Owner coordination preparation civil work and records | 32 | 500,000 | 16,000,000 | Unquoted opportunity-cost assumption; Separately shown; exclude from cash budget when self-managed |
 
 ## Financial comparison
 
@@ -182,4 +192,4 @@ If the owner is electrically qualified and supplies accepted instruments, some s
 8. **Accept only after protection checks:** record MET-to-rack/metalwork low-resistance continuity, visual/torque inspections, applicable earth-fault loop and RCD operation/disconnection checks, and operation-mode verification for utility, UPS/bypass and generator. Compare results with the approved design, not just an ohm target. Correct failures and retest before putting affected circuits in service.
 9. **Hand over and maintain:** keep drawings, material certificates, photos, test instrument/calibration details, weather/soil conditions and signed results. Recheck in the dry season, after relevant electrical/civil changes or lightning damage, and at the responsible engineer's agreed interval. A freshly wetted acceptance reading alone is insufficient evidence of year-round performance.
 
-The editable [itemized estimate CSV](earthing-estimate.csv) records quantities, original currency, exchange rate, IRT line totals, evidence type, sources and owner hours. Use it to replace provisional allowances with supplier quotations before implementing the work.
+All quantities, material and human-resource estimates, IRT line totals, price sources, procurement notes and owner hours are included in the tables in this document. Prices were checked on 13 October 2026, and every USD allowance uses 1 USD = 270,000 IRT. Replace the provisional allowances with supplier quotations in these tables before implementing the work.
