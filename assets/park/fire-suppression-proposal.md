@@ -14,9 +14,32 @@ Request a conventional pre-action sprinkler alternative if the approved mist pac
 
 ## Design basis and layout
 
-Use the [airflow room plan](../assets/park/airflow-proposal.md) and [existing warning-system proposal](../assets/park/fire-monitoring-proposal.md). The room's **3.2 m height is an assumption**, not a measurement. Four assumed 600 × 1200 mm racks occupy x=1.05–3.45 m, y=1.60–2.80 m. The cold/front area is y=0–1.60 m; contained hot aisle is y=2.80–4.00 m. Room origin is the southwest corner, x east along 4.5 m and y north along 4 m.
+Use the [airflow room plan](airflow-proposal.md) and [existing warning-system proposal](fire-monitoring-proposal.md). The room's **3.2 m height is an assumption**, not a measurement. Four assumed 600 × 1200 mm racks occupy x=1.05–3.45 m, y=1.60–2.80 m. The cold/front area is y=0–1.60 m; contained hot aisle is y=2.80–4.00 m. Room origin is the southwest corner, x east along 4.5 m and y north along 4 m.
 
-![Preliminary suppression layout and supply schematic](fire-suppression-layout.svg)
+The following tables contain the room layout and supply schematic. All positions are candidate areas for quotation, not installation coordinates.
+
+| Room feature | Plan coordinates / arrangement |
+| --- | --- |
+| Orientation | North at top; southwest origin (0,0); x east and y north. Room 4.50 × 4.00 m; height assumed 3.20 m. |
+| R1 | x=1.05–1.65 m, y=1.60–2.80 m |
+| R2 | x=1.65–2.25 m, y=1.60–2.80 m |
+| R3 | x=2.25–2.85 m, y=1.60–2.80 m |
+| R4 | x=2.85–3.45 m, y=1.60–2.80 m |
+| Rack fronts | Face south toward the cold aisle; keep escape and service routes clear. |
+| Cold/front aisle | y=0–1.60 m |
+| Contained hot aisle | Behind racks, y=2.80–4.00 m; H5–H6 beneath its roof. Coordinate heads with the return duct. |
+| H1 / H2 | Ceiling candidates at (0.60,0.65) / (3.90,0.65) m |
+| H3 / H4 | Ceiling candidates at (0.60,3.35) / (3.90,3.35) m |
+| H5 / H6 | Containment candidates at (1.65,3.40) / (2.85,3.40) m |
+
+| Supply / control stage | Connection and function |
+| --- | --- |
+| 1. Atmospheric tank | 3000 L nominal budget assumption; feeds the matched fire pump. Tank/pump are in an external service space. |
+| 2. Matched fire pump and controller | Supplies the pre-action valve; duty and backup power determined by engineer. Include OEM-required filtration and water-quality preparation. |
+| 3. Pre-action valve and supervision | Feeds OEM-approved pipework; single-interlock budget basis. |
+| 4. Pressure-rated pipework | Feeds automatic closed heads; 35 m total budget quantity. Routing topology only; no bore or operating pressure specified. |
+| 5. Closed heads | Six candidate heads: four ceiling and two beneath containment. Heat opens individual heads. No temperature rating or coverage radius specified. |
+| Release controls | Compatible supervised controls receive detection, raise the alarm and release the valve. Control backup batteries and pump backup power are separate provisions. |
 
 | Element | Quotation / layout basis | Final design requirement |
 | --- | --- | --- |
@@ -24,7 +47,7 @@ Use the [airflow room plan](../assets/park/airflow-proposal.md) and [existing wa
 | Valve and controls | Accessible supervised assembly outside the protected room; short protected feeder to room | Exact valve, pressure ratings, detection interfaces, drains and release logic from the selected OEM package. |
 | H1–H4 ceiling heads | Four candidate areas: (0.60,0.65), (3.90,0.65), (0.60,3.35), (3.90,3.35) m | Budget symbols, not drilling coordinates. Confirm wall spacing, rack/duct/tray obstructions and all coverage requirements. |
 | H5–H6 hot-aisle heads | Two candidate areas inside containment: (1.65,3.40), (2.85,3.40) m, beneath its roof | The planned return duct occupies this area: revise head/duct locations together. Do not mount above the roof and assume protection below. More heads or a different layout may be required. |
-| Pipework | 35 m total planning quantity including feeder, overhead branches, drops and routing reserve | No construction pipe bore specified. Engineer selects OEM-approved material, fittings, bore, support spacing and pressure rating after hydraulic calculation. Diagram lines represent topology only. |
+| Pipework | 35 m total planning quantity including feeder, overhead branches, drops and routing reserve | No construction pipe bore specified. Engineer selects OEM-approved material, fittings, bore, support spacing and pressure rating after hydraulic calculation. The supply table represents topology only. |
 | Detection | General room and contained-aisle detection coordinated with cooling airflow | Confirm listed compatibility with releasing controls. Aspirating detection may be needed; a new aspirating system is excluded from this estimate. |
 
 Nozzle quantity cannot be established from floor area alone. The approval and installation manual must cover the actual room and aisle heights, obstructions, nozzle orientation/spacing, airflow and hazard. Survey any raised-floor or ceiling voids, combustible cabling and adjacent electrical/battery spaces separately. The budget covers only this rack room; it does not establish protection of the proposed UPS battery bank or the whole building.
@@ -35,13 +58,17 @@ The **six heads and 3000 L tank are costing assumptions**, not a proven suppress
 
 For budget sensitivity only, assume six simultaneous operating heads at **10 L/min each for 30 minutes**. Neither flow nor duration is a code requirement or a manufacturer's specification:
 
-```text
-Q = 6 × 10 = 60 L/min
-Discharge water = 60 × 30 = 1800 L
-Assumed reserve = 10%; assumed usable tank fraction = 90%
-Nominal volume example = 1800 × 1.10 / 0.90 = 2200 L
-Round up for the budget example to 3000 L nominal.
-```
+| Sizing step | Illustrative calculation / assumption | Result |
+| --- | --- | ---: |
+| Simultaneous heads | Budget example only | 6 |
+| Flow per head | Budget example only | 10 L/min |
+| Combined flow | 6 × 10 | 60 L/min |
+| Discharge duration | Budget example only | 30 minutes |
+| Discharge volume | 60 × 30 | 1800 L |
+| Reserve | Assumed for example | 10% |
+| Usable tank fraction | Assumed for example | 90% |
+| Nominal volume example | 1800 × 1.10 / 0.90 | 2200 L |
+| Rounded budget tank | Preliminary allowance | 3000 L nominal |
 
 This example excludes separately required hose demand and other simultaneously protected zones; add them if applicable. Do not credit refill unless the engineer and authority accept its reliability. Reserve and usable fraction must be replaced with actual tank suction, freeboard and OEM requirements. If six heads instead require 15 L/min for 60 minutes, the same example gives **6600 L nominal**, requiring at least a **7000 L budget case** and revised tank, pump and installation pricing. A longer mandatory duration or greater operating area can increase this further.
 
@@ -68,9 +95,37 @@ Keep suppression independent of the LAN, monitoring VM and cellular network. Pre
 
 ## Cost table
 
-All figures below are **unsourced planning allowances in IRT**, dated 13 October 2026. Quantities are preliminary. The [editable CSV](fire-suppression-estimate.csv) contains each low/base/high unit and extended price, scope notes and calculated totals. None of these numbers is a published Marioff or Viking price. An imported approved package may exceed the high scenario substantially.
+All figures below are **unsourced planning allowances in IRT**, dated 13 October 2026. Quantities are preliminary. The tables in this file contain every low/base/high unit and extended price, scope note and calculated total. None of these numbers is a published Marioff or Viking price. An imported approved package may exceed the high scenario substantially.
 
-| ID | Part / service | Qty | Base unit IRT | Base line IRT |
+### Low allowance: itemized costs
+
+| ID | Part / service | Quantity | Low unit IRT | Low line IRT |
+| --- | --- | ---: | ---: | ---: |
+| S01 | Site survey, engineered drawings and hydraulic calculations | 1 lot | 25,000,000 | 25,000,000 |
+| S02 | 3000 L nominal atmospheric water tank and level monitoring | 1 set | 35,000,000 | 35,000,000 |
+| S03 | Matched high-pressure fire pump package with controller | 1 set | 250,000,000 | 250,000,000 |
+| S04 | OEM-compatible pre-action valve assembly and supervised trim | 1 set | 65,000,000 | 65,000,000 |
+| S05 | OEM-compatible automatic closed water-mist heads | 6 each | 8,000,000 | 48,000,000 |
+| S06 | OEM-approved pressure-rated pipe or tubing | 35 m | 700,000 | 24,500,000 |
+| S07 | Pressure-rated fittings, supports and penetration firestopping | 1 lot | 20,000,000 | 20,000,000 |
+| S08 | OEM-required filtration and water-quality preparation | 1 set | 10,000,000 | 10,000,000 |
+| S09 | Compatible releasing panel, batteries and supervised interfaces | 1 set | 35,000,000 | 35,000,000 |
+| S10 | Compatible release detection and protected field cabling | 1 lot | 18,000,000 | 18,000,000 |
+| S11 | Dry-pipe supervisory air package if required by OEM | 1 set | 15,000,000 | 15,000,000 |
+| S12 | Test and drain assembly, flow and pressure supervision | 1 lot | 15,000,000 | 15,000,000 |
+| S13 | Dedicated electrical feed and resilient pump power provision | 1 lot | 25,000,000 | 25,000,000 |
+| S14 | Tank base, drainage route and leak detection | 1 lot | 15,000,000 | 15,000,000 |
+| S15 | Specialist mechanical and electrical installation | 1 lot | 45,000,000 | 45,000,000 |
+| S16 | Commissioning, acceptance, training and as-built documents | 1 lot | 20,000,000 | 20,000,000 |
+| S17 | Local transport and handling | 1 lot | 10,000,000 | 10,000,000 |
+| S18 | OEM-required spare heads, tools and initial service consumables | 1 lot | 10,000,000 | 10,000,000 |
+| SUBTOTAL | **Installed subtotal** | | | **685,500,000** |
+| CONTINGENCY | **30% contingency on installed subtotal** | | | **205,650,000** |
+| TOTAL | **Installed planning total before tax** | | | **891,150,000** |
+
+### Base allowance: itemized costs
+
+| ID | Part / service | Quantity | Base unit IRT | Base line IRT |
 | --- | --- | ---: | ---: | ---: |
 | S01 | Site survey, engineered drawings and hydraulic calculations | 1 lot | 40,000,000 | 40,000,000 |
 | S02 | 3000 L nominal atmospheric water tank and level monitoring | 1 set | 55,000,000 | 55,000,000 |
@@ -90,10 +145,64 @@ All figures below are **unsourced planning allowances in IRT**, dated 13 October
 | S16 | Commissioning, acceptance, training and as-built documents | 1 lot | 35,000,000 | 35,000,000 |
 | S17 | Local transport and handling | 1 lot | 20,000,000 | 20,000,000 |
 | S18 | OEM-required spare heads, tools and initial service consumables | 1 lot | 18,000,000 | 18,000,000 |
-| | Installed subtotal | | | **1,134,000,000** |
-| | 30% contingency | | | **340,200,000** |
-| | **Installed total before tax** | | | **1,474,200,000** |
+| SUBTOTAL | **Installed subtotal** | | | **1,134,000,000** |
+| CONTINGENCY | **30% contingency on installed subtotal** | | | **340,200,000** |
+| TOTAL | **Installed planning total before tax** | | | **1,474,200,000** |
 
+### High allowance: itemized costs
+
+| ID | Part / service | Quantity | High unit IRT | High line IRT |
+| --- | --- | ---: | ---: | ---: |
+| S01 | Site survey, engineered drawings and hydraulic calculations | 1 lot | 70,000,000 | 70,000,000 |
+| S02 | 3000 L nominal atmospheric water tank and level monitoring | 1 set | 90,000,000 | 90,000,000 |
+| S03 | Matched high-pressure fire pump package with controller | 1 set | 700,000,000 | 700,000,000 |
+| S04 | OEM-compatible pre-action valve assembly and supervised trim | 1 set | 180,000,000 | 180,000,000 |
+| S05 | OEM-compatible automatic closed water-mist heads | 6 each | 24,000,000 | 144,000,000 |
+| S06 | OEM-approved pressure-rated pipe or tubing | 35 m | 2,000,000 | 70,000,000 |
+| S07 | Pressure-rated fittings, supports and penetration firestopping | 1 lot | 60,000,000 | 60,000,000 |
+| S08 | OEM-required filtration and water-quality preparation | 1 set | 40,000,000 | 40,000,000 |
+| S09 | Compatible releasing panel, batteries and supervised interfaces | 1 set | 100,000,000 | 100,000,000 |
+| S10 | Compatible release detection and protected field cabling | 1 lot | 55,000,000 | 55,000,000 |
+| S11 | Dry-pipe supervisory air package if required by OEM | 1 set | 45,000,000 | 45,000,000 |
+| S12 | Test and drain assembly, flow and pressure supervision | 1 lot | 45,000,000 | 45,000,000 |
+| S13 | Dedicated electrical feed and resilient pump power provision | 1 lot | 90,000,000 | 90,000,000 |
+| S14 | Tank base, drainage route and leak detection | 1 lot | 50,000,000 | 50,000,000 |
+| S15 | Specialist mechanical and electrical installation | 1 lot | 130,000,000 | 130,000,000 |
+| S16 | Commissioning, acceptance, training and as-built documents | 1 lot | 60,000,000 | 60,000,000 |
+| S17 | Local transport and handling | 1 lot | 40,000,000 | 40,000,000 |
+| S18 | OEM-required spare heads, tools and initial service consumables | 1 lot | 35,000,000 | 35,000,000 |
+| SUBTOTAL | **Installed subtotal** | | | **2,004,000,000** |
+| CONTINGENCY | **30% contingency on installed subtotal** | | | **601,200,000** |
+| TOTAL | **Installed planning total before tax** | | | **2,605,200,000** |
+
+### Item scope and pricing basis
+
+All S01–S18 entries are unsourced planning allowances, not supplier quotations.
+
+| ID | Scope / pricing note |
+| --- | --- |
+| S01 | Includes manufacturer application and local authority review |
+| S02 | Illustrative capacity only; OEM water quality and usable volume govern |
+| S03 | OEM fire-protection package; duty and redundancy unconfirmed |
+| S04 | Single-interlock budget basis; no generic solenoid substitution |
+| S05 | Four ceiling and two containment candidate heads; final count by listing |
+| S06 | Budget route allowance; material and bore from hydraulic design |
+| S07 | No domestic compression fittings |
+| S08 | Includes initial fill treatment allowance |
+| S09 | Incremental suppression controls; existing warning panel not assumed release capable |
+| S10 | Budget for two detection areas; reuse only with documented compatibility |
+| S11 | Regulator and pressure supervision; deduct only if OEM permits omission |
+| S12 | Remove overlaps with quoted valve/pump package |
+| S13 | Assumes suitable existing backup source; excludes new generator or UPS |
+| S14 | Assumes nearby approved drain and sound ground-level slab |
+| S15 | Survey-dependent labor allowance |
+| S16 | Includes safe test discharge and control testing |
+| S17 | Excludes exceptional import/customs costs |
+| S18 | Exact spare count and tools per OEM |
+
+The subtotal, contingency and total are calculated values. They exclude the existing warning-system budget and the exclusions listed below.
+
+### Scenario totals
 
 | Scenario | Installed subtotal IRT | 30% contingency IRT | Total before tax IRT |
 | --- | ---: | ---: | ---: |
@@ -108,7 +217,7 @@ The scenario totals change every line's allowance together; they are not confide
 ## Procurement, installation and acceptance
 
 1. **Survey and approval:** a qualified fire protection engineer and OEM-authorized installer measure the room, ducts, containment, voids, airflow, water/power availability and tank location. Confirm Iranian/local fire authority and insurer requirements, accepted standards/editions and whether water mist may satisfy the required building protection. NFPA 75 addresses fire protection of IT areas; NFPA 750 is the relevant water-mist framework, but a standard title is not proof of project compliance. [NFPA 75 scope](https://www.nfpa.org/codes-and-standards/nfpa-standard-development/75). Full standards and a manufacturer's installation manual have not been reviewed for this project.
-2. **Obtain comparable quotes:** issue this layout and CSV to qualified suppliers. Require exact model numbers, application approval/listing, local acceptance, manufacturer hydraulic calculations, final head count, pipe schedule, tank usable volume, pump curve, power redundancy, release logic, commissioning scope, taxes, delivery time, warranty and local spare/service availability. Reject a proposal consisting only of unspecified nozzles, a domestic pump and generic plumbing.
+2. **Obtain comparable quotes:** issue this single Markdown proposal, including its layout and cost tables, to qualified suppliers. Require exact model numbers, application approval/listing, local acceptance, manufacturer hydraulic calculations, final head count, pipe schedule, tank usable volume, pump curve, power redundancy, release logic, commissioning scope, taxes, delivery time, warranty and local spare/service availability. Reject a proposal consisting only of unspecified nozzles, a domestic pump and generic plumbing.
 3. **Install the approved package:** specialist installs the tank/base, pump/valves, protected supply, approved tubing and supports, drain/test route and supervised control circuits. Flush to the OEM procedure before final head installation. Schedule work around live IT equipment and keep escape/service routes accessible. Allow roughly 4–7 specialist working days after equipment delivery and design approval, subject to survey; imported equipment lead time is unconfirmed. The owner coordinates access and procurement, rather than fabricating pressure or release components.
 4. **Commission before service:** witness the checks below with the designer/installer and authority where required; obtain signed acceptance and operator training. Keep system impairments controlled during work, with locally agreed temporary protection.
 
