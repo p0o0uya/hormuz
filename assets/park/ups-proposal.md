@@ -388,3 +388,30 @@ The battery sizing formulas in section 5 and the cost table in section 10 contai
 | Scenario conversion | IRT total / 270,000 = illustrative USD total; this is not a current exchange-rate quote |
 
 Arithmetic verification does not validate site safety, standards compliance or physical battery performance. Final acceptance still requires the engineering and commissioning evidence specified above.
+
+## 12. One-page executive summary
+
+**Purpose:** Supply the Hormuz mini data center's assumed 50 kW critical load for 15 minutes during a power outage, allowing generator recovery or controlled shutdown. This is a preliminary engineering and budget proposal; construction requires a site-specific signed design.
+
+| Decision / parameter | Proposed basis |
+| --- | --- |
+| UPS and converter | Commercial 80 kVA / 80 kW, three-phase online double-conversion VFI UPS with an integrated sinusoidal inverter; 400/230 V, 50 Hz |
+| Battery selection | Manufacturer-approved stationary high-rate UPS batteries. Automotive starter batteries are a cost/sizing comparison and are unsuitable for the proposed production installation |
+| Battery quantity | Provisionally 160 × 12 V, 50 Ah blocks: four parallel strings of 40, with two 20-block halves per string for an OEM-required midpoint |
+| Bank and runtime | 480 V nominal, 200 Ah, 96 kWh nominal stored energy; 15-minute end-of-life target and 16.5-minute selection time. Final count depends on approved discharge curves |
+| Electrical boards | Coordinated AC input, bypass and output protection; interlocked maintenance bypass; backfeed protection; individually protected DC strings, combiner and OEM-compatible main battery breaker |
+| Monitoring and room | Block voltage/temperature and string-current monitoring; separate battery service space with engineered supports, ventilation, gas assessment and controlled temperature |
+| Resilience | One UPS and common output board; no independent A/B or UPS redundancy. Four strings do not meet the target with one string removed; an approved fifth string can preserve four-string capacity |
+| Delivery | Approximately 7–15 weeks for survey, detailed design, procurement, installation and witnessed commissioning; supplier lead times govern |
+
+| Budget, Iranian tomans (IRT) | Stationary batteries | Automotive comparison only |
+| --- | ---: | ---: |
+| Installed subtotal | 10,020,000,000 | 9,540,000,000 |
+| Contingency, 20% | 2,004,000,000 | 1,908,000,000 |
+| **Planning total before tax/duty** | **12,024,000,000** | **11,448,000,000** |
+
+Prices are unquoted planning allowances. Exclusions include generator/ATS, utility upgrades, new cooling equipment, major structural/fire works, tax/duty and recurring operating costs. Obtain comparable written local offers before procurement.
+
+**Execution:** Confirm load, backup duration, supply/earthing and thermal continuity; qualify battery curves and charging limits; complete fault coordination, cable, room and structural designs; procure verified assemblies; install through qualified contractors; arrange OEM startup and handover.
+
+**Acceptance:** Witness at least 16.5 minutes at 50 kW on a charged new bank, with separate OEM evidence for the 15-minute aged/temperature target. Verify protection in every supply mode, bypass interlocks, backfeed prevention, ventilation, recharge and graceful shutdown. Electrical autonomy alone does not establish safe server temperatures throughout the outage.
