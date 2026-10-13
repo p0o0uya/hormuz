@@ -78,7 +78,7 @@ Specify a documented power arrangement able to start and run the pump through a 
 
 ## Detection, release and building interfaces
 
-The budget basis is **single-interlock pre-action with automatic closed heads**, subject to OEM and local acceptance. The existing conventional warning panel and its fire relay must not be assumed capable of safely releasing suppression. Provide a compatible supervised releasing system, backed-up controls and a documented cause-and-effect schedule. Reuse existing detectors only when their compatibility and location are accepted by the suppression designer.
+The budget basis is **single-interlock pre-action with automatic closed heads**, subject to OEM and local acceptance. The DIY smoke-monitoring VM and Ethernet I/O in the warning-system proposal must not be used as suppression-release controls. Provide a compatible supervised releasing system, backed-up controls and a documented cause-and-effect schedule. Reuse existing detectors only when their compatibility and location are accepted by the suppression designer.
 
 | Event | Intended behavior to be confirmed in the approved schedule |
 | --- | --- |
@@ -189,7 +189,7 @@ All S01–S18 entries are unsourced planning allowances, not supplier quotations
 | S06 | Budget route allowance; material and bore from hydraulic design |
 | S07 | No domestic compression fittings |
 | S08 | Includes initial fill treatment allowance |
-| S09 | Incremental suppression controls; existing warning panel not assumed release capable |
+| S09 | Incremental suppression controls; DIY monitoring VM/I/O not used for release |
 | S10 | Budget for two detection areas; reuse only with documented compatibility |
 | S11 | Regulator and pressure supervision; deduct only if OEM permits omission |
 | S12 | Remove overlaps with quoted valve/pump package |
@@ -210,7 +210,7 @@ The subtotal, contingency and total are calculated values. They exclude the exis
 | Base allowance | 1,134,000,000 | 340,200,000 | 1,474,200,000 |
 | High allowance | 2,004,000,000 | 601,200,000 | 2,605,200,000 |
 
-The scenario totals change every line's allowance together; they are not confidence intervals. Contingency is a budget reserve, not tax or a guaranteed import premium. Supplier package pricing may combine S03–S04, S08, S11–S12 and controls: remove overlaps before summing an actual quotation. S10 covers incremental release detection; the separately budgeted warning panel, sounders and dialer in the fire-monitoring proposal are not included again here.
+The scenario totals change every line's allowance together; they are not confidence intervals. Contingency is a budget reserve, not tax or a guaranteed import premium. Supplier package pricing may combine S03–S04, S08, S11–S12 and controls: remove overlaps before summing an actual quotation. S10 covers incremental release detection; the separately budgeted smoke detectors, Ethernet I/O, siren and voice API setup in the fire-monitoring proposal are not included again here.
 
 **Excluded:** VAT/taxes, extraordinary shipping/customs/import charges, major structural work, tank room construction, new backup generator/UPS, redundant pumps, aspirating detection, additional protected rooms/voids, required upgrades to the building sprinkler supply and post-fire equipment replacement. Confirm applicable taxes on each quote rather than inventing a rate. Ring-fence an additional **30–70 million IRT per year as an unsourced service allowance**, outside the capital total, for scheduled specialist maintenance; replacement pumps, major repairs and consumables after discharge are extra.
 

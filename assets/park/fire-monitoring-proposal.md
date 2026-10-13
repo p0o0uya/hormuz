@@ -1,161 +1,215 @@
-# Fire and smoke detection, automatic warning calls and audible alarms
+# Simple UPS-powered smoke detection for the monitoring VM
 
-Prepared for Hormuz Data Center, Ilam Province, Iran, on 13 October 2026. Prices are in **Iranian tomans (IRT); 10 IRR = 1 IRT**. This is a procurement and installation proposal for the existing **4.5 m × 4 m, four-rack room**, subject to a site survey.
+Rewritten for Hormuz Data Center, Ilam Province, Iran, on 13 October 2026. Scope: **1–3 wired smoke detectors, one Ethernet I/O module and one audible alarm**, integrated with your existing monitoring VM. You perform all installation, testing and programming. All parts, instructions, estimates and the final one-page summary are in this Markdown file.
 
-## Recommendation
+## Recommended setup
 
-Buy **two conventional combined photoelectric-smoke/heat detectors for the rack room**, a battery-backed fire alarm control panel, **two wired sounder/beacons**, a manual call point and a cellular voice dialer. Add a **third detector in an adjacent UPS/electrical room** if the survey supports that placement. The three-detector installed planning budget is **73,083,600 IRT including 20% contingency, before tax**. The two-detector equivalent is **71,464,800 IRT**.
+Start with **two 12 V photoelectric smoke detectors with isolated relay outputs**: one for the general rack room and one inside the contained hot aisle. Add a third for a surveyed adjacent electrical room or separate smoke pocket. Connect each detector to its own input on a **Waveshare Modbus POE ETH Relay (B), SKU 27876**. This device converts contact states into values the VM can read over Ethernet and also provides relays for the siren.
 
-The fire panel is the primary monitoring system: it watches detector and sounder circuits, displays alarm/fault status, latches fire alarms and operates the sounders. Its fire relay triggers the dialer to call nominated people and play a recorded warning. Detection and local sound continue without the LAN, monitoring VM, Internet or cloud service. Cellular calls depend on the mobile network and dialer power.
+Use your **existing datacenter UPS**. Plug one enclosed 12 V DC supply into a UPS-backed outlet and power the detectors, module and siren from it. Keep the Ethernet switch, VM host, firewall/router and Internet equipment on the same UPS-backed power system. There is **no separate battery, charger, fire panel, physical telephone dialer or paid labor** in this proposal. UPS runtime remains the limit during a prolonged outage; test the complete power path.
 
-Use genuine **ZITEX ZI-HSD 1015** combined detectors, with compatible bases. The manufacturer describes photoelectric smoke sensing and heat sensing; obtain written confirmation that the supplied version alarms on **smoke or heat**, without requiring both. Do not substitute heat-only sensors for early smoke warning, or confuse CO/gas detectors with smoke detectors. [Manufacturer detector description](https://www.zitexiran.com/en/heat-smoke-detector-zihsd1015/).
+The two-detector purchase budget is **30,656,760 Iranian tomans (IRT)**, including 20% contingency, before tax. Three detectors cost **32,612,760 IRT** on the same basis. These are planning estimates; imported hardware availability and current local quotations need checking.
 
-This scope provides warning, not extinguishing or guaranteed very-early detection. A competent local fire-alarm installer must confirm the design and applicable local requirements. Separate battery rooms, cable voids, escape routes and other building spaces may require additional detection. The proposed large UPS battery bank is not fully protected merely by adding one detector. Where strong airflow prevents reliable point detection, obtain a separate aspirating-smoke-detection design and quotation. [Hochiki air-sampling detector overview](https://www.hochikieurope.com/product/firelink-aspirating-smoke-detection).
+This baseline detects **smoke**, rather than flame or temperature. Your rack temperature sensors remain separate measurements. If you want heat detection as well, substitute a documented combined smoke/heat detector with the same 12 V supply and isolated relay interface, then revise its price and test both functions. Ordinary two-wire panel detectors, including the earlier ZITEX selection, are not a direct replacement for a relay-output detector.
 
-## Choose the detector count and locations
+## Ethernet choices and buying specification
 
-Use the room coordinates from the [airflow proposal](airflow-proposal.md): southwest corner `(0,0)`, x along the 4.5 m side and y along the 4 m side. Racks occupy y=1.60–2.80 m; the planned contained hot aisle occupies y=2.80–4.00 m. The ceiling height and actual containment remain unconfirmed.
-
-| Quantity | Proposed placement | Conditions and limits |
+| Option | How the VM reads it | Decision |
 | --- | --- | --- |
-| 1 | At the center of an open, unobstructed ceiling, approximately `(2.25, 2.00)` m | Only consider for a single open room with no separate containment or smoke pockets and an installer-approved airflow survey. The rack row/ducts may obstruct this point. One detector is not the recommendation for the planned contained layout. |
-| **2 recommended** | D1 on the unobstructed ceiling over the general/cold-side room, initial candidate `(2.25, 0.60)` m; D2 at the highest smoke-collecting surface **inside** the contained hot aisle, initial candidate `(2.25, 3.40)` m | These are search areas, not drilling coordinates. Move them after checking supply/return openings, ducts, beams and containment. If the aisle has its own roof, mount D2 beneath that roof, rather than above it outside the enclosure. |
-| 3 | Keep D1/D2; place D3 centrally on the ceiling of the adjacent UPS/electrical room, away from ventilation jets | Survey that room separately. If no such room exists, use D3 for a surveyed additional smoke pocket in the rack room. Do not mount it directly over a battery vent or assume one device covers every battery enclosure. |
+| **Relay-output detectors + Waveshare Ethernet I/O** | Modbus TCP input states through one LAN address | Recommended: generic contacts, one interface for 1–3 detectors, and siren relays in the same box |
+| AKCP SK00 + compatible sensorProbe hub | Network monitoring through the hub | Packaged alternative; requires the manufacturer's hub and the correct enabled sensor ports |
+| Detector advertised with an RJ45 socket | Depends on its actual protocol | Buy as a direct Ethernet detector only if its manual confirms Ethernet/IP, a local readable API and its power requirements |
 
-As preliminary siting rules, keep detector centers **at least 0.5 m from walls/major obstructions and 1 m from supply-air inlets**, and outside direct ventilation jets. Check the actual model's mounting instructions and locally adopted rules. D2's narrow aisle and overhead return duct may make these clearances impossible at the candidate point: revise the duct/containment layout or select engineered air-sampling detection, rather than installing in an unsuitable location. A normal room detector must not simply be placed inside a duct.
+The Waveshare **(B)** model has eight digital inputs and eight relay outputs; the similarly named model without **(B)** lacks the detector inputs. It supports dry contacts, Modbus TCP and 7–36 V DC power, as well as optional PoE. The baseline uses 12 V DC and an ordinary Ethernet switch port, so no PoE injector is needed. [Manufacturer product page and USD price](https://www.waveshare.com/catalog/product/view/id/6496/s/modbus-poe-eth-relay-b/category/340/).
 
-The [Hochiki siting guide](https://www.hochikieurope.com/guides/BS5839_GUIDE_(V18_MAR18).pdf) discusses these clearances, obstruction effects and alarm audibility. It explains the 2017 BS5839 edition; it is guidance, not a claim of compliance with current Iranian requirements. Check smoke transport with cooling operating normally and at maximum duty. A successful aerosol test at the detector proves device operation, not that smoke from every rack will reach it promptly.
+AKCP offers a smoke sensor and network hub, but its sensor connectors are hub interfaces, not direct LAN ports. Confirm the hub's port licensing before buying. [AKCP smoke-sensor datasheet](https://akcp-downloads.s3-us-west-2.amazonaws.com/Sensor/Environmental/SK00-Smoke-Detector.pdf), [sensorProbe2+ specifications](https://www.akcp.com/sensorprobe2plus/).
 
-Mount the panel and dialer in an accessible, protected location near the entrance, preferably outside the rack room. Put one sounder/beacon inside the room and one outside at the entrance/operator approach, on separate supervised sounder circuits if the supplied panel supports this. Measure audibility with doors shut and fans running; use **at least 65 dB(A) or 5 dB(A) above sustained background noise, whichever is greater**, as an initial acceptance target, subject to the installer's local design. Increase sounder quantity/output if this fails. A generic flashing beacon does not establish certified visual-alarm coverage.
+For local procurement, **ARIAK APDA-12R** is a quote candidate: a Persian supplier's indexed price list describes a 12 V relay-output photoelectric detector at **1,530,000 IRT**. That is an indicative listing reference, not a verified checkout price or a reviewed manufacturer wiring manual. Obtain the actual unit's manual, base inclusion and contact diagram before ordering. [Local ARIAK price-list reference](https://eshayan.com/brands-ariak-price-list/).
 
-## Parts, connections and monitoring behavior
+Your detector purchase requirements are: external 12 V DC power; photoelectric sensing; an **isolated contact pair open normally and closed on smoke alarm**; a documented reset method; and a mounting base. Reject a model that only provides a panel-current signal, requires a proprietary panel, or cannot provide the required contact behavior. Do not infer pin assignments or relay behavior from the model name. An integrated sounder is optional because this design includes a separate siren.
+
+## Placement for the 18 m² rack room
+
+Use the coordinates in the [airflow proposal](airflow-proposal.md): southwest corner `(0,0)`, x along 4.5 m and y along 4 m. The rack row occupies y=1.60–2.80 m; the hot aisle is y=2.80–4.00 m.
+
+| Detector count | Placement |
+| --- | --- |
+| 1 | Near the center of an open, unobstructed room ceiling, approximately `(2.25, 2.00)` m, only if racks/ducts and containment do not divide smoke travel |
+| **2 recommended** | D1 over the general/cold-side room, candidate `(2.25, 0.60)` m; D2 inside the contained hot aisle, candidate `(2.25, 3.40)` m, beneath its roof if it has one |
+| 3 | Keep D1/D2; place D3 at the ceiling of a surveyed adjacent electrical room or another distinct smoke pocket |
+
+These are starting locations, not fixed drilling coordinates. Keep detectors out of ventilation jets; initially allow **0.5 m from walls/major obstructions and 1 m from supply inlets**, following the selected detector manual. Check ducts, ceiling beams and hot-aisle roofing with fans running. If the narrow aisle cannot accommodate a suitable location, revise placement or use an air-sampling design. A detector above the containment roof cannot monitor smoke trapped beneath it. A point detector is not a duct detector. [Hochiki detector-siting guidance](https://www.hochikieurope.com/guides/BS5839_GUIDE_(V18_MAR18).pdf).
+
+Mount the interface and DC supply in an accessible enclosure near the rack room entrance. Put the siren where it can be heard inside the room and at the operator approach with the door shut. Test with fans at normal maximum duty; if one siren is inadequate, add another and resize the supply allowance.
+
+## Wiring: detector contacts to Ethernet
 
 ```mermaid
 flowchart LR
-    D[1–3 smoke and heat detectors] --> Z[Supervised detector zones]
-    M[Manual call point at exit] --> Z
-    Z --> P[Battery-backed fire alarm panel]
-    P --> S[Supervised sounder circuits: inside and outside]
-    P --> R[Fire relay and isolated trigger interface]
-    R --> G[Battery-backed cellular voice dialer]
-    G --> C[Calls to owner and on-call contacts]
+    UPS[Existing datacenter UPS] --> PSU[Enclosed 12 V DC supply]
+    PSU --> D[1–3 relay-output smoke detectors]
+    PSU --> IO[Ethernet I/O module]
+    PSU --> S[Siren through module relay contacts]
+    D -->|Separate contact pair per detector| IO
+    IO -->|Ethernet / Modbus TCP| VM[Existing monitoring VM]
+    IO -->|Local input-to-relay linkage| S
+    VM --> DB[Existing dashboard and event history]
+    VM --> API[Voice-call API]
+    API --> PHONE[Owner and on-call phones]
 ```
 
-The estimate uses **ZX-1800-12**, because a public local price is available. Twelve zones exceed this small project's needs. Ask for a cheaper supported 4-zone panel quotation with the same required outputs; revise the estimate only after compatibility is confirmed. The manufacturer's ZX-1800-N family specifies 24 V operation, two 12 V 7.2 Ah batteries, a voltage-free auxiliary relay and 6.8 kΩ end-of-line resistors. The exact ordered panel revision and its manual govern wiring. [Manufacturer panel specifications](https://www.zitexiran.com/en/conventional-control-panel-zx1800n/).
+Use low-voltage wiring and a ready-made enclosed mains adapter; no new mains circuit is included. Start with a **12 V, 3 A regulated supply** and check its rating against the measured module load plus all detector alarm loads and siren load, with approximately 25% headroom. Fuse outgoing branches to suit their wiring and loads. Verify 12 V at the farthest detector while the siren operates.
 
-1. Have the installer put D1, D2 and D3 on separately labeled zones where practical: `Rack room`, `Hot aisle`, `UPS room`. Put the manual call point near the exit on another zone. Use compatible two-wire conventional devices, correct polarity, routed zone wiring and an end-of-line device **at the last field device**, not left inside the panel. Terminate unused circuits as the manual requires. Detector removal, cable breaks and shorts must produce the specified local fault indications.
-2. Connect the **24 V fire-rated sounder/beacons** to the panel's supervised sounder outputs. Observe polarity, current limits, required end-of-line components and voltage drop. These detectors are not standalone audible alarms; the separate sounders are essential. Budget 60 m of 2 × 1.5 mm² fire-alarm cable across all routes, with metal supports, conduit where needed and penetration firestopping. Measure routes before ordering.
-3. Connect the panel's fire relay through a documented isolated interface to the dialer's trigger input. Confirm contact rating, trigger polarity, latching behavior and reset behavior on the bench. **Do not feed a 24 V sounder output into a 12 V dialer input.** Keep the trigger cable short and protected. The basic dry-contact dialer link may be unsupervised; prove operation regularly and request a supervised communicator if remote transmission supervision is required.
-4. Power the panel from a dedicated protected mains circuit with its own charger and two matched 12 V batteries in series. Power the dialer from a separate fused, battery-backed 12 V charger supply. **Do not tap the midpoint of the panel batteries.** The budget includes a dialer PSU/charger, battery, enclosure and antenna allowance. Verify that the charger can support both standby consumption and cellular transmit peaks.
-5. Use a dialer supporting recorded **voice messages**, calls to at least three numbers and configurable retries. **N1 is a procurement candidate**, publicly listed at 6,499,000 IRT; its seller advertises calls with recorded-message playback. Obtain the actual manufacturer's manual and prove these functions before accepting this model. Confirm supported cellular bands and voice service with the local operator; an LTE/data label alone does not establish usable voice calls. [N1 price and advertised functions](https://negahbansystem.ir/fa/Home-alarm/1696-gsm-dialer-n1-fire-alarm.html).
-
-Configure fire detection **24 hours a day**, independent of any burglary arming state. A single detector or call-point alarm must sound locally and start calls immediately; do not wait for a second detector or human confirmation. Sounder silence must not clear the fire relay prematurely. Reset only after an authorized person checks the cause.
-
-Record a Persian warning giving the site name, full address and response instruction, for example: “Fire alarm at Hormuz Data Center, [full address]. Evacuate anyone present and contact the on-call operator immediately.” Call the owner, primary on-call operator and backup operator. Request three call attempts per contact with a short retry interval; validate the supplied dialer's actual sequence and whether answering, voicemail or keypad acknowledgment changes escalation. If it cannot perform the agreed sequence, select another dialer. SMS can supplement calls. Do not program automatic calls to public emergency numbers without an approved arrangement.
-
-The baseline is **self-monitoring**, not a staffed alarm-receiving-center contract. Call acceptance is not proof someone will respond; nominate an operator and backup with an agreed escalation procedure. Local panel faults require daily inspection; this budget does not promise remote fault reporting. If that is needed, specify a panel/communicator with documented separate fire, fault and communication-failure reporting.
-
-The existing [rack monitoring VM](rack-monitoring-proposal.md) may later receive separate fire/fault relay status through an isolated network I/O module. That optional dashboard interface is excluded here, and must neither carry nor delay the primary siren/call path. Coordinate hardwired door unlocking with the [security proposal](security-proposal.md); its separately budgeted release interface must operate while UPS power remains available. Do not add automatic server shutdown or cooling shutdown without an engineered cause-and-effect design.
-
-## Buying and installation sequence
-
-1. **Survey and quotation:** book a local fire-alarm installer; confirm the ceiling, air paths, containment, adjacent electrical room, existing fire panel, mains feed, cellular reception and alarm audibility. If a compatible building fire panel already exists, quote adding supervised zones and the dialer instead of buying a duplicate panel. The table below assumes a new panel because the existing panel assumed by the security proposal has not been verified.
-2. **Order as a matched package:** request the detectors with bases, panel, sounders, call point, batteries, dialer/manual, power supplies, interfaces and cable. Obtain model numbers, compatibility confirmation, authenticity/warranty documentation, current local acceptance documents and a written price including tax and delivery. Confirm whether detector bases, batteries, antenna, EOL devices and mains protection are already included to avoid double charging.
-3. **Bench check:** demonstrate smoke and heat alarm behavior, relay-to-dialer triggering, recorded voice playback and contact escalation before mounting. Save configuration and label circuits.
-4. **Install:** the specialist runs protected cabling, mounts equipment, connects mains and batteries, documents circuit loads and battery sizing, and produces a zone plan and terminal drawing. The owner supplies contact numbers/address and reviews the response procedure. Allow about **2–3 working days after delivery**, including survey/commissioning, if routes are simple.
-5. **Commission and hand over:** complete the checks below, then record a 72-hour observation period for nuisance alarms and power/communication stability. Leave manuals, as-built drawings, battery calculations, test records, zone map and reset/silence instructions with the operator.
-
-For preliminary backup sizing, request **24 hours standby plus 30 minutes alarm**, or the greater local requirement. For each supply separately, calculate `required Ah = 1.25 × (standby A × 24 h + alarm A × 0.5 h)` from measured/OEM loads, then apply battery temperature, ageing and discharge corrections and check charger/enclosure capacity. Two series 7.2 Ah batteries give **24 V at 7.2 Ah**, not 14.4 Ah. The priced batteries are starting allowances, not a demonstrated autonomy result; resize if the calculation fails.
-
-| Acceptance check | Required evidence |
+| Connection | What you wire |
 | --- | --- |
-| Smoke and heat | Every detector tested with manufacturer-approved aerosol/heat equipment; correct zone, latched alarm, both sounders and warning call demonstrated. Never use an open flame. |
-| Manual alarm | Call point starts the same local/call response; reset works only as documented. |
-| Audible coverage | Recorded sound levels at working positions and outside the closed door with cooling at maximum normal duty. |
-| Calling | All three contacts receive intelligible address/message; unanswered calls and voicemail are tested; actual retry behavior is recorded. Aim for first call initiation within 30 seconds of panel alarm, as a commissioning target rather than a network delivery guarantee. |
-| Faults | Detector removal, zone/sounder open circuits and safe simulated shorts produce the manual's expected fault response; restoration is shown. Confirm one sounder circuit fault leaves the other operating. |
-| Outages | Disconnect Internet/LAN: local sound and cellular calls still work. Remove mains: panel and dialer operate on their batteries. Verify calculations and a controlled backup test. Remove SIM/network service: local alarm still operates and the communication limitation is visible/documented. |
-| Building interface | Existing door fire-release interface tested on UPS power; any additional fire controls follow an approved cause-and-effect schedule. |
+| Detector power | Fused +12 V and 0 V to each detector's documented power terminals |
+| Detector alarm | Its isolated normally-open alarm contact pair to the corresponding module input and DGND, following the module's passive dry-contact diagram; leave its input COM unconnected as specified for this mode |
+| Network | Module Ethernet port to existing switch; switch to the monitoring VLAN/VM |
+| Module power | 12 V to its DC power terminals; do not assume Ethernet feeds power to the detectors |
+| Siren power | Fused +12 V to relay 1 COM; relay 1 NO to siren positive; siren negative to supply 0 V |
+| Additional detectors | Wire relay 2/3 COM to the same fused +12 V, and their NO contacts in parallel with relay 1 NO to the same siren positive |
+| Detector reset | A labeled normally-closed momentary switch in each detector's positive power branch, used only for the interruption duration stated in its manual |
 
-Inspect the panel's normal/fault state daily; check SIM balance/expiry and perform a scheduled test call monthly. Arrange periodic functional tests, cleaning and battery capacity checks with the installer at the manufacturer's/local required intervals. Log impairments and provide temporary coverage when circuits are isolated. Cellular network failure, SIM suspension and a failed dialer can prevent calls while local alarms still work.
+Configure relay 1 to follow input 1, relay 2 to follow input 2, and relay 3 to follow input 3 using the module's **linkage mode**. Their parallel isolated contacts give a simple “any detector sounds the siren” function. This local linkage continues without the VM or LAN, provided the module and DC supply remain powered. Linkage-mode relays are controlled by their inputs rather than VM commands. Confirm mode persistence and operation after a power cycle. [Manufacturer wiring and linkage-mode instructions](https://www.waveshare.com/wiki/Modbus_POE_ETH_Relay_%28B%29).
 
-## Cost estimate and summation
+Use one four-core run per detector: two conductors for power and two for its isolated contact. Budget **40 m total**, then measure actual routes. Keep power and alarm labels distinct; never put detector supply voltage onto a dry-contact input. Separate the siren power pair from signal wiring. These simple inputs are **not supervised fire-alarm loops**: an open alarm wire or a detector that loses power can look like “no smoke.” Ethernet freshness checks do not detect that condition. Include physical detector tests in your routine.
 
-Local list prices below are from the [Asafire June 1405 ZITEX list](https://asafire.ir/zitex-price-list); they are historical list-price references found on 13 October 2026, **not current stock reservations or binding quotes**. Discounted listings also exist; no discount is assumed. N1 uses its opened seller page price, explicitly before tax. All remaining rows are clearly marked planning allowances. No foreign-exchange conversion is needed.
+If a detector latches, investigate and clear the smoke, then reset using its own documented method. The VM must retain the event until you acknowledge it, even if a self-resetting detector's contact opens. This is a monitoring-bench integration, not a certified building fire-alarm or suppression-release controller. Keep the independent door-release and suppression functions in the [security](security-proposal.md) and [suppression](fire-suppression-proposal.md) proposals separate from this VM.
 
-| ID | Part/service | Quantity | Unit IRT | Line IRT | Price basis |
+## Programming on your existing VM
+
+Use one small service on the existing Linux VM. Read the module over **Modbus TCP**, publish named detector states to the existing MQTT/dashboard path and call an Iranian voice API on an alarm. No Arduino, USB passthrough, separate database or replacement monitoring stack is needed. Store a small durable event/retry journal on the VM; the existing [rack-monitoring stack](rack-monitoring-proposal.md) can display the results.
+
+| Setting | Initial implementation |
+| --- | --- |
+| Network | Reserved module IP; allow VM access to its configured Modbus TCP port only; no Internet port forwarding |
+| Inputs | D1=input 1, D2=input 2, D3=input 3; verify function code 02 and the input address/bit order against the supplied firmware manual before using it |
+| Polling | Read the input block every 2 seconds with a bounded timeout; latch an alarm on the first valid active state |
+| Read failure | Retain previous alarm latch; mark current readings unknown/stale immediately; raise an interface-offline event after 10 seconds without a valid reply |
+| Dashboard | Per detector: normal/alarm/unknown, location, last valid reading, latched event and acknowledgment; display contact state, not a smoke-concentration number |
+| Call event | Notify owner, primary and backup contact on each new alarm event; deduplicate by event ID |
+| Repetition | Repeat unacknowledged warnings every 5 minutes; stop repeats only after an authenticated operator acknowledgment |
+| Recovery | Clear the dashboard latch only when the contact is normal and the event has been checked/acknowledged; acknowledgment must not electrically reset detectors |
+| Restart | Run under systemd with restart-on-failure; reload the journal, reconcile active inputs and pending calls, and never start by assuming “normal” |
+
+Implementation outline, to adapt to your existing collector:
+
+```text
+load detector map, contact numbers and persisted alarm/retry journal
+repeat every 2 seconds:
+    read current input states with a short network timeout
+    on failure: set freshness unknown; preserve latched alarms; retry next poll
+    on success:
+        publish states and reception timestamp
+        for each newly active detector:
+            persist event ID, detector/location and call jobs
+            latch dashboard alarm
+    process due call jobs independently of polling with bounded HTTP timeouts
+    record provider response IDs and failures; retry transient failures
+    save acknowledgments and repeat deadlines across service restarts
+```
+
+For automatic warning calls, **Kavenegar documents `call/maketts.json`** with `receptor` and `message`. Use its SDK or an HTTPS client to send a short Persian site/address warning to each nominated contact. Confirm account activation, unrestricted warning-message support and a real answered test call before relying on it. An HTTP/API success means the request was accepted, not that someone heard the message. [Kavenegar official voice-call documentation](https://kavenegar.com/rest.html), [official SDK call method](https://github.com/kavenegar/kavenegar-php/blob/master/src/KavenegarApi.php).
+
+Keep API credentials in a restricted service configuration and redact them from logs; the provider's API URL contains the key. Do not block input polling while making calls. Deduplicate local retry jobs; if a request times out after submission, record the uncertain outcome rather than assuming it was never sent. Internet/provider failure prevents calls but does not stop the module's local siren linkage. This Internet voice service uses no local SIM or cellular dialer.
+
+## Your installation and test sequence
+
+| Stage | Your work | Time allowance |
+| --- | --- | ---: |
+| Plan and order | Check ceiling/airflow, cable routes, model manuals, dry-contact behavior, UPS outlets and supplier quotes | 2–3 hours |
+| Bench wire | One detector, supply, module and siren first; test contacts and local linkage before adding the other detectors | 3–4 hours |
+| Install | Mount detectors and enclosure, run labeled cables, measure loaded supply voltage and configure the network | 4–6 hours |
+| Program | Poll/publish service, event journal, dashboard, voice calls, retries and acknowledgment | 6–10 hours |
+| Test and document | Complete checks below, save settings/wiring map and write the reset procedure | 3–4 hours |
+| **Total owner effort** | **No paid labor included** | **18–27 hours**, plus 72-hour observation |
+
+| Test | Expected result |
+| --- | --- |
+| Smoke detection | Approved detector-test aerosol activates each detector; correct dashboard location, siren and calls; no open flame or burning material |
+| Local independence | With VM stopped and Ethernet unplugged, each detector still sounds the siren through its matching local relay |
+| Voice delivery | All nominated contacts hear the correct Persian address/message; API failure, retry and acknowledgment tested |
+| Fault visibility | Unplug Ethernet: VM becomes unknown/offline, never falsely normal. Break a contact wire/remove detector power: document the baseline's lack of automatic detection |
+| UPS operation | During a controlled mains-loss test, detectors, module, siren, switch, VM and Internet equipment stay powered by the shared UPS |
+| Restart/reset | Module retains linkage configuration; VM retains alarm/retry state; detector reset works only as documented |
+| Audibility | Siren is clearly audible at working positions and the operator approach with the door closed and fans running |
+| Observation | 72 hours without unexplained input changes; record event/call logs and investigate nuisance triggers |
+
+Use or borrow a multimeter for contact/polarity/voltage checks and a sound-level meter for objective audibility checks. Follow the detector's approved functional-test method; aerosol directly at a detector tests its operation but not smoke transport from every rack. Check service/input freshness daily and make a scheduled test call monthly; test and clean detectors at their manufacturer intervals. You perform this maintenance yourself.
+
+## Parts and cost estimate
+
+Currency: **IRT (tomans); 10 IRR = 1 IRT**. The module's manufacturer listing is **USD 46.99**; conversion uses **270,000 IRT/USD**, retained as an illustrative planning rate from the repository, not a verified current exchange rate. Detector pricing uses the indexed local listing noted above. Other prices are explicit allowances, not supplier quotations. Import/delivery and tax must be confirmed before purchase.
+
+| ID | Part | Quantity | Unit IRT | Line IRT | Basis |
 | --- | --- | ---: | ---: | ---: | --- |
-| F01 | ZI-HSD 1015 smoke/heat detector | 3 | 1,199,000 | 3,597,000 | Asafire list |
-| F02 | Compatible detector base allowance | 3 | 150,000 | 450,000 | Allowance; remove if included with F01 |
-| F03 | ZX-1800-12 conventional fire panel with charger | 1 | 20,900,000 | 20,900,000 | Asafire list; seek smaller compatible panel quote |
-| F04 | ZI-SS 81 sounder/beacon | 2 | 1,099,000 | 2,198,000 | Asafire list; confirm 24 V compatibility |
-| F05 | ZI-CP 95 manual call point and test key | 1 | 1,059,000 | 1,059,000 | Asafire list |
-| F06 | Panel battery, matched 12 V 7.2 Ah VRLA | 2 | 1,800,000 | 3,600,000 | Allowance; verify required capacity |
-| F07 | N1 cellular recorded-voice dialer candidate | 1 | 6,499,000 | 6,499,000 | [Seller price](https://negahbansystem.ir/fa/Home-alarm/1696-gsm-dialer-n1-fire-alarm.html); acceptance conditional on manual/test |
-| F08 | Dialer 12 V PSU/charger, fuse, enclosure and antenna | 1 set | 2,500,000 | 2,500,000 | Allowance; sized for transmit peaks |
-| F09 | Dialer 12 V 7.2 Ah VRLA battery | 1 | 1,200,000 | 1,200,000 | Allowance; verify capacity and quoted price |
-| F10 | Isolated fire-relay trigger interface and protected lead | 1 set | 1,500,000 | 1,500,000 | Allowance; exact circuit follows manuals |
-| F11 | Fire-alarm cable, 2 × 1.5 mm² | 60 m | 60,000 | 3,600,000 | Allowance; route/specification survey required |
-| F12 | Metal supports, conduit, boxes, labels, glands, firestopping and EOL parts | 1 lot | 2,000,000 | 2,000,000 | Allowance; EOL specification follows panel manual |
-| F13 | Protected mains feed, isolator and termination | 1 set | 1,500,000 | 1,500,000 | Allowance; electrician |
-| F14 | SIM activation and initial voice/SMS credit | 1 | 800,000 | 800,000 | Allowance; select operator after coverage test |
-| F15 | Domestic delivery | 1 | 1,000,000 | 1,000,000 | Allowance |
-| F16 | Specialist installation | 1 service | 6,000,000 | 6,000,000 | Allowance |
-| F17 | Commissioning, test-equipment use and operator training | 1 service | 2,500,000 | 2,500,000 | Allowance; includes installer aerosol/heat and sound-level tests |
-| | **Installed subtotal** | | | **60,903,000** | Sum F01–F17 |
-| | **Contingency, 20%** | | | **12,180,600** | 0.20 × subtotal |
-| | **TOTAL: three detectors, installed before tax** | | | **73,083,600 IRT** | Subtotal + contingency |
+| F01 | 12 V photoelectric relay-output detector, including base; APDA-12R quote candidate | 3 | 1,530,000 | 4,590,000 | Indexed local list reference; obtain manual and current quote |
+| F02 | Waveshare Modbus POE ETH Relay (B), SKU 27876 | 1 | 12,687,300 | 12,687,300 | USD 46.99 × 270,000; manufacturer list |
+| F03 | Enclosed regulated 12 V 3 A mains adapter | 1 | 1,000,000 | 1,000,000 | Allowance; existing UPS outlet; resize for measured load |
+| F04 | Active 12 V electronic siren, terminal-fed, not a passive loudspeaker | 1 | 1,500,000 | 1,500,000 | Allowance; check current and audibility |
+| F05 | Four-core low-voltage detector cable | 40 m | 30,000 | 1,200,000 | Allowance; gauge/specification and routes to be confirmed |
+| F06 | Enclosure, terminals, branch fuses, siren power pair, conduit/supports and labels | 1 lot | 1,500,000 | 1,500,000 | Allowance |
+| F07 | Labeled normally-closed momentary reset switch | 3 | 100,000 | 300,000 | Allowance; only use if detector manual requires power reset |
+| F08 | Ethernet patch cable | 1 | 250,000 | 250,000 | Allowance |
+| F09 | Compatible detector-test aerosol | 1 | 650,000 | 650,000 | Allowance; approved test method required |
+| F10 | Import/domestic transport allowance | 1 lot | 3,000,000 | 3,000,000 | Allowance; import availability unconfirmed |
+| F11 | Initial voice API account/credit allowance | 1 | 500,000 | 500,000 | Allowance; replace with provider account quotation |
+| F12 | Owner installation, testing and programming | 1 | 0 | 0 | Your labor; no contractor cost |
+| F13 | Existing UPS, switch, VM, router and borrowed/owned test tools | 1 lot | 0 | 0 | Reused equipment; verify availability |
+| | **Purchase subtotal** | | | **27,177,300** | Sum F01–F13 |
+| | **Contingency, 20%** | | | **5,435,460** | 0.20 × subtotal |
+| | **TOTAL: three-detector DIY setup before tax** | | | **32,612,760 IRT** | Subtotal + contingency |
 
-All itemized costs and quantity scenarios are included in this document. Holding the panel, sounders, cable and labor allowances constant, changing only detector/base quantity gives:
+Holding shared equipment, cable and other allowances constant, each removed detector/reset switch reduces the subtotal by **1,630,000 IRT**. This avoids pretending that a shorter cable route is already measured.
 
-| Installed detector count | Subtotal IRT | 20% contingency IRT | Total before tax IRT |
+| Detector count | Subtotal IRT | 20% contingency IRT | Total before tax IRT |
 | --- | ---: | ---: | ---: |
-| 1, only for an approved open-room layout | 58,205,000 | 11,641,000 | **69,846,000** |
-| **2, recommended rack-room starting scope** | **59,554,000** | **11,910,800** | **71,464,800** |
-| 3, adds surveyed adjacent-room detection | 60,903,000 | 12,180,600 | **73,083,600** |
+| 1, open-room layout only | 23,917,300 | 4,783,460 | **28,700,760** |
+| **2, recommended rack-room scope** | **25,547,300** | **5,109,460** | **30,656,760** |
+| 3, adds another surveyed location | 27,177,300 | 5,435,460 | **32,612,760** |
 
-Recurring costs are planning allowances, not published tariffs. Replace them with actual operator and maintenance quotations; battery replacement is a separate future cost.
+| Recurring allowance | Monthly IRT | Annual IRT |
+| --- | ---: | ---: |
+| Voice API usage after initial account/credit | 100,000 | 1,200,000 |
+| Owner maintenance labor | 0 | 0 |
+| **Annual recurring subtotal** | **100,000** | **1,200,000** |
 
-| Recurring item | Quantity per year | Unit IRT | Annual IRT | Basis |
-| --- | ---: | ---: | ---: | --- |
-| SIM voice/SMS service | 12 months | 200,000 | 2,400,000 | Planning allowance; separate from initial SIM activation/credit |
-| Inspection and functional testing | 1 service | 3,000,000 | 3,000,000 | Planning allowance |
-| **Annual recurring subtotal** | | | **5,400,000** | Sum of annual service allowances |
+Voice usage is a planning reserve, not a published tariff; actual cost depends on call attempts, message duration and account fees. Initial credit is included in F11; the annual reserve is additional and should be reconciled with the purchased package. Replacement aerosol and failed equipment are future consumable/repair costs, not included in this annual subtotal.
 
 | Three-detector first-year summation | IRT |
 | --- | ---: |
-| Installed subtotal | 60,903,000 |
-| Installation contingency, 20% | 12,180,600 |
-| **Installed total before tax** | **73,083,600** |
-| Annual recurring subtotal | 5,400,000 |
-| **First-year total before tax** | **78,483,600** |
+| Parts, transport and initial voice credit | 27,177,300 |
+| 20% purchase contingency | 5,435,460 |
+| **DIY setup total before tax** | **32,612,760** |
+| Additional annual voice-service reserve | 1,200,000 |
+| **First-year total before tax** | **33,812,760** |
 
-Excluded: tax, a staffed monitoring contract, new UPS/network infrastructure, optional VM integration, major containment/duct/civil changes, full building or large battery-room coverage, additional sounders/batteries after engineering checks, aspirating detection, suppression and new door-release hardware already budgeted in the security proposal. Reconcile shared interfaces between quotations. The **73,083,600 IRT** installation total pays for the specified parts and services; contingency does not fund excluded scope.
+Excluded: tax, new UPS/LAN/VM equipment, separate batteries or chargers, fire panel, physical dialer/SIM, paid labor, automatic loop supervision, full-building coverage, suppression/door-control modifications, combined heat-detector upgrades and extra sirens if the audibility test requires them. Buy any missing test tools separately. All cost data is included above; no spreadsheet is needed.
 
 ## One-page summary
 
-**Recommended decision:** install two combined smoke/heat detectors for the 18 m² rack room, with a third for an adjacent UPS/electrical room if a survey supports it. Any detector or manual call-point alarm immediately activates local sounders and triggers recorded warning calls to the owner, on-call operator and backup contact.
+**Build:** two externally powered smoke detectors with isolated alarm contacts, one Waveshare **Modbus POE ETH Relay (B)** and one 12 V active siren. A third detector can cover another surveyed location. One enclosed 12 V supply plugs into the existing datacenter UPS. You do the wiring, programming and tests yourself; no dedicated battery system or paid installation is included.
 
-| What to buy | Quantity and purpose |
+| Component | Quantity and role |
 | --- | --- |
-| ZITEX ZI-HSD 1015 detectors and compatible bases | 2–3; detect smoke or heat, with alarm behavior confirmed before purchase |
-| Compatible conventional fire panel | 1; estimate uses ZX-1800-12; seek a smaller supported panel quote |
-| ZI-SS 81 sounder/beacons and ZI-CP 95 call point | 2 sounders, inside/outside the entrance; 1 manual call point at the exit |
-| Panel backup batteries | 2 matched 12 V 7.2 Ah batteries in series; verify required autonomy |
-| Cellular recorded-voice dialer and isolated trigger interface | 1 each; N1 is a candidate subject to manual review and call testing |
-| Dialer backup supply | Separate 12 V PSU/charger, battery, fuse, enclosure, antenna and active SIM |
-| Installation materials/services | Approximately 60 m fire-alarm cable, supports, conduit, EOL parts, protected mains feed, installation and commissioning |
+| 12 V photoelectric relay-output detector with base | 2–3; separate input for each location; APDA-12R is a quotation candidate requiring manual verification |
+| Ethernet I/O module, SKU 27876 | 1; detector contacts become VM-readable Modbus TCP states; onboard relays operate the siren |
+| Enclosed 12 V supply and active siren | 1 each; all powered from the existing UPS |
+| Wiring and fittings | Four-core detector runs, siren pair, fuses, enclosure, labels, reset switches and Ethernet patch lead |
+| Software and calls | Existing VM/dashboard plus your polling service and a Kavenegar voice API account |
 
-**Placement:** D1 goes on an unobstructed ceiling over the general/cold-side room; D2 goes beneath the highest smoke-collecting surface inside the contained hot aisle. D3, if used, goes in the surveyed adjacent electrical room. Avoid direct ventilation jets; initially allow 0.5 m from walls/major obstructions and 1 m from supply inlets. Final locations require installer review of ducts, containment and airflow. One detector is only an option for an approved open-room layout. If smoke cannot reliably reach point detectors, obtain a separate air-sampling design.
+**Place:** D1 on an unobstructed general-room ceiling and D2 inside the contained hot aisle, below its roof. D3 belongs in a separate electrical room or smoke pocket after checking airflow. Avoid direct air jets; initial clearances are 0.5 m from walls/major obstructions and 1 m from supply inlets. One detector only suits an open, unobstructed layout. The baseline senses smoke; buy a documented relay-output smoke/heat model if heat detection is also needed.
 
-**What to do:** obtain a site survey and matched-package quotation; confirm detector/panel compatibility and cellular voice coverage; bench-test the relay, dialer message and retries; then have a specialist install and label the supervised circuits. Allow 2–3 working days after delivery plus a 72-hour observation period. Commission every detector and call point, test sound levels with fans running and doors shut, confirm calls reach all contacts, and demonstrate battery operation and circuit-fault indications. Record the site address in the Persian warning message.
+**Connect:** provide 12 V power and a separate isolated contact pair to each detector. Link input 1/2/3 locally to relay 1/2/3; parallel their normally-open output contacts to power the siren when any detector alarms. The siren can therefore operate with the VM/LAN disconnected. The VM polls every two seconds, records location/state/freshness, latches events and requests Persian warning calls to the owner and two backup contacts. Calls require Internet and an active provider account.
 
-| Budget option | Total IRT before tax |
+**Do:** verify model manuals and relay behavior, bench-test one detector first, install labeled cable runs, configure the module IP/linkage, then write the collector, retry journal and acknowledgment flow. Allow **18–27 hours of your time**, plus 72-hour observation. Test every detector with approved aerosol, calls to every contact, audibility with doors shut/fans running, VM/network outages, restarts and shared-UPS operation. Simple contact wiring does not automatically report a broken wire or lost detector power; keep periodic physical tests.
+
+| Budget | IRT before tax |
 | --- | ---: |
-| 1 detector, approved open-room layout only | 69,846,000 |
-| **2 detectors, recommended rack-room scope** | **71,464,800** |
-| 3 detectors, including surveyed adjacent-room detection | 73,083,600 |
-| Annual SIM and inspection/testing allowance | 5,400,000 |
-| **3-detector first-year total** | **78,483,600** |
+| 1-detector DIY setup | 28,700,760 |
+| **2-detector recommended setup** | **30,656,760** |
+| 3-detector DIY setup | 32,612,760 |
+| Additional annual voice API reserve | 1,200,000 |
+| **3-detector first-year total** | **33,812,760** |
 
-Installed totals include 20% contingency; prices are planning references and allowances requiring fresh quotations. Detection and local sound operate without Internet/LAN; warning calls require working cellular service and dialer power. Check panel status daily and SIM credit/expiry and test calls monthly. This scope provides warning; suppression, staffed monitoring, full building/battery-room coverage, optional VM integration and major construction changes are excluded.
+Setup totals include 20% contingency. Prices, import availability and the illustrative exchange rate need fresh quotes. Existing UPS, switch, VM and test tools are reused. This monitors the rack room and sounds/calls on smoke; independent building safety, door release and suppression controls remain separate.
