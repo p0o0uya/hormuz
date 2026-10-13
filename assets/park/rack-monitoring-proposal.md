@@ -183,6 +183,24 @@ The server's conventional COM interface is **RS-232**, while the Uno's D0/RX and
 
 One RS-232 port does not directly provide a multi-drop sensor bus. For several rack controllers, use independent serial ports, a controller that aggregates their readings, or an RS-485 design. An RS-485 adapter is a distinct peripheral, not an ordinary RS-232 cable. For example, ATEN documents a USB-to-RS-422/485 adapter; a purchased temperature/RH transmitter must additionally have a documented register map and configurable bus address. Follow the actual devices' instructions for supply, topology, termination and biasing. [ATEN USB-to-RS-485 adapter](https://www.aten.com/eu/en/products/usb-peripherals/usb-converters/uc485/).
 
+### What RS-485 means: comparison with Ethernet
+
+**RS-485 is an electrical communication standard, not a sensor or an Ethernet interface.** A temperature/humidity sensor can include an RS-485 interface to send its measurements. A common two-wire implementation communicates over a twisted signal pair, usually labeled A and B, with reference/ground and power connections as required by the equipment. Several compatible devices can share the bus. [Texas Instruments RS-485 explanation](https://www.ti.com/video/6107769508001).
+
+RS-485 itself does not assign MAC addresses, IP addresses or device IDs. **Modbus RTU** is one protocol commonly used over RS-485: each sensor has a configured numeric address, such as 1, 2 or 3, and the collector asks each address for its measurements in turn. That number is a Modbus address, not an Ethernet MAC address. Other protocols can also use RS-485. [libmodbus RTU addressing documentation](https://libmodbus.org/reference/modbus_set_slave/).
+
+| Feature | RS-485 sensor using Modbus RTU | Ethernet sensor or gateway using IP |
+| --- | --- | --- |
+| Typical connection | A/B signal terminals; separate supply and reference as specified | Ethernet port connected to a network switch |
+| Device identification | Configured Modbus address; no Ethernet MAC/IP needed for this interface | MAC address for the Ethernet interface and an IP configuration |
+| Several sensors | Share a properly wired bus with different Modbus addresses | Usually connect separately to a switch, or through a gateway |
+| Connection to the monitoring VM | USB-to-RS-485 adapter passed into the VM, or a network-to-RS-485 gateway | VM reaches the device through the LAN |
+| Arduino needed? | Not for a complete Modbus temperature/RH transmitter with a documented register map | Not for a complete network sensor/gateway with a supported API |
+
+Example for the RS-485 alternative: **temperature/RH probes with addresses 1–12 → shared RS-485 bus → USB-to-RS-485 adapter → local monitoring VM**. The probe power supply is additional to the signal wiring. An Ethernet-to-RS-485 gateway is another option: the gateway has a network MAC/IP, while its attached RS-485 probes retain their Modbus addresses.
+
+Some RS-485 products use an RJ45-shaped connector or Cat5 cable, but that does not make them Ethernet devices. Check the documented interface and pinout before connecting them to a network switch. Procurement should request a **temperature and relative-humidity transmitter with RS-485, Modbus RTU, configurable address and a published register map**, rather than a bare RS-485 converter.
+
 ### Native USB sensors exist
 
 One documented example is **Yoctopuce Yocto-Meteo-V2-C**, a USB-C module measuring temperature, relative humidity and pressure, with a Python API. Its manufacturer describes it as a component requiring an enclosure. It demonstrates that Arduino-free USB sensing is possible; Iranian availability and pricing have not been verified for this alternative. A USB connector alone does not prove live acquisition support: some products only use USB for power or downloading historical logs. [Yoctopuce module and API manual](https://www.yoctopuce.com/EN/products/yocto-meteo-v2-c/doc/MTEOMK2C.usermanual.html).
