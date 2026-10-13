@@ -12,7 +12,7 @@ The [50 kW battery UPS engineering proposal](docs/ups-proposal.md) includes a 15
 
 The [50 kW datacenter electrical earthing proposal](docs/earthing-proposal.md) compares driven rods, a shallow ring with rods, and a copper-plate pit. It includes Persian price sources, itemized material and labor budgets in Iranian tomans, implementation procedures, and schedules for one owner with the required specialists. Its [editable financial estimate](docs/earthing-estimate.csv) is available as CSV.
 
-The [four-rack temperature and humidity monitoring proposal](docs/rack-monitoring-proposal.md) includes the architecture, implementation procedure, one-person schedule, sourced hardware prices and an estimate in Iranian tomans. Its [itemized materials estimate](docs/rack-monitoring-estimate.csv) is available as CSV.
+The [four-rack temperature and humidity monitoring proposal](assets/park/rack-monitoring-proposal.md) includes the architecture, implementation procedure, one-person schedule, sourced hardware prices and an estimate in Iranian tomans. All itemized costs and schedules are included as tables in this single Markdown file.
 
 The [four-rack air-quality and airflow proposal](docs/airflow-proposal.md) reviews international guidance and specifies a ducted cold-supply/hot-return layout for a 4.5 m × 4 m room, with filters assembled from raw media. It includes a cost table in Iranian tomans, heat-load assumptions and a 50 kW sizing comparison. The [dimensioned drawing](docs/airflow-layout.svg) and [editable estimate](docs/airflow-estimate.csv) are available separately.
 

@@ -55,7 +55,7 @@ Record a Persian warning giving the site name, full address and response instruc
 
 The baseline is **self-monitoring**, not a staffed alarm-receiving-center contract. Call acceptance is not proof someone will respond; nominate an operator and backup with an agreed escalation procedure. Local panel faults require daily inspection; this budget does not promise remote fault reporting. If that is needed, specify a panel/communicator with documented separate fire, fault and communication-failure reporting.
 
-The existing [rack monitoring VM](rack-monitoring-proposal.md) may later receive separate fire/fault relay status through an isolated network I/O module. That optional dashboard interface is excluded here, and must neither carry nor delay the primary siren/call path. Coordinate hardwired door unlocking with the [security proposal](security-proposal.md); its separately budgeted release interface must operate while UPS power remains available. Do not add automatic server shutdown or cooling shutdown without an engineered cause-and-effect design.
+The existing [rack monitoring VM](../assets/park/rack-monitoring-proposal.md) may later receive separate fire/fault relay status through an isolated network I/O module. That optional dashboard interface is excluded here, and must neither carry nor delay the primary siren/call path. Coordinate hardwired door unlocking with the [security proposal](security-proposal.md); its separately budgeted release interface must operate while UPS power remains available. Do not add automatic server shutdown or cooling shutdown without an engineered cause-and-effect design.
 
 ## Buying and installation sequence
 
