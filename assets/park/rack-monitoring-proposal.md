@@ -217,3 +217,36 @@ One documented example is **Yoctopuce Yocto-Meteo-V2-C**, a USB-C module measuri
 For this project, **pilot one Uno connected by USB to a local monitoring VM** if the racks are near the server. If rack distances or VM mobility make USB awkward, retain the Ethernet baseline or price industrial Modbus RTU probes and an isolated RS-485 interface. Keep acquisition outside the hypervisor host where practical, using either a dedicated VM or a separate gateway.
 
 The earlier Ethernet budget remains the baseline. Switching four Uno nodes to USB removes four W5500 modules: **4,080,000 IRT of listed materials**, or **4,896,000 IRT including the associated 20% contingency**, before adding any USB hub, extension cables or revised power arrangements. A native-USB or RS-485 sensor design requires a new itemized quote and must not be assumed to cost the same as bare SHT31 modules.
+
+## ELFI / Fidar EtherSense FTA3070-21: model and price research
+
+**Research date: 13 October 2026. Result: the exact model is verified, but no public unit price in IRT, IRR or USD was found.** Fidar Electronics lists FTA3070-21 as a network temperature/relative-humidity sensor. Its product page directs purchasers to the sales team instead of displaying a price. Exact-model Persian and English price searches, including targeted searches of Torob and Emalls, did not produce a verifiable priced offer. Prices for unrelated products sharing the shorter `FTA3070` code are excluded. [Exact manufacturer product page](https://fidarelectronics.com/سنسور-دما-رطوبت-تحت-شبکه/), [Manufacturer purchasing information](https://fidarelectronics.com/از-کجا-بخریم؟/).
+
+| Price question | Finding |
+| --- | --- |
+| Exact model | ELFI / Fidar Electronics EtherSense **FTA3070-21** |
+| Published Iranian price | Not found; supplier quotation required |
+| Published USD price | Not found; no actual dollar price available to convert |
+| Confirmed unit cost in IRT | **Unknown**, not zero and not a planning allowance |
+| Manufacturer sales telephone | **021-91308515** |
+| Manufacturer email | **info@fidarelectronics.com** |
+
+The telephone is published on the product/purchasing pages; the email is published on the [manufacturer homepage](https://fidarelectronics.com/). A written quote should specify unit price, currency, quantity discount, tax, delivery, included power supply/accessories and warranty. Request prices for **8 units** (two positions per rack), **12 units** (three positions per rack), and **14 units** (12 installed plus two spares). No purchase request or message to the manufacturer was sent during this research.
+
+### Fit with the monitoring VM
+
+The manufacturer describes Ethernet connectivity with DHCP/static IP and SNMP, HTTP and HTTPS support. The model's manual identifies a PoE Ethernet input, an adapter input and SNMP alarm configuration. **This is an Ethernet device alternative, rather than the RS-485 design discussed above.** The proposed connection is: **FTA3070-21 devices → monitoring LAN switch → collector in the monitoring VM → database/dashboard**. Arduino and serial/USB passthrough are unnecessary for that network acquisition path. [FTA3070-21 English manual](https://fidarelectronics.com/wp-content/uploads/2025/07/FTA3070-21-User-Manual-EN.pdf).
+
+Obtain the exact SNMP MIB/OIDs, measurement scale and supported polling interval before configuring the collector. Also confirm sensor accuracy, calibration evidence, sensing-point count per unit, external-probe support and the required PoE standard/power budget. The public product page contains different temperature ranges in its overview and specification table, so final measurement and environmental limits need confirmation in the supplier's current datasheet. The manual also needs supplier clarification on the permissible combination of adapter power and Ethernet/PoE connections. Do not assume that four units provide 12 independent sensing points or that a generic 48 V injector is compatible.
+
+### Conversion and quote-based sensor subtotal
+
+Use **unit IRT = quoted unit USD × 270,000** when the quote is in dollars. If the quote is in Iranian rials, use **unit IRT = quoted unit IRR ÷ 10**. If it is already in tomans, no conversion is needed. Let **U** be the quoted unit price in USD and **T** the quoted unit price in IRT:
+
+| Deployment | Units | Sensor subtotal from an IRT quote | Sensor subtotal from a USD quote, converted to IRT |
+| --- | ---: | ---: | ---: |
+| Two sensing positions per rack | 8 | 8 × T | 2,160,000 × U |
+| Three sensing positions per rack | 12 | 12 × T | 3,240,000 × U |
+| Three positions per rack plus two spare units | 14 | 14 × T | 3,780,000 × U |
+
+These are conversion formulas, **not sensor prices or supplier quotations**. Quantities assume one sensing position per unit and must be revised if the confirmed product supports multiple remote probes. A complete FTA3070-21 system estimate must also include the required Ethernet/PoE ports or approved power supplies, cabling, mounting, taxes/delivery and integration labor. Its final cost cannot yet be calculated or compared reliably with the earlier **44,782,200 IRT Arduino materials budget**.
