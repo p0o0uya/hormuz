@@ -1,6 +1,6 @@
 # Antistatic epoxy finish over the Hormuz mosaic floor
 
-Prepared 13 October 2026. Design basis: the **4.5 m × 4 m = 18 m² room** in the [airflow proposal](airflow-proposal.md), fully emptied before coating. Currency: **Iranian tomans (IRT); 10 IRR = 1 IRT**. Confirm actual dimensions, mosaic type, moisture and supplier availability before procurement. This is a preliminary design and estimate; it does not certify the installed floor.
+Prepared 13 October 2026. Design basis: the **4.5 m × 4 m = 18 m² room** in the [airflow proposal](../assets/park/airflow-proposal.md), fully emptied before coating. Currency: **Iranian tomans (IRT); 10 IRR = 1 IRT**. Confirm actual dimensions, mosaic type, moisture and supplier availability before procurement. This is a preliminary design and estimate; it does not certify the installed floor.
 
 ## Recommended construction
 

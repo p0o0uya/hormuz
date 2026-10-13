@@ -14,7 +14,7 @@ Request a conventional pre-action sprinkler alternative if the approved mist pac
 
 ## Design basis and layout
 
-Use the [airflow room plan](airflow-proposal.md) and [existing warning-system proposal](fire-monitoring-proposal.md). The room's **3.2 m height is an assumption**, not a measurement. Four assumed 600 × 1200 mm racks occupy x=1.05–3.45 m, y=1.60–2.80 m. The cold/front area is y=0–1.60 m; contained hot aisle is y=2.80–4.00 m. Room origin is the southwest corner, x east along 4.5 m and y north along 4 m.
+Use the [airflow room plan](../assets/park/airflow-proposal.md) and [existing warning-system proposal](fire-monitoring-proposal.md). The room's **3.2 m height is an assumption**, not a measurement. Four assumed 600 × 1200 mm racks occupy x=1.05–3.45 m, y=1.60–2.80 m. The cold/front area is y=0–1.60 m; contained hot aisle is y=2.80–4.00 m. Room origin is the southwest corner, x east along 4.5 m and y north along 4 m.
 
 ![Preliminary suppression layout and supply schematic](fire-suppression-layout.svg)
 

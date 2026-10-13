@@ -14,7 +14,7 @@ This scope provides warning, not extinguishing or guaranteed very-early detectio
 
 ## Choose the detector count and locations
 
-Use the room coordinates from the [airflow proposal](airflow-proposal.md): southwest corner `(0,0)`, x along the 4.5 m side and y along the 4 m side. Racks occupy y=1.60–2.80 m; the planned contained hot aisle occupies y=2.80–4.00 m. The ceiling height and actual containment remain unconfirmed.
+Use the room coordinates from the [airflow proposal](../assets/park/airflow-proposal.md): southwest corner `(0,0)`, x along the 4.5 m side and y along the 4 m side. Racks occupy y=1.60–2.80 m; the planned contained hot aisle occupies y=2.80–4.00 m. The ceiling height and actual containment remain unconfirmed.
 
 | Quantity | Proposed placement | Conditions and limits |
 | --- | --- | --- |

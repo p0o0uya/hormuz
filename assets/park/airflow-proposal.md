@@ -8,7 +8,7 @@ For the **4.5 m × 4 m room with four 42U racks**, use one row of four racks, al
 
 At the provisional **20 kW IT load (5 kW/rack)**, budget **311,496,000 IRT for equipment/materials with 20% contingency**, or **383,496,000 IRT including installation, commissioning and a provisional filter-test allowance**. A sensitivity range is **354–521 million IRT installed**, explained below. This pays for airflow distribution, two fans and filters made from separate raw materials; **it excludes the machine that produces cold air**. Existing cooling must provide approximately **25 kW of usable sensible cooling** for this example, subject to a site heat-load calculation.
 
-The actual rack load, cold-air source, rack dimensions, ceiling height, doors, cooling capacity and duct route are unconfirmed. The repository's earlier [earthing proposal](../assets/park/earthing-proposal.md) mentions a 50 kW facility: that is not evidence of 50 kW IT heat. A 50 kW IT sizing case appears below, but the cost table covers the 20 kW case only.
+The actual rack load, cold-air source, rack dimensions, ceiling height, doors, cooling capacity and duct route are unconfirmed. The repository's earlier [earthing proposal](earthing-proposal.md) mentions a 50 kW facility: that is not evidence of 50 kW IT heat. A 50 kW IT sizing case appears below, but the cost table covers the 20 kW case only.
 
 ## International guidance used
 
@@ -50,9 +50,49 @@ Server manufacturer flow requirements take precedence if greater than the heat-b
 
 ## Room layout and air path
 
-![Dimensioned preliminary plan and airflow section](airflow-layout.svg)
+The plan and section below are included directly in this file. They are schematic; the tables give the design dimensions. Door swings and fire egress require a site survey.
 
-[Open the standalone drawing](airflow-layout.svg). Plan dimensions are to the assumed cabinet bodies. Door swings and fire egress require a site survey.
+```text
+PLAN — 4.50 m along x; 4.00 m along y
+Front/south wall (y = 0)
++----------------------------------------------------------------+
+|                COLD FRONT AISLE — 1.60 m deep                    |
+|       Overhead supply trunk: 800 × 500 mm; 7,200 m³/h             |
+|                     ↓         ↓         ↓         ↓            |
+|  1.05 m access   +---------+---------+---------+---------+        |
+|                  | Rack 1  | Rack 2  | Rack 3  | Rack 4  | access |
+|                  |  42U    |  42U    |  42U    |  42U    | 1.05 m |
+|                  |         1.20 m cabinet depth          |        |
+|                  +---------+---------+---------+---------+        |
+|                     ↓         ↓         ↓         ↓            |
+|              CONTAINED HOT REAR AISLE — 1.20 m deep              |
+|       Overhead return trunk: 850 × 500 mm; 7,500 m³/h             |
++----------------------------------------------------------------+
+Rear/north wall (y = 4.00 m)
+Row width: 4 × 0.60 m = 2.40 m; end access: 1.05 m on each side.
+Racks: y = 1.60–2.80 m. Supply branches: 400 × 300 mm each.
+Return branches: 450 × 300 mm each.
+
+SECTION — across the 4.00 m room depth (schematic)
+Ceiling: z = 3.20 m
++----------------------------------------------------------------+
+|   [SUPPLY TRUNK]                            [RETURN TRUNK]        |
+|    top z ≈ 3.00 m                            top z ≈ 3.00 m      |
+|    bottom z ≈ 2.50 m                         bottom z ≈ 2.50 m   |
+|          ↓                                                      |
+|          ↓               +---------------+----- hot-aisle roof --|
+|          ↓               | Rack ~2.00 m  |           ↑          |
+|          +------------→  |     high      |  ---------+          |
+|    Cold front aisle      |               |    Hot rear aisle     |
++--------------------------+---------------+----------------------+
+Floor: z = 0; supply duct has 25 mm nominal external insulation.
+
+EXTERNAL MECHANICAL SPACE — outside the 18 m² rack room
+Conditioned air → coarse raw-media stage → pleated fine-media stage
+→ supply fan → cold aisle → four racks in parallel → contained hot aisle
+→ return fan → cooling-unit return.
+Filter bank: two stages, each with four cassettes arranged 2 × 2.
+```
 
 Use a coordinate system with the southwest room corner at `(0,0)`, the 4.5 m side along x, the 4 m side along y, and the rack fronts facing south:
 
@@ -149,7 +189,7 @@ If corrosion measurements call for gas treatment, add a separate, contained sorb
 
 ## Itemized one-time cost table
 
-All values are IRT. The [editable CSV](airflow-estimate.csv) includes quantities, unit prices, line totals and source/assumption notes. No equipment was ordered and no supplier was contacted.
+All values are IRT. Quantities, unit prices, line totals and source/assumption notes are included in the tables in this file. No equipment was ordered and no supplier was contacted.
 
 **Price basis:** [Sazaab's opened duct table](https://sazaab.com/کانال-هوا/) lists 0.6 mm galvanized rectangular duct with galvanized flanges at **8,400,000 IRR/m² = 840,000 IRT/m²**; update date and installation inclusion are unclear. It is used as a fabrication reference, with installation separately allowed. [Fanmarket's opened backward-fan catalog](https://fanmarket.ir/product-category/فن-سانتریفیوژ/فن-سانتریفیوژ-بکوارد/) displays ABA-56 at **23,000,000 IRT**, ABA-63 at **29,600,000 IRT** and ABA-71 variants around **42–43 million IRT**. These are price benchmarks only, **not selected or verified fans at the required pressure**. Allow 40 million IRT per fan until duty-point quotations arrive. All other prices below are explicit planning allowances, not researched supplier offers.
 
@@ -184,13 +224,35 @@ All values are IRT. The [editable CSV](airflow-estimate.csv) includes quantities
 
 If self-installing, equipment/materials with their own 20% contingency cost **311,496,000 IRT**, but commissioning and laboratory testing remain necessary costs. The filter housing plus raw materials/frames/seals total **36,500,000 IRT** before contingency; no assembled filter pack is included. Retain tax, transport and workshop scope on each quotation to avoid double counting. Additional VAT, imports, major wall openings, fire/smoke dampers where required, silencing, cooling plant, humidity control, outdoor-air hardware, N+1 redundancy and existing monitoring upgrades are excluded.
 
+| Budget option | Subtotal IRT | Contingency IRT | Total IRT | Scope |
+| --- | ---: | ---: | ---: | --- |
+| Equipment/materials only | 259,580,000 | 51,916,000 | 311,496,000 | Alternative materials budget; installation and testing additional |
+| Installed baseline | 319,580,000 | 63,916,000 | 383,496,000 | Includes installation, commissioning and provisional filter testing |
+| Filter housing, frames, raw materials and seals | 36,500,000 | Not separately applied | 36,500,000 | Included in the equipment subtotal; do not add again |
+
 ### Estimate uncertainty and operating cost
 
 The sensitivity range varies duct fabrication from **840,000–1,800,000 IRT/m²**, each fan from **30–65 million IRT**, and fine raw media from **800,000–2,000,000 IRT/m²**. The high duct rate is a small-job budgeting scenario, not a supplier quotation. Keep all other rows fixed, add the 60 million IRT labor/testing allowances and apply 20% contingency: **353,736,000–520,680,000 IRT**. This is a procurement sensitivity exercise, not a statistically guaranteed range. Obtain quotes especially for reinforcement, fans, filter media and test services.
 
+| Sensitivity input / result | Low scenario | Baseline | High scenario |
+| --- | ---: | ---: | ---: |
+| Duct fabrication, IRT/m² | 840,000 | 840,000 | 1,800,000 |
+| Fan allowance, IRT per fan | 30,000,000 | 40,000,000 | 65,000,000 |
+| Fine raw media, IRT/m² | 800,000 | 1,200,000 | 2,000,000 |
+| Installed subtotal before contingency, IRT | 294,780,000 | 319,580,000 | 433,900,000 |
+| 20% contingency, IRT | 58,956,000 | 63,916,000 | 86,780,000 |
+| **Installed total, IRT** | **353,736,000** | **383,496,000** | **520,680,000** |
+
 At the provisional loaded-fan input of 2.86 kW, continuous operation consumes about **25,100 kWh/year**; at electricity price `T` IRT/kWh, annual fan energy is approximately `25,100 × T` IRT. Mechanical cooling electricity is additional. Do not use the 4.5 kW summed motor nameplates as measured operating power.
 
 For a starting replacement budget, assume four coarse-stage changes and two fine-stage changes per year. Using the same purchased-area allowances gives **32,400,000 IRT/year in raw media**, plus seals, labor, shipping, tests and disposal. Actual intervals depend on dust loading and pressure drop, not the calendar alone. Do not wash fine media unless its manufacturer explicitly supports it.
+
+| Recurring item | Annual estimating quantity | Annual cost / consumption | Basis |
+| --- | --- | ---: | --- |
+| Coarse raw media | 4 changes × 2 m² | 3,600,000 IRT | 450,000 IRT/m²; same trim/spare allowance as initial purchase |
+| Fine raw media | 2 changes × 12 m² | 28,800,000 IRT | 1,200,000 IRT/m²; same cutting allowance as initial purchase |
+| **Raw-media replacement subtotal** | | **32,400,000 IRT** | Excludes seals, labor, transport, tests and disposal |
+| Fan electricity | Approximately 2.86 kW × 8,760 hours | Approximately 25,100 kWh | Annual cost ≈ 25,100 × tariff T in IRT/kWh; cooling electricity additional |
 
 ## Installation and acceptance
 
@@ -198,7 +260,7 @@ For a starting replacement budget, assume four coarse-stage changes and two fine
 2. Finalize duct routing, fitting takeoff, reinforcement, coil/terminal pressure losses and fan curves. Fabricate filter samples and obtain efficiency, pressure and shedding evidence before installing them in service.
 3. Install/clean ducts, insulated supply, filter housing, containment, dampers, protected fans and controls. Preserve rack/aisle access and coordinate containment with detection and suppression systems.
 4. Measure supply/return flow by a calibrated duct traverse or suitable flow hood. Set equal-load baseline branches near **1,800 m³/h supply** and **1,875 m³/h return**, then adjust for actual rack loads and density. Check fan motor current, static pressure and filter differential pressures at clean and design-loaded resistance.
-5. Record inlet temperature/RH at lower, middle and upper points of all racks using the [existing monitoring proposal](../assets/park/rack-monitoring-proposal.md). Demonstrate all occupied inlets meet equipment requirements under expected maximum load; inspect bottom-of-rack delivery and hot-air leakage. A wall-average reading is insufficient.
+5. Record inlet temperature/RH at lower, middle and upper points of all racks using the [existing monitoring proposal](rack-monitoring-proposal.md). Demonstrate all occupied inlets meet equipment requirements under expected maximum load; inspect bottom-of-rack delivery and hot-air leakage. A wall-average reading is insufficient.
 6. Log clean filter pressure drops. Initially investigate coarse loss approaching 150 Pa or fine loss approaching 250 Pa; use the actual media maker's lower terminal limits where specified. Alarm on low flow, fan failure and unexpectedly low filter pressure (possible missing media/bypass), as well as inlet overtemperature. Test alarms and controlled load reduction without overheating production equipment.
 7. Perform ISO 14644-1 particle sampling with a qualified instrument/procedure and establish copper/silver coupon results. A consumer PM sensor cannot prove ISO Class 8. If either test fails, correct leakage, shedding, filtration or pollutant ingress and repeat. Confirm the final cassette test meets the chosen MERV/ePM target; the estimate itself makes no compliance claim.
 8. Observe the complete system over at least 72 hours including high load, and retain balancing readings, fan curves, filter test reports, drawings and replacement instructions. Allow roughly **2–3 weeks for fabrication/installation after parts arrive**, plus laboratory lead time and the approximately 30-day coupon exposure. Do not declare corrosion acceptance before results return.

@@ -32,7 +32,7 @@ This base system has **one UPS and one common output board**. It provides batter
 | Routes | 15 m each for three AC feeders; short battery routes | Measure routes; grouping, ambient temperature, terminal capacity |
 | Currency | IRT; illustrative 270,000 IRT/USD retained from earlier site proposal | Written local quotes; this is not a verified October exchange rate |
 
-The previous [airflow proposal](airflow-proposal.md) budgets a 20 kW example. It does not establish cooling capacity for this 50 kW IT case. Here **50 kW is the critical UPS load**, rather than confirmed total facility demand. Cooling compressors remain on a separately designed utility/generator feeder. Essential room circulation and controls need power continuity or a demonstrated thermal shutdown window. If these auxiliaries are added to this UPS, add their measured kW and motor starting demand and repeat every calculation. A 15-minute electrical runtime alone does not establish 15 minutes of safe server temperatures.
+The previous [airflow proposal](../assets/park/airflow-proposal.md) budgets a 20 kW example. It does not establish cooling capacity for this 50 kW IT case. Here **50 kW is the critical UPS load**, rather than confirmed total facility demand. Cooling compressors remain on a separately designed utility/generator feeder. Essential room circulation and controls need power continuity or a demonstrated thermal shutdown window. If these auxiliaries are added to this UPS, add their measured kW and motor starting demand and repeat every calculation. A 15-minute electrical runtime alone does not establish 15 minutes of safe server temperatures.
 
 ## 3. Standards and engineering deliverables
 
