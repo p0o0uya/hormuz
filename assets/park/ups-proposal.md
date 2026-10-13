@@ -1,6 +1,6 @@
 # Proposal: battery UPS for the 50 kW Hormuz mini data center
 
-**Prepared:** 13 October 2026. **Site:** assumed Hormuz, Ilam Province, Iran. **Status:** preliminary engineering and budget proposal; not issued for construction. Currency is Iranian tomans (IRT), not rials. The [editable estimate](ups-estimate.csv), [runtime comparison](ups-battery-sizing.csv), and [reproducible calculations](ups-calculations.py) accompany this document.
+**Prepared:** 13 October 2026. **Site:** assumed Hormuz, Ilam Province, Iran. **Status:** preliminary engineering and budget proposal; not issued for construction. Currency is Iranian tomans (IRT), not rials. All design assumptions, calculations, runtime comparisons, itemized cost estimates, implementation steps and acceptance criteria are included in this single Markdown file.
 
 ## 1. Proposed result and decision
 
@@ -32,7 +32,7 @@ This base system has **one UPS and one common output board**. It provides batter
 | Routes | 15 m each for three AC feeders; short battery routes | Measure routes; grouping, ambient temperature, terminal capacity |
 | Currency | IRT; illustrative 270,000 IRT/USD retained from earlier site proposal | Written local quotes; this is not a verified October exchange rate |
 
-The previous [airflow proposal](../assets/park/airflow-proposal.md) budgets a 20 kW example. It does not establish cooling capacity for this 50 kW IT case. Here **50 kW is the critical UPS load**, rather than confirmed total facility demand. Cooling compressors remain on a separately designed utility/generator feeder. Essential room circulation and controls need power continuity or a demonstrated thermal shutdown window. If these auxiliaries are added to this UPS, add their measured kW and motor starting demand and repeat every calculation. A 15-minute electrical runtime alone does not establish 15 minutes of safe server temperatures.
+The previous [airflow proposal](airflow-proposal.md) budgets a 20 kW example. It does not establish cooling capacity for this 50 kW IT case. Here **50 kW is the critical UPS load**, rather than confirmed total facility demand. Cooling compressors remain on a separately designed utility/generator feeder. Essential room circulation and controls need power continuity or a demonstrated thermal shutdown window. If these auxiliaries are added to this UPS, add their measured kW and motor starting demand and repeat every calculation. A 15-minute electrical runtime alone does not establish 15 minutes of safe server temperatures.
 
 ## 3. Standards and engineering deliverables
 
@@ -218,7 +218,7 @@ The reference OEM's third-party interface requires instantaneous battery protect
 4. Select cable ampacity after all derating, then coordinate `Ib ≤ In ≤ Iz` and the protective device's conventional operating current with cable thermal limits. Check allowable voltage drop, terminals, mechanical protection and `S ≥ sqrt(I²t)/k_material` for short-circuit withstand. Obtain device let-through data; do not infer `I²t` from nameplate current.
 5. Panel builder creates reviewed schematics, component layout, bar supports, barriers, segregation and labels. Complete design verification and routine inspection/testing of the assembly. No breaker may be selected solely because it fits physically in the cabinet.
 
-The [Schneider UPS cable guide](https://www.electrical-installation.org/enwiki/Installation%2C_connection_and_sizing_of_cables_with_UPS) explains the need to consider charging current, conductor heating and drop separately. Final earthing coordinates with the site's [earthing proposal](../assets/park/earthing-proposal.md); retain continuous circuit PE and common bonding rather than a separate battery “clean earth.”
+The [Schneider UPS cable guide](https://www.electrical-installation.org/enwiki/Installation%2C_connection_and_sizing_of_cables_with_UPS) explains the need to consider charging current, conductor heating and drop separately. Final earthing coordinates with the site's [earthing proposal](earthing-proposal.md); retain continuous circuit PE and common bonding rather than a separate battery “clean earth.”
 
 ## 7. Cable and rack distribution calculations
 
@@ -320,32 +320,32 @@ The following figures are **engineering allowances in IRT**, developed for compa
 
 One [opened Persian automotive listing](https://www.kianpower.com/product/50ah-saba-battery/) displayed **5,388,000 IRT** for 12 V, 50 Ah, conditional on returning a same-capacity old battery. Its weight/dimension data were used only for comparison. This new installation has no exchange stock; therefore the automotive budget uses an **unquoted 7,000,000 IRT/block allowance**, not the advertised price. Do not assume an automotive warranty covers stationary UPS use. There is no researched compatible stationary 50 Ah battery quote here; its 10,000,000 IRT allowance must be replaced by a curve-qualified bid.
 
-The 4,320,000,000 IRT UPS allowance is a **USD 16,000 scenario converted at 270,000 IRT/USD**, retained for consistency with the earlier site proposal; neither the dollar price nor the exchange rate is established as a current market quote. Other installation and panel rows are direct IRT allowances. Every row and scenario is available in [ups-estimate.csv](ups-estimate.csv).
+The 4,320,000,000 IRT UPS allowance is a **USD 16,000 scenario converted at 270,000 IRT/USD**, retained for consistency with the earlier site proposal; neither the dollar price nor the exchange rate is established as a current market quote. Other installation and panel rows are direct IRT allowances. Every item, quantity, unit allowance, scenario total and price basis is included in the table below.
 
 ### Installed bill of quantities
 
-| Item | Quantity | Unit allowance IRT | Stationary scenario line IRT | Automotive comparison line IRT |
-| --- | ---: | ---: | ---: | ---: |
-| 80 kVA / 80 kW online UPS, batteries excluded | 1 | 4,320,000,000 | 4,320,000,000 | 4,320,000,000 |
-| UPS high-rate stationary 12 V, 50 Ah blocks | 160 | 10,000,000 | 1,600,000,000 | — |
-| Automotive 12 V, 50 Ah blocks, comparison only | 160 | 7,000,000 | — | 1,120,000,000 |
-| AC input/bypass/output board and external maintenance bypass | 1 | 800,000,000 | 800,000,000 | 800,000,000 |
-| Backfeed protection interface allowance | 1 | 180,000,000 | 180,000,000 | 180,000,000 |
-| Battery racks/covered trays | 4 | 60,000,000 | 240,000,000 | 240,000,000 |
-| DC string protection, combiner, main isolation and trip interface | 1 | 400,000,000 | 400,000,000 | 400,000,000 |
-| DC links, cables, lugs, covers and bonding | 1 lot | 250,000,000 | 250,000,000 | 250,000,000 |
-| AC feeders, neutral, PE, lugs and trays | 1 lot | 400,000,000 | 400,000,000 | 400,000,000 |
-| Rack distribution and eight PDU feed circuits | 4 rack sets | 80,000,000 | 320,000,000 | 320,000,000 |
-| Battery monitoring and UPS network interface | 1 | 160,000,000 | 160,000,000 | 160,000,000 |
-| Battery exhaust, make-up air and gas alarm | 1 | 180,000,000 | 180,000,000 | 180,000,000 |
-| Safety equipment, spill provisions, tools and labeling | 1 lot | 120,000,000 | 120,000,000 | 120,000,000 |
-| Survey, engineering and protection study | 1 service | 250,000,000 | 250,000,000 | 250,000,000 |
-| Installation and panel routine verification | 1 service | 350,000,000 | 350,000,000 | 350,000,000 |
-| OEM startup, load bank and witnessed acceptance | 1 service | 250,000,000 | 250,000,000 | 250,000,000 |
-| Freight, lifting/handling and delivery | 1 service | 200,000,000 | 200,000,000 | 200,000,000 |
-| **Subtotal** | | | **10,020,000,000** | **9,540,000,000** |
-| **Contingency, 20% of subtotal** | | | **2,004,000,000** | **1,908,000,000** |
-| **Planning installed total, before tax/duty** | | | **12,024,000,000** | **11,448,000,000** |
+| Item | Quantity | Unit allowance IRT | Stationary scenario line IRT | Automotive comparison line IRT | Price basis / scope |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 80 kVA / 80 kW online UPS, batteries excluded | 1 | 4,320,000,000 | 4,320,000,000 | 4,320,000,000 | Unquoted USD 16000 scenario allowance |
+| UPS high-rate stationary 12 V, 50 Ah blocks | 160 | 10,000,000 | 1,600,000,000 | — | Unquoted allowance; exact high-rate model and curves required |
+| Automotive 12 V, 50 Ah blocks, comparison only | 160 | 7,000,000 | — | 1,120,000,000 | Unquoted no-exchange allowance; retail exchange price 5388000 IRT at Kian Power |
+| AC input/bypass/output board and external maintenance bypass | 1 | 800,000,000 | 800,000,000 | 800,000,000 | Unquoted verified assembly allowance; excludes UPS internal static bypass |
+| Backfeed protection interface allowance | 1 | 180,000,000 | 180,000,000 | 180,000,000 | Unquoted allowance; confirm included equipment before ordering |
+| Battery racks/covered trays | 4 | 60,000,000 | 240,000,000 | 240,000,000 | Unquoted allowance; one rack per string; engineer structural capacity |
+| DC string protection, combiner, main isolation and trip interface | 1 | 400,000,000 | 400,000,000 | 400,000,000 | Unquoted DC-rated assembly allowance |
+| DC links, cables, lugs, covers and bonding | 1 lot | 250,000,000 | 250,000,000 | 250,000,000 | Unquoted allowance; provisional 156 links plus 4 midpoint taps and external cable routes |
+| AC feeders, neutral, PE, lugs and trays | 1 lot | 400,000,000 | 400,000,000 | 400,000,000 | Unquoted allowance; 3 routes of 15m plus rack routes; final lengths required |
+| Rack distribution and eight PDU feed circuits | 4 rack sets | 80,000,000 | 320,000,000 | 320,000,000 | Unquoted allowance; verify existing PDUs and required upgrades |
+| Battery monitoring and UPS network interface | 1 | 160,000,000 | 160,000,000 | 160,000,000 | Unquoted allowance |
+| Battery exhaust, make-up air and gas alarm | 1 | 180,000,000 | 180,000,000 | 180,000,000 | Unquoted allowance; ventilation design not yet surveyed |
+| Safety equipment, spill provisions, tools and labeling | 1 lot | 120,000,000 | 120,000,000 | 120,000,000 | Unquoted allowance |
+| Survey, engineering and protection study | 1 service | 250,000,000 | 250,000,000 | 250,000,000 | Unquoted local specialist allowance |
+| Installation and panel routine verification | 1 service | 350,000,000 | 350,000,000 | 350,000,000 | Unquoted contractor allowance |
+| OEM startup, load bank and witnessed acceptance | 1 service | 250,000,000 | 250,000,000 | 250,000,000 | Unquoted allowance; avoid duplicate start-up charge if included in UPS quote |
+| Freight, lifting/handling and delivery | 1 service | 200,000,000 | 200,000,000 | 200,000,000 | Unquoted allowance; no tax or import duty included |
+| **Subtotal** | | | **10,020,000,000** | **9,540,000,000** | Calculated from the itemized allowances above |
+| **Contingency, 20% of subtotal** | | | **2,004,000,000** | **1,908,000,000** | Calculated from the itemized allowances above |
+| **Planning installed total, before tax/duty** | | | **12,024,000,000** | **11,448,000,000** | Calculated from the itemized allowances above |
 
 Stationary total is approximately USD 44,533 at the stated scenario rate; automotive comparison is USD 42,400. Currency conversion is only a reporting convention. Add `applicable tax rate × taxable quoted scope` and quoted import charges separately. **1 IRT = 10 IRR**; divide rial quotations by ten before combining them with this table.
 
@@ -373,10 +373,18 @@ Maintain a register of block models/dates, torque/baseline readings, string curr
 
 The actionable tender is: **50 kW critical load; 15-minute end-of-life target; 16.5-minute selection time; 80 kVA / 80 kW three-phase VFI UPS; external approved high-rate batteries; coordinated AC/DC boards; maintenance bypass; monitored and ventilated battery space; witnessed runtime and fault-protection verification.** Reserve the 160-block footprint and the stated budget until curve-qualified bids establish the final quantities. Construction release follows the site-specific signed design and supplier compatibility documentation.
 
-To reproduce the calculations and check estimate consistency, run:
+### Calculation and estimate verification
 
-```sh
-python3 docs/ups-calculations.py --check
-```
+The battery sizing formulas in section 5 and the cost table in section 10 contain the inputs needed to reproduce the estimates without a separate spreadsheet or script. Arithmetic was checked when this proposal was consolidated:
 
-The script verifies the CSV arithmetic and proposal totals. It does not validate site safety, standards compliance or physical battery performance.
+| Check | Calculation / result |
+| --- | --- |
+| Baseline battery quantity | 40 blocks/string × 4 strings = 160 blocks |
+| Nominal bank capacity and energy | 4 × 50 Ah = 200 Ah; 160 × 12 V × 50 Ah / 1,000 = 96 kWh |
+| Runtime comparison | Recalculated all five rows from the section 5 screening formula; each exceeds its target plus the 10% time reserve |
+| Cost line items | Each line equals quantity × unit allowance; shared items enter each scenario once |
+| Stationary installed estimate | 10,020,000,000 + (20% × 10,020,000,000) = 12,024,000,000 IRT |
+| Automotive comparison estimate | 9,540,000,000 + (20% × 9,540,000,000) = 11,448,000,000 IRT |
+| Scenario conversion | IRT total / 270,000 = illustrative USD total; this is not a current exchange-rate quote |
+
+Arithmetic verification does not validate site safety, standards compliance or physical battery performance. Final acceptance still requires the engineering and commissioning evidence specified above.
