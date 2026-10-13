@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1030" viewBox="0 0 1100 1030" role="img" aria-labelledby="title desc">
+<title id="title">Four-rack airflow: dimensioned preliminary room plan and section</title>
+<desc id="desc">A 4.5 by 4 metre room has four assumed 600 by 1200 millimetre racks in a row. The cold aisle is 1.6 metres deep, the hot aisle 1.2 metres, and each row end has 1.05 metres access. Supply and return ducts are above the aisles. Two filter stages and fans occupy separate external mechanical space.</desc>
+<defs>
+<marker id="blueArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#136baa"/></marker>
+<marker id="redArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#bd3927"/></marker>
+<style>text{font-family:Arial,sans-serif;fill:#182e43;font-size:16px}.small{font-size:13px}.label{font-weight:bold}.dim{stroke:#52657a;stroke-width:1.2;fill:none}.blue{stroke:#136baa;stroke-width:3;fill:none;marker-end:url(#blueArrow)}.red{stroke:#bd3927;stroke-width:3;fill:none;marker-end:url(#redArrow)}</style>
+</defs>
+<rect width="1100" height="1030" fill="#fff"/>
+<text x="35" y="35" font-size="24" class="label">Four 42U racks · preliminary 20 kW design</text>
+<text x="35" y="60">Parallel airflow · 7,200 m³/h supply · 7,500 m³/h hot return</text>
+<path class="dim" d="M90 80H630 M90 73V92 M630 73V92"/>
+<text x="330" y="78" class="label">4.50 m</text>
+<rect x="90" y="100" width="540" height="480" fill="#f5f8fb" stroke="#182e43" stroke-width="3"/>
+<rect x="90" y="100" width="540" height="192" fill="#e8f4fc"/>
+<rect x="216" y="436" width="288" height="144" fill="#fff0e9"/>
+<text x="225" y="128" class="small">Front wall · y = 0 · rack fronts face this side</text>
+<text x="220" y="158" class="label">Cold aisle · 1.60 m deep</text>
+<rect x="90" y="184" width="540" height="60" fill="#a9d5f3" stroke="#136baa" stroke-width="2"/>
+<text x="180" y="210" class="label">Overhead supply · 800 × 500 mm</text>
+<text x="192" y="231" class="small">Four balanced branches: 400 × 300 mm</text>
+<rect x="90" y="472" width="540" height="60" fill="#ffc8ba" stroke="#bd3927" stroke-width="2"/>
+<text x="178" y="495" class="label">Overhead return · 850 × 500 mm</text>
+<text x="192" y="516" class="small">Four pickup branches: 450 × 300 mm</text>
+<path d="M216 436V579 M504 436V579 M216 436H504" stroke="#bd3927" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+<text x="229" y="563" class="small">Contained hot aisle · 1.20 m deep</text>
+<path class="dim" d="M58 100V580 M50 100H70 M50 292H70 M50 436H70 M50 580H70"/>
+<text x="28" y="252" transform="rotate(-90 28 252)">1.60 m</text>
+<text x="28" y="401" transform="rotate(-90 28 401)">1.20 m rack</text>
+<text x="28" y="555" transform="rotate(-90 28 555)">1.20 m</text>
+<path class="dim" d="M653 100V580 M646 100H662 M646 580H662"/>
+<text x="678" y="368" transform="rotate(-90 678 368)">4.00 m</text>
+<rect x="216" y="292" width="72" height="144" fill="#e0e7ef" stroke="#182e43" stroke-width="2"/>
+<text x="236" y="348" class="label">R1</text>
+<text x="230" y="370" class="small">42U</text>
+<path class="blue" d="M252 248V286"/>
+<path class="red" d="M252 401V465"/>
+<rect x="288" y="292" width="72" height="144" fill="#e0e7ef" stroke="#182e43" stroke-width="2"/>
+<text x="308" y="348" class="label">R2</text>
+<text x="302" y="370" class="small">42U</text>
+<path class="blue" d="M324 248V286"/>
+<path class="red" d="M324 401V465"/>
+<rect x="360" y="292" width="72" height="144" fill="#e0e7ef" stroke="#182e43" stroke-width="2"/>
+<text x="380" y="348" class="label">R3</text>
+<text x="374" y="370" class="small">42U</text>
+<path class="blue" d="M396 248V286"/>
+<path class="red" d="M396 401V465"/>
+<rect x="432" y="292" width="72" height="144" fill="#e0e7ef" stroke="#182e43" stroke-width="2"/>
+<text x="452" y="348" class="label">R4</text>
+<text x="446" y="370" class="small">42U</text>
+<path class="blue" d="M468 248V286"/>
+<path class="red" d="M468 401V465"/>
+<text x="103" y="345" class="label">1.05 m</text><text x="103" y="369" class="small">End access</text>
+<text x="514" y="345" class="label">1.05 m</text><text x="514" y="369" class="small">End access</text>
+<path class="dim" d="M216 601H504 M216 592V610 M504 592V610"/>
+<text x="251" y="623">4 × 0.60 m = 2.40 m row</text>
+<text x="715" y="120" class="label">Design assumptions</text>
+<text x="715" y="149">Cabinet: 600 W × 1,200 D mm</text>
+<text x="715" y="176">Height: approximately 2,000 mm</text>
+<text x="715" y="203">Room clear height: 3,200 mm</text>
+<text x="715" y="248" class="label">Outside the room</text>
+<rect x="715" y="264" width="344" height="203" rx="8" fill="#f5f8fb" stroke="#52657a"/>
+<text x="732" y="294">Existing conditioned-air source</text>
+<text x="732" y="324">→ coarse raw-media stage</text>
+<text x="732" y="354">→ pleated fine-media stage</text>
+<text x="732" y="384">→ supply fan → front aisle</text>
+<text x="732" y="414">Rear aisle → return fan</text>
+<text x="732" y="444">→ cooling unit return</text>
+<text x="715" y="494" class="small">Filter bank: 2 × 2 cassettes per stage.</text>
+<text x="715" y="519" class="small">Allow separate service/mechanical space.</text>
+<text x="715" y="544" class="small">Main ducts: 6 m each including external lead.</text>
+<text x="715" y="569" class="small">Branches: 1 m each; eight total.</text>
+<text x="715" y="602" class="small">Confirm actual doors, rack sizes and ceiling.</text>
+<text x="35" y="671" font-size="21" class="label">Section across room depth · schematic</text>
+<path d="M90 706H630V945H90Z" fill="#f5f8fb" stroke="#182e43" stroke-width="2"/>
+<rect x="306" y="795" width="162" height="150" fill="#e0e7ef" stroke="#182e43" stroke-width="2"/>
+<text x="362" y="859" class="label">Rack</text>
+<text x="344" y="882" class="small">~2.00 m high</text>
+<rect x="185" y="721" width="68" height="38" fill="#a9d5f3" stroke="#136baa" stroke-width="2"/>
+<rect x="508" y="721" width="68" height="38" fill="#ffc8ba" stroke="#bd3927" stroke-width="2"/>
+<path class="blue" d="M219 765V879H300"/>
+<path class="red" d="M474 879H542V765"/>
+<path d="M468 795H630" stroke="#bd3927" stroke-dasharray="6 4" stroke-width="2"/>
+<text x="127" y="921" class="small">Cold front aisle</text>
+<text x="491" y="921" class="small">Hot rear aisle</text>
+<text x="715" y="738">Trunk bottom: z ≈ 2.50 m</text>
+<text x="715" y="769">Trunk top: z ≈ 3.00 m</text>
+<text x="715" y="800">25 mm external supply insulation</text>
+<text x="715" y="831">Verify hanger / sprinkler clearance</text>
+<text x="715" y="882" class="small">Section is schematic, not to scale.</text>
+<text x="715" y="907" class="small">Plan shows cabinet bodies to scale.</text>
+<text x="35" y="991" class="small">Estimating layout only. Final routing, pressure losses, supports, door swings and fire provisions require site review.</text>
+</svg>
