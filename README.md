@@ -1,5 +1,7 @@
 # Hormuz Data Center Specification
 
+The [fire and smoke detection proposal](docs/fire-monitoring-proposal.md) specifies 1–3 combined smoke/heat detectors, placement for the rack room and contained hot aisle, a battery-backed fire panel, audible sounder/beacons and automatic cellular warning calls. It includes procurement and installation steps, commissioning checks and itemized costs in Iranian tomans, with an [editable estimate](docs/fire-monitoring-estimate.csv).
+
 The [data center CCTV and facial entrance access proposal](docs/security-proposal.md) specifies four IP cameras, local 30-day recording and one facial recognition entrance terminal with secure door control and emergency release. It includes coverage assumptions, installation and acceptance checks, an itemized price table and an installed planning total in Iranian tomans. Its [editable estimate](docs/security-estimate.csv) separates supplier price references from planning allowances.
 
 The [antistatic mosaic-floor finishing proposal](docs/antistatic-floor-proposal.md) specifies a bonded ESD epoxy system for the 18 m² rack room, with copper collectors, two grounding points, material quantities, an itemized budget in Iranian tomans, installation steps and commissioning tests. It explains the limits of loose graphite additives and includes an [editable material and installed-cost estimate](docs/antistatic-floor-estimate.csv).

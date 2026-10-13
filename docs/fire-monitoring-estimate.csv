@@ -1,0 +1,26 @@
+ID,Item,Quantity,Unit,Unit_IRT,Line_IRT,Basis,Source_URL
+F01,ZI-HSD 1015 smoke/heat detector,3,each,1199000,3597000,Asafire list,https://asafire.ir/zitex-price-list
+F02,Compatible detector base allowance,3,each,150000,450000,Allowance; remove if included with F01,
+F03,ZX-1800-12 conventional fire panel with charger,1,each,20900000,20900000,Asafire list; seek smaller compatible panel quote,https://asafire.ir/zitex-price-list
+F04,ZI-SS 81 sounder/beacon,2,each,1099000,2198000,Asafire list; confirm 24 V compatibility,https://asafire.ir/zitex-price-list
+F05,ZI-CP 95 manual call point and test key,1,each,1059000,1059000,Asafire list,https://asafire.ir/zitex-price-list
+F06,"Panel battery, matched 12 V 7.2 Ah VRLA",2,each,1800000,3600000,Allowance; verify required capacity,
+F07,N1 cellular recorded-voice dialer candidate,1,each,6499000,6499000,[Seller price](https://negahbansystem.ir/fa/Home-alarm/1696-gsm-dialer-n1-fire-alarm.html); acceptance conditional on manual/test,https://negahbansystem.ir/fa/Home-alarm/1696-gsm-dialer-n1-fire-alarm.html
+F08,"Dialer 12 V PSU/charger, fuse, enclosure and antenna",1,set,2500000,2500000,Allowance; sized for transmit peaks,
+F09,Dialer 12 V 7.2 Ah VRLA battery,1,each,1200000,1200000,Allowance; verify capacity and quoted price,
+F10,Isolated fire-relay trigger interface and protected lead,1,set,1500000,1500000,Allowance; exact circuit follows manuals,
+F11,"Fire-alarm cable, 2 × 1.5 mm²",60,m,60000,3600000,Allowance; route/specification survey required,
+F12,"Metal supports, conduit, boxes, labels, glands, firestopping and EOL parts",1,lot,2000000,2000000,Allowance; EOL specification follows panel manual,
+F13,"Protected mains feed, isolator and termination",1,set,1500000,1500000,Allowance; electrician,
+F14,SIM activation and initial voice/SMS credit,1,each,800000,800000,Allowance; select operator after coverage test,
+F15,Domestic delivery,1,each,1000000,1000000,Allowance,
+F16,Specialist installation,1,service,6000000,6000000,Allowance,
+F17,"Commissioning, test-equipment use and operator training",1,service,2500000,2500000,Allowance; includes installer aerosol/heat and sound-level tests,
+SUBTOTAL,Installed subtotal,1,sum,60903000,60903000,Calculated,
+CONTINGENCY,20 percent of installed subtotal,1,sum,12180600,12180600,Calculated,
+TOTAL,Three-detector installed total before tax,1,sum,73083600,73083600,Calculated,
+SCENARIO_1,1-detector installed total including 20 percent contingency before tax,1,sum,69846000,69846000,Only detector and base quantity changed; all other allowances unchanged,
+SCENARIO_2,2-detector installed total including 20 percent contingency before tax,1,sum,71464800,71464800,Only detector and base quantity changed; all other allowances unchanged,
+R01,Recurring SIM service,12,month,200000,2400000,Planning allowance; excluded from installation subtotal,
+R02,Recurring inspection and testing,1,year,3000000,3000000,Planning allowance; excluded from installation subtotal,
+FIRST_YEAR,Three-detector installation plus one year recurring allowances before tax,1,sum,78483600,78483600,Calculated; future battery replacement excluded,
