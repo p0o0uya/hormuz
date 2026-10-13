@@ -4,7 +4,7 @@ Prepared for Hormuz Data Center on 13 October 2026. Currency: **Iranian tomans (
 
 ## Recommendation and design basis
 
-Install **four wired IP cameras and one facial recognition terminal controlling one entrance door**, with local video recording and local authorized-person access. Budget **311,491,200 IRT (311.4912 million tomans)** installed, including 20% contingency, before applicable tax. The itemized estimate is also available in [security-estimate.csv](security-estimate.csv).
+Install **four wired IP cameras and one facial recognition terminal controlling one entrance door**, with local video recording and local authorized-person access. Budget **311,491,200 IRT (311.4912 million tomans)** installed, including 20% contingency, before applicable tax. The complete itemized estimate and cost summation are included in the tables below.
 
 This preliminary proposal assumes the existing **four-rack, 4.5 m × 4 m room**, one entrance, an indoor approach corridor, an existing firewall/VPN, fire alarm and UPS-backed supply. The survey must confirm door material/rating, rack arrangement, camera sight lines, lighting, cable routes and spare UPS capacity. Four cameras are a starting quantity; racks may create blind spots that require repositioning or additional cameras. The facial terminal is separate from the four CCTV cameras. No second facial reader is required for exit.
 
