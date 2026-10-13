@@ -1,0 +1,18 @@
+scenario,item,quantity,unit,unit_irt,line_irt,price_basis
+common,80 kVA / 80 kW online UPS without batteries,1,unit,4320000000,4320000000,Unquoted USD 16000 scenario allowance
+stationary,12 V 50 Ah UPS high-rate VRLA battery,160,block,10000000,1600000000,Unquoted allowance; exact high-rate model and curves required
+automotive,12 V 50 Ah starter battery comparison only,160,block,7000000,1120000000,Unquoted no-exchange allowance; retail exchange price 5388000 IRT at Kian Power
+common,AC UPS board including input bypass output isolation and maintenance bypass,1,assembly,800000000,800000000,Unquoted verified assembly allowance; excludes UPS internal static bypass
+common,Backfeed protection interface,1,set,180000000,180000000,Unquoted allowance; confirm included equipment before ordering
+common,Battery support racks and covered trays,4,rack,60000000,240000000,Unquoted allowance; one rack per string; engineer structural capacity
+common,DC string protection combiner main disconnect trip interfaces,1,assembly,400000000,400000000,Unquoted DC-rated assembly allowance
+common,DC links cables lugs covers and bonding,1,lot,250000000,250000000,Unquoted allowance; provisional 156 links plus 4 midpoint taps and external cable routes
+common,AC feeders neutral PE lugs and cable tray,1,lot,400000000,400000000,Unquoted allowance; 3 routes of 15m plus rack routes; final lengths required
+common,Four rack distribution panels and eight PDU feed circuits,4,rack set,80000000,320000000,Unquoted allowance; verify existing PDUs and required upgrades
+common,Battery block/string monitoring and UPS network interface,1,set,160000000,160000000,Unquoted allowance
+common,Battery-room exhaust make-up air and gas alarm,1,set,180000000,180000000,Unquoted allowance; ventilation design not yet surveyed
+common,Spill provisions electrical labels insulated tools PPE and safety equipment,1,lot,120000000,120000000,Unquoted allowance
+common,Site survey engineering protection study drawings,1,service,250000000,250000000,Unquoted local specialist allowance
+common,Electrical mechanical installation and panel routine verification,1,service,350000000,350000000,Unquoted contractor allowance
+common,OEM start-up load bank hire and witnessed acceptance,1,service,250000000,250000000,Unquoted allowance; avoid duplicate start-up charge if included in UPS quote
+common,Freight handling and battery delivery,1,service,200000000,200000000,Unquoted allowance; no tax or import duty included

@@ -1,0 +1,6 @@
+target_minutes,design_minutes,strings,blocks_per_string,total_batteries,nominal_kwh,eod_current_per_string_a,screening_runtime_minutes
+5,5.5,2,40,80,48.0,63.32,7.6
+10,11.0,3,40,120,72.0,42.22,12.62
+15,16.5,4,40,160,96.0,31.66,18.08
+30,33.0,7,40,280,168.0,18.09,36.39
+60,66.0,12,40,480,288.0,10.55,71.39

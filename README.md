@@ -1,5 +1,7 @@
 # Hormuz Data Center Specification
 
+The [50 kW battery UPS engineering proposal](docs/ups-proposal.md) includes a 15-minute design basis, automotive battery suitability review, battery sizing for five backup durations, three-phase online UPS selection, AC/DC board architecture, protection and cable calculations, commissioning methodology, and itemized planning budgets in Iranian tomans. Its [editable installed-cost estimate](docs/ups-estimate.csv), [battery sizing table](docs/ups-battery-sizing.csv), and [reproducible calculation and verification script](docs/ups-calculations.py) accompany the preliminary proposal. Final equipment selection requires a site survey and manufacturer battery discharge data.
+
 The [50 kW datacenter electrical earthing proposal](docs/earthing-proposal.md) compares driven rods, a shallow ring with rods, and a copper-plate pit. It includes Persian price sources, itemized material and labor budgets in Iranian tomans, implementation procedures, and schedules for one owner with the required specialists. Its [editable financial estimate](docs/earthing-estimate.csv) is available as CSV.
 
 The [four-rack temperature and humidity monitoring proposal](docs/rack-monitoring-proposal.md) includes the architecture, implementation procedure, one-person schedule, sourced hardware prices and an estimate in Iranian tomans. Its [itemized materials estimate](docs/rack-monitoring-estimate.csv) is available as CSV.
