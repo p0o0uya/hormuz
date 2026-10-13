@@ -225,6 +225,8 @@ The earlier Ethernet budget remains the baseline. Switching four Uno nodes to US
 | Price question | Finding |
 | --- | --- |
 | Exact model | ELFI / Fidar Electronics EtherSense **FTA3070-21** |
+| Company origin | **Iran**; company name published as بهینه فرآیند الکترونیک فیدار (Fidar Electronics) |
+| Headquarters and factory | **Urmia, West Azerbaijan, Iran**; West Azerbaijan Science and Technology Park, kilometre 11 of the Urmia–Sero road, according to the [manufacturer website](https://fidarelectronics.com/) |
 | Published Iranian price | Not found; supplier quotation required |
 | Published USD price | Not found; no actual dollar price available to convert |
 | Confirmed unit cost in IRT | **Unknown**, not zero and not a planning allowance |
