@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="890" viewBox="0 0 1120 890" role="img" aria-labelledby="title desc">
+<title id="title">Hormuz preliminary water-mist suppression layout</title>
+<desc id="desc">Four rack bodies in a 4.5 by 4 metre room with four candidate ceiling heads and two candidate heads beneath the hot aisle roof. A tank, pump and pre-action valve outside the room feed the heads. Locations, quantities and tank capacity are budget assumptions requiring manufacturer engineering.</desc>
+<defs>
+ <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#b43c35"/></marker>
+ <g id="head"><circle r="13" fill="white" stroke="#b43c35" stroke-width="3"/><path d="M-7 0 H7 M0 -7 V7" stroke="#b43c35" stroke-width="2"/></g>
+ <g id="aisleHead"><rect x="-13" y="-13" width="26" height="26" rx="3" fill="#fff4d4" stroke="#b43c35" stroke-width="3"/><path d="M-7 0 H7 M0 -7 V7" stroke="#b43c35" stroke-width="2"/></g>
+</defs>
+<rect width="1120" height="890" fill="#f5f7fa"/>
+<g font-family="Arial, sans-serif" fill="#203047">
+ <text x="40" y="45" font-size="26" font-weight="bold">Hormuz · Tank-fed water-mist concept</text>
+ <text x="40" y="76" font-size="16">18 m² rack room · 13 October 2026 · Concept for specialist quotation</text>
+ <rect x="40" y="95" width="1040" height="44" rx="6" fill="#fff0df"/>
+ <text x="56" y="123" font-size="17" font-weight="bold">NOT FOR INSTALLATION — Head positions, pipe sizes and tank/pump duty require OEM design.</text>
+ <text x="65" y="178" font-size="19" font-weight="bold">Room plan (north at top)</text>
+ <text x="702" y="178" font-size="19" font-weight="bold">Supply and control schematic</text>
+ <!-- Room scale 120 px/m; origin 100,690; north edge y210 -->
+ <rect x="100" y="210" width="540" height="480" fill="white" stroke="#203047" stroke-width="3"/>
+ <rect x="226" y="210" width="288" height="144" fill="#ffe7dc" stroke="#ba7d64" stroke-dasharray="6 4"/>
+ <text x="235" y="240" font-size="14" font-weight="bold">Contained hot aisle</text>
+ <text x="235" y="260" font-size="13">Heads beneath roof · y=2.8–4.0 m</text>
+ <text x="237" y="614" font-size="17" font-weight="bold">Cold / front aisle</text>
+ <text x="237" y="636" font-size="14">y=0–1.6 m · keep egress clear</text>
+ <!-- Room ceiling pipe topology outside rack body, exact routing unapproved -->
+ <path d="M148 642 V224 H592 V642 H148 M148 288 H442 M172 288 V224 M568 288 V224 M298 282 V224 M442 282 V224 M172 612 V642 M568 612 V642" fill="none" stroke="#b43c35" stroke-width="3" stroke-dasharray="8 5"/>
+ <g fill="#e1e8f1" stroke="#56677e" stroke-width="2">
+  <rect x="226" y="354" width="72" height="144"/><rect x="298" y="354" width="72" height="144"/>
+  <rect x="370" y="354" width="72" height="144"/><rect x="442" y="354" width="72" height="144"/>
+ </g>
+ <g text-anchor="middle" font-size="17" font-weight="bold">
+  <text x="262" y="430">R1</text><text x="334" y="430">R2</text><text x="406" y="430">R3</text><text x="478" y="430">R4</text>
+ </g>
+ <path d="M226 498 H514" stroke="#246b8e" stroke-width="5"/>
+ <text x="370" y="522" text-anchor="middle" font-size="13">Rack fronts face south</text>
+ <use href="#head" x="172" y="612"/><text x="192" y="602" font-size="14">H1</text>
+ <use href="#head" x="568" y="612"/><text x="588" y="602" font-size="14">H2</text>
+ <use href="#head" x="172" y="288"/><text x="116" y="282" font-size="14">H3</text>
+ <use href="#head" x="568" y="288"/><text x="588" y="282" font-size="14">H4</text>
+ <use href="#aisleHead" x="298" y="282"/><text x="285" y="319" font-size="14">H5</text>
+ <use href="#aisleHead" x="442" y="282"/><text x="429" y="319" font-size="14">H6</text>
+ <text x="370" y="339" text-anchor="middle" font-size="12" fill="#8a382d">Return duct conflict: coordinate final locations</text>
+ <path d="M100 194 H640 M100 186 V202 M640 186 V202" stroke="#56677e"/>
+ <text x="370" y="190" text-anchor="middle" font-size="14">4.50 m</text>
+ <path d="M80 210 V690 M72 210 H88 M72 690 H88" stroke="#56677e"/>
+ <text x="65" y="450" transform="rotate(-90 65 450)" text-anchor="middle" font-size="14">4.00 m</text>
+ <text x="100" y="715" font-size="13">SW origin (0,0) · x east, y north · height assumed 3.2 m</text>
+ <!-- Schematic outside protected room -->
+ <g stroke="#56677e" stroke-width="2">
+  <rect x="738" y="210" width="300" height="75" rx="8" fill="#dfeef5"/>
+  <rect x="738" y="320" width="300" height="65" rx="8" fill="white"/>
+  <rect x="738" y="420" width="300" height="65" rx="8" fill="white"/>
+  <rect x="738" y="520" width="300" height="65" rx="8" fill="#fff0df"/>
+ </g>
+ <g font-size="16" text-anchor="middle">
+  <text x="888" y="237" font-weight="bold">Atmospheric water tank</text>
+  <text x="888" y="260">3000 L nominal budget assumption</text>
+  <text x="888" y="348" font-weight="bold">Matched fire pump + controller</text>
+  <text x="888" y="369" font-size="14">Duty and backup power by engineer</text>
+  <text x="888" y="448" font-weight="bold">Pre-action valve + supervision</text>
+  <text x="888" y="469" font-size="14">Single-interlock budget basis</text>
+  <text x="888" y="548" font-weight="bold">OEM pipework → closed heads</text>
+  <text x="888" y="570" font-size="14">Six candidate heads in plan</text>
+ </g>
+ <path d="M888 285 V315 M888 385 V415 M888 485 V515" stroke="#b43c35" stroke-width="3" marker-end="url(#arrow)"/>
+ <rect x="722" y="616" width="332" height="113" rx="8" fill="#e8edf4"/>
+ <text x="737" y="642" font-size="16" font-weight="bold">Compatible supervised release controls</text>
+ <text x="737" y="665" font-size="14">Detection → alarm + valve release</text>
+ <text x="737" y="687" font-size="14">Heat opens individual closed heads</text>
+ <text x="737" y="709" font-size="14">Controls backed up; pump power separate</text>
+ <path d="M1054 640 H1065 V452 H1040" fill="none" stroke="#56677e" stroke-width="2" stroke-dasharray="4 4"/>
+ <!-- Legend and limitations -->
+ <use href="#head" x="64" y="765"/><text x="88" y="771" font-size="14">Ceiling candidate</text>
+ <use href="#aisleHead" x="265" y="765"/><text x="289" y="771" font-size="14">Beneath containment roof</text>
+ <path d="M510 765 H570" stroke="#b43c35" stroke-width="3" stroke-dasharray="8 5"/><text x="582" y="771" font-size="14">Pipe topology only</text>
+ <text x="40" y="811" font-size="15">Budget: 35 m pipework. No bore, pressure, temperature rating or coverage radius is specified.</text>
+ <text x="40" y="838" font-size="15">Tank/pump in external service space; confirm slab, access, drainage, power and required usable water volume.</text>
+ <text x="40" y="865" font-size="14">See fire-suppression-proposal.md and fire-suppression-estimate.csv for assumptions, costs and acceptance requirements.</text>
+</g>
+</svg>

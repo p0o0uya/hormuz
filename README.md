@@ -1,5 +1,7 @@
 # Hormuz Data Center Specification
 
+The [tank-fed fire suppression proposal](docs/fire-suppression-proposal.md) provides a preliminary water-mist pre-action design for the 18 m² four-rack room, including contained-aisle coverage, tank/pump sizing assumptions, release controls and acceptance checks. Its itemized cost table in Iranian tomans has low/base/high planning allowances, with an [editable estimate](docs/fire-suppression-estimate.csv) and [concept layout](docs/fire-suppression-layout.svg). Final construction design requires a qualified fire protection engineer and the selected manufacturer’s approved calculations.
+
 The [fire and smoke detection proposal](docs/fire-monitoring-proposal.md) specifies 1–3 combined smoke/heat detectors, placement for the rack room and contained hot aisle, a battery-backed fire panel, audible sounder/beacons and automatic cellular warning calls. It includes procurement and installation steps, commissioning checks and itemized costs in Iranian tomans, with an [editable estimate](docs/fire-monitoring-estimate.csv).
 
 The [data center CCTV and facial entrance access proposal](docs/security-proposal.md) specifies four IP cameras, local 30-day recording and one facial recognition entrance terminal with secure door control and emergency release. It includes coverage assumptions, installation and acceptance checks, an itemized price table and an installed planning total in Iranian tomans. Its [editable estimate](docs/security-estimate.csv) separates supplier price references from planning allowances.
