@@ -226,6 +226,27 @@ Floor qualification needs a calibrated high-resistance meter with the specified 
 
 For the ANSI floor resistance procedure, the cited [EOS/ESD test-voltage explanation](https://forum.esda.org/t/tr53-test-voltage-for-surface-rtg-measurements/1018) describes 10 V below 10⁶ Ω and 100 V at/above 10⁶ Ω. Follow the chosen current method for switching, dwell time and electrode geometry. A generic insulation tester fixed at 250/500/1,000 V is not a substitute; a suitable instrument must support the required ESD settings and range. Never improvise a person test with a high-voltage insulation tester. Borrow/hire the ESD instruments or commission a measurement service, as already budgeted.
 
+### What is an ESD resistance meter, and why is it different from a multimeter?
+
+An **ESD resistance meter is a high-resistance measuring instrument designed for static-control materials**. It applies a specified voltage, measures the very small resulting current, and calculates resistance. It uses the same electrical principle as an ordinary ohmmeter; there is no separate kind of “ESD resistance.” The difference is its measurement capability and the standardized test arrangement.
+
+A typical floor-testing setup uses one weighted conductive electrode on the floor and a lead to the verified grounding point for floor-to-ground resistance. For point-to-point resistance, use two specified electrodes on the surface. Electrode dimensions, contact material, force, separation, test voltage and measurement time follow the selected test method. Do not confuse resistance in ohms with a sheet-resistivity indication in ohms per square.
+
+**A normal multimeter can measure resistance, including some graphite/epoxy readings.** My earlier statement concerns proving compliance, not an inability to measure any resistance. Four differences matter:
+
+| Difference | Why it matters for this floor |
+| --- | --- |
+| Resistance range | ESD qualification can involve hundreds of megohms, up to a 1 GΩ limit. A meter whose maximum is 40 MΩ cannot distinguish an acceptable 100 MΩ path from an unacceptable 2 GΩ path: both may display OL. Actual ranges vary by model. |
+| Applied voltage | Ordinary resistance modes use a low test voltage/current determined by the meter. The floor method specifies 10/100 V conditions. Filled polymers and their contacts need not behave like an ideal fixed resistor; results at different voltages may differ. |
+| Contact and geometry | Sharp probes sample tiny, pressure-dependent spots. Specified weighted electrodes provide controlled contact. Finding one exposed graphite particle does not characterize the floor surface. |
+| Test procedure | Calibration, timing, conditioning, humidity, locations and records are part of the measurement. A meter alone does not supply these, or the separate walking-voltage test. |
+
+For a concrete range example, [Fluke lists 40 MΩ for its 117 multimeter](https://www.fluke.com/en-us/product/electrical-testing/digital-multimeters/fluke-117). This is an example, not a claim about every multimeter. [EOS/ESD instrument guidance](https://www.esda.org/esd-overview/esd-fundamentals/part-4-training-and-auditing/) describes a high-resistance meter with 10/100 V capability, suitable electrodes and a broad measuring range.
+
+**Example using Ohm's law:** at 100 MΩ, 100 V produces 1 μA; 1 V produces only 10 nA. At 1 GΩ, 100 V produces 100 nA. Measuring such small currents reliably requires suitable input circuitry, leads and control of leakage. These arithmetic examples explain instrument demands; they are not instructions to build a mains-powered test circuit.
+
+An ordinary meter is useful for copper continuity and rough comparative screening when the reading is inside its specified range. Record its model, range and probe arrangement, but label the result “screening,” not an ESD pass. A specialist laboratory instrument could also perform the resistance measurement if it meets the chosen method; the instrument's label is less important than its verified specifications. For affordable qualification, borrow or hire an appropriate meter and electrodes, then arrange the separate person/footwear walking-voltage test already included in the plan.
+
 ### What are ESD footwear and affordable alternatives?
 
 **ESD footwear provides a controlled path from the wearer, through the shoe sole, to the ESD floor.** Ordinary insulating rubber soles may leave a person electrically isolated even on a good floor. ESD shoes are designed and tested for charge control; a generic “antistatic” description alone does not qualify a shoe/floor combination. ESD footwear is not electrical-insulating footwear for live electrical work.
