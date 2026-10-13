@@ -14,7 +14,7 @@ This scope provides warning, not extinguishing or guaranteed very-early detectio
 
 ## Choose the detector count and locations
 
-Use the room coordinates from the [airflow proposal](../assets/park/airflow-proposal.md): southwest corner `(0,0)`, x along the 4.5 m side and y along the 4 m side. Racks occupy y=1.60–2.80 m; the planned contained hot aisle occupies y=2.80–4.00 m. The ceiling height and actual containment remain unconfirmed.
+Use the room coordinates from the [airflow proposal](airflow-proposal.md): southwest corner `(0,0)`, x along the 4.5 m side and y along the 4 m side. Racks occupy y=1.60–2.80 m; the planned contained hot aisle occupies y=2.80–4.00 m. The ceiling height and actual containment remain unconfirmed.
 
 | Quantity | Proposed placement | Conditions and limits |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ Record a Persian warning giving the site name, full address and response instruc
 
 The baseline is **self-monitoring**, not a staffed alarm-receiving-center contract. Call acceptance is not proof someone will respond; nominate an operator and backup with an agreed escalation procedure. Local panel faults require daily inspection; this budget does not promise remote fault reporting. If that is needed, specify a panel/communicator with documented separate fire, fault and communication-failure reporting.
 
-The existing [rack monitoring VM](../assets/park/rack-monitoring-proposal.md) may later receive separate fire/fault relay status through an isolated network I/O module. That optional dashboard interface is excluded here, and must neither carry nor delay the primary siren/call path. Coordinate hardwired door unlocking with the [security proposal](security-proposal.md); its separately budgeted release interface must operate while UPS power remains available. Do not add automatic server shutdown or cooling shutdown without an engineered cause-and-effect design.
+The existing [rack monitoring VM](rack-monitoring-proposal.md) may later receive separate fire/fault relay status through an isolated network I/O module. That optional dashboard interface is excluded here, and must neither carry nor delay the primary siren/call path. Coordinate hardwired door unlocking with the [security proposal](security-proposal.md); its separately budgeted release interface must operate while UPS power remains available. Do not add automatic server shutdown or cooling shutdown without an engineered cause-and-effect design.
 
 ## Buying and installation sequence
 
@@ -106,7 +106,7 @@ Local list prices below are from the [Asafire June 1405 ZITEX list](https://asaf
 | | **Contingency, 20%** | | | **12,180,600** | 0.20 × subtotal |
 | | **TOTAL: three detectors, installed before tax** | | | **73,083,600 IRT** | Subtotal + contingency |
 
-The [editable estimate](fire-monitoring-estimate.csv) contains the same rows and quantity scenarios. Holding the panel, sounders, cable and labor allowances constant, changing only detector/base quantity gives:
+All itemized costs and quantity scenarios are included in this document. Holding the panel, sounders, cable and labor allowances constant, changing only detector/base quantity gives:
 
 | Installed detector count | Subtotal IRT | 20% contingency IRT | Total before tax IRT |
 | --- | ---: | ---: | ---: |
@@ -114,6 +114,20 @@ The [editable estimate](fire-monitoring-estimate.csv) contains the same rows and
 | **2, recommended rack-room starting scope** | **59,554,000** | **11,910,800** | **71,464,800** |
 | 3, adds surveyed adjacent-room detection | 60,903,000 | 12,180,600 | **73,083,600** |
 
-Budget an additional **200,000 IRT/month for SIM service (2,400,000 IRT/year)** and **3,000,000 IRT/year for inspection/testing**, both allowances, not published tariffs. With those recurring allowances, the three-detector **first-year total is 78,483,600 IRT before tax**. Replace with actual operator and maintenance quotations; battery replacement is a separate future cost.
+Recurring costs are planning allowances, not published tariffs. Replace them with actual operator and maintenance quotations; battery replacement is a separate future cost.
+
+| Recurring item | Quantity per year | Unit IRT | Annual IRT | Basis |
+| --- | ---: | ---: | ---: | --- |
+| SIM voice/SMS service | 12 months | 200,000 | 2,400,000 | Planning allowance; separate from initial SIM activation/credit |
+| Inspection and functional testing | 1 service | 3,000,000 | 3,000,000 | Planning allowance |
+| **Annual recurring subtotal** | | | **5,400,000** | Sum of annual service allowances |
+
+| Three-detector first-year summation | IRT |
+| --- | ---: |
+| Installed subtotal | 60,903,000 |
+| Installation contingency, 20% | 12,180,600 |
+| **Installed total before tax** | **73,083,600** |
+| Annual recurring subtotal | 5,400,000 |
+| **First-year total before tax** | **78,483,600** |
 
 Excluded: tax, a staffed monitoring contract, new UPS/network infrastructure, optional VM integration, major containment/duct/civil changes, full building or large battery-room coverage, additional sounders/batteries after engineering checks, aspirating detection, suppression and new door-release hardware already budgeted in the security proposal. Reconcile shared interfaces between quotations. The **73,083,600 IRT** installation total pays for the specified parts and services; contingency does not fund excluded scope.
