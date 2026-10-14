@@ -6,7 +6,7 @@ Prepared **13 October 2026** for Hormuz Data Center, Ilam Province, Iran. Curren
 
 For the repository's **4.5 m × 4 m (18 m²), four-rack room**, obtain a quotation for a **manufacturer-approved high-pressure water-mist pre-action system**: atmospheric water tank, matched fire pump, pre-action valve, pressure-rated pipework and automatic closed mist heads. Budget for protection both at the room ceiling and inside the roofed hot aisle. Use a matched system with documented approval for the actual data-center application, ceiling height, airflow and containment geometry. Domestic spray nozzles, irrigation pumps and a tank alone do not constitute this system.
 
-The installed base allowance is **1,474,200,000 IRT including 30% contingency, before tax**. Low/base/high allowance scenarios are **891,150,000 / 1,474,200,000 / 2,605,200,000 IRT**. These are estimating scenarios, not verified Iranian market prices or binding quotes. All cost rows are unsourced allowances; manufacturer publications below support the concept, not prices. Obtain local written quotations before committing funds.
+The installed base allowance is **1,134,000,000 IRT before tax**. Low/base/high allowance scenarios are **685,500,000 / 1,134,000,000 / 2,004,000,000 IRT**. These are estimating scenarios, not verified Iranian market prices or binding quotes. All cost rows are unsourced allowances; manufacturer publications below support the concept, not prices. Obtain local written quotations before committing funds.
 
 Marioff describes data-center water mist using a pump/tank arrangement and approved pre-action options. Its pre-action explanation describes dry standby piping, detection admitting water, and heat-operated closed heads controlling discharge. These support the proposed architecture, without certifying this room's layout. [Manufacturer data-center overview](https://www.marioff.com/en/industries/land/data-centers/), [pre-action operation](https://www.marioff.com/en/technology/system-types/pre-action/).
 
@@ -119,9 +119,7 @@ All figures below are **unsourced planning allowances in IRT**, dated 13 October
 | S16 | Commissioning, acceptance, training and as-built documents | 1 lot | 20,000,000 | 20,000,000 |
 | S17 | Local transport and handling | 1 lot | 10,000,000 | 10,000,000 |
 | S18 | OEM-required spare heads, tools and initial service consumables | 1 lot | 10,000,000 | 10,000,000 |
-| SUBTOTAL | **Installed subtotal** | | | **685,500,000** |
-| CONTINGENCY | **30% contingency on installed subtotal** | | | **205,650,000** |
-| TOTAL | **Installed planning total before tax** | | | **891,150,000** |
+| TOTAL | **Installed planning total before tax** | | | **685,500,000** |
 
 ### Base allowance: itemized costs
 
@@ -145,9 +143,7 @@ All figures below are **unsourced planning allowances in IRT**, dated 13 October
 | S16 | Commissioning, acceptance, training and as-built documents | 1 lot | 35,000,000 | 35,000,000 |
 | S17 | Local transport and handling | 1 lot | 20,000,000 | 20,000,000 |
 | S18 | OEM-required spare heads, tools and initial service consumables | 1 lot | 18,000,000 | 18,000,000 |
-| SUBTOTAL | **Installed subtotal** | | | **1,134,000,000** |
-| CONTINGENCY | **30% contingency on installed subtotal** | | | **340,200,000** |
-| TOTAL | **Installed planning total before tax** | | | **1,474,200,000** |
+| TOTAL | **Installed planning total before tax** | | | **1,134,000,000** |
 
 ### High allowance: itemized costs
 
@@ -171,9 +167,7 @@ All figures below are **unsourced planning allowances in IRT**, dated 13 October
 | S16 | Commissioning, acceptance, training and as-built documents | 1 lot | 60,000,000 | 60,000,000 |
 | S17 | Local transport and handling | 1 lot | 40,000,000 | 40,000,000 |
 | S18 | OEM-required spare heads, tools and initial service consumables | 1 lot | 35,000,000 | 35,000,000 |
-| SUBTOTAL | **Installed subtotal** | | | **2,004,000,000** |
-| CONTINGENCY | **30% contingency on installed subtotal** | | | **601,200,000** |
-| TOTAL | **Installed planning total before tax** | | | **2,605,200,000** |
+| TOTAL | **Installed planning total before tax** | | | **2,004,000,000** |
 
 ### Item scope and pricing basis
 
@@ -200,17 +194,17 @@ All S01–S18 entries are unsourced planning allowances, not supplier quotations
 | S17 | Excludes exceptional import/customs costs |
 | S18 | Exact spare count and tools per OEM |
 
-The subtotal, contingency and total are calculated values. They exclude the existing warning-system budget and the exclusions listed below.
+Each installed total is the sum of its itemized costs, with no contingency added. Totals exclude the existing warning-system budget and the exclusions listed below.
 
 ### Scenario totals
 
-| Scenario | Installed subtotal IRT | 30% contingency IRT | Total before tax IRT |
-| --- | ---: | ---: | ---: |
-| Low allowance | 685,500,000 | 205,650,000 | 891,150,000 |
-| Base allowance | 1,134,000,000 | 340,200,000 | 1,474,200,000 |
-| High allowance | 2,004,000,000 | 601,200,000 | 2,605,200,000 |
+| Scenario | Installed total before tax IRT |
+| --- | ---: |
+| Low allowance | 685,500,000 |
+| Base allowance | 1,134,000,000 |
+| High allowance | 2,004,000,000 |
 
-The scenario totals change every line's allowance together; they are not confidence intervals. Contingency is a budget reserve, not tax or a guaranteed import premium. Supplier package pricing may combine S03–S04, S08, S11–S12 and controls: remove overlaps before summing an actual quotation. S10 covers incremental release detection; the separately budgeted smoke detectors, Ethernet I/O, siren and voice API setup in the fire-monitoring proposal are not included again here.
+The scenario totals change every line's allowance together; they are not confidence intervals. Supplier package pricing may combine S03–S04, S08, S11–S12 and controls: remove overlaps before summing an actual quotation. S10 covers incremental release detection; the separately budgeted smoke detectors, Ethernet I/O, siren and voice API setup in the fire-monitoring proposal are not included again here.
 
 **Excluded:** VAT/taxes, extraordinary shipping/customs/import charges, major structural work, tank room construction, new backup generator/UPS, redundant pumps, aspirating detection, additional protected rooms/voids, required upgrades to the building sprinkler supply and post-fire equipment replacement. Confirm applicable taxes on each quote rather than inventing a rate. Ring-fence an additional **30–70 million IRT per year as an unsourced service allowance**, outside the capital total, for scheduled specialist maintenance; replacement pumps, major repairs and consumables after discharge are extra.
 
