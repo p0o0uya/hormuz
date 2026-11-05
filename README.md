@@ -1,5 +1,7 @@
 # Hormuz Data Center Specification
 
+The [15-minute presentation draft](docs/presentation/README.md) includes a Persian PowerPoint with editable illustrations, speaker notes, a PDF preview and four appendix slides. The [Hormuz source brief](docs/hormuz-brief.md) preserves the draft's source facts, planning assumptions and unresolved design bases for future revisions.
+
 The [tank-fed fire suppression proposal](assets/park/fire-suppression-proposal.md) provides a preliminary water-mist pre-action design for the 18 m² four-rack room, including contained-aisle coverage, tank/pump sizing assumptions, release controls and acceptance checks. The room layout, supply schematic, itemized low/base/high costs in Iranian tomans, scope notes and calculations are all contained as tables in this single Markdown file. Final construction design requires a qualified fire protection engineer and the selected manufacturer’s approved calculations.
 
 The [DIY smoke detection proposal](assets/park/fire-monitoring-proposal.md) connects 1–3 relay-output detectors to an Ethernet I/O module and the existing monitoring VM. The shared datacenter UPS powers the detectors, module and siren; local relay linkage sounds the siren and the VM requests voice warning calls. Owner installation/programming steps, testing, cost tables and a one-page summary are included in this single Markdown file.
