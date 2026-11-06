@@ -1,5 +1,23 @@
 # Hormuz Data Center Specification
 
+The [15-minute presentation draft](docs/presentation/README.md) includes a Persian PowerPoint with editable illustrations, speaker notes, a PDF preview and four appendix slides. The [Hormuz source brief](docs/hormuz-brief.md) preserves the draft's source facts, planning assumptions and unresolved design bases for future revisions.
+
+The [tank-fed fire suppression proposal](assets/park/fire-suppression-proposal.md) provides a preliminary water-mist pre-action design for the 18 m² four-rack room, including contained-aisle coverage, tank/pump sizing assumptions, release controls and acceptance checks. The room layout, supply schematic, itemized low/base/high costs in Iranian tomans, scope notes and calculations are all contained as tables in this single Markdown file. Final construction design requires a qualified fire protection engineer and the selected manufacturer’s approved calculations.
+
+The [DIY smoke detection proposal](assets/park/fire-monitoring-proposal.md) connects 1–3 relay-output detectors to an Ethernet I/O module and the existing monitoring VM. The shared datacenter UPS powers the detectors, module and siren; local relay linkage sounds the siren and the VM requests voice warning calls. Owner installation/programming steps, testing, cost tables and a one-page summary are included in this single Markdown file.
+
+The [data center CCTV and facial entrance access proposal](assets/park/security-proposal.md) specifies four IP cameras, local 30-day recording and one facial recognition entrance terminal with secure door control and emergency release. It includes coverage assumptions, installation and acceptance checks, an itemized price table and an installed planning total in Iranian tomans. All pricing and cost summation tables are contained in that single Markdown file, with supplier price references distinguished from planning allowances.
+
+The [DIY graphite-filled epoxy floor proposal](assets/park/antistatic-floor-proposal.md) develops an affordable raw-epoxy and graphite formulation for the 18 m² mosaic floor. Research sources, trial batch recipes, copper collectors, homemade grounding terminals, material quantities, cost tables, installation steps and acceptance tests are included in this single Markdown file.
+
+The [50 kW battery UPS engineering proposal](assets/park/ups-proposal.md) includes a 15-minute design basis, automotive battery suitability review, battery sizing for five backup durations, three-phase online UPS selection, AC/DC board architecture, protection and cable calculations, commissioning methodology, and itemized planning budgets in Iranian tomans. All calculations, runtime comparisons, quantities, cost tables and price assumptions are included in this single Markdown file. Final equipment selection requires a site survey and manufacturer battery discharge data.
+
+The [50 kW datacenter electrical earthing proposal](assets/park/earthing-proposal.md) compares driven rods, a shallow ring with rods, and a copper-plate pit. It includes Persian price sources, itemized material and labor budgets in Iranian tomans, implementation procedures, and schedules for one owner with the required specialists. All itemized costs, resource estimates and schedules are included as tables in this single Markdown file.
+
+The [four-rack temperature and humidity monitoring proposal](assets/park/rack-monitoring-proposal.md) includes the architecture, implementation procedure, one-person schedule, sourced hardware prices and an estimate in Iranian tomans. All itemized costs and schedules are included as tables in this single Markdown file.
+
+The [four-rack air-quality and airflow proposal](assets/park/airflow-proposal.md) reviews international guidance and specifies a ducted cold-supply/hot-return layout for a 4.5 m × 4 m room, with filters assembled from raw media. It includes a cost table in Iranian tomans, heat-load assumptions and a 50 kW sizing comparison. The room layout, duct dimensions, filter construction, itemized costs and operating-cost tables are included in this single Markdown file.
+
 ## 1. About US
 
 ### 1.1. En
