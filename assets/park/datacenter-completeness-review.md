@@ -1,6 +1,6 @@
 # Hormuz data center essentials and completeness review
 
-Reviewed **6 November 2026** for [presentation draft 02](Hormuz-15min-Draft-02.pptx). The primary deliverables are in `/etc/hormuz/assets/park`. This is a review of scope and design readiness, not evidence that equipment has been installed, a compliance audit, or a construction design.
+Reviewed **6 November 2026** for [presentation draft 03](Hormuz-15min-Draft-03.pptx). The primary deliverables are in `/etc/hormuz/assets/park`. This is a review of scope and design readiness, not evidence that equipment has been installed, a compliance audit, or a construction design.
 
 **Finding:** the eight technical issues cover valuable subsystems, but do not yet form a complete, costed, resilient data-center design. The largest open dependencies are cooling production/thermal continuity, prolonged-outage power, networking and cyber isolation, customer-data recovery, and an integrated operating/acceptance plan. The presentation now covers these alongside the existing components. No essential family in the reference scope below is deliberately left out; site-specific hazards, service requirements and detailed engineering may introduce further requirements.
 
@@ -12,7 +12,7 @@ The review also used public, primary-source descriptions of the [TIA-942 infrast
 
 ## Existing issue → current plan → presentation
 
-“Documented” below means there is a proposal, not a passed test or finished installation. Slide numbers refer to draft 02; appendix discussion is outside the 15-minute slot.
+“Documented” below means there is a proposal, not a passed test or finished installation. Component slide numbers 4–18 are unchanged in draft 03. Source and issue-mapping material is documentation rather than audience slides.
 
 | Existing issue | Source and current intent | Execution and evidence to retain | Slides |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@ The review also used public, primary-source descriptions of the [TIA-942 infrast
 
 These rows are a domain checklist; the level of redundancy is selected against customer need and risk, not automatically maximized. “Partial” means a source mentions the area but does not close the design, budget and acceptance evidence.
 
-| Essential family or dependency | Existing coverage | Readiness finding / remaining work | Draft 02 coverage |
+| Essential family or dependency | Existing coverage | Readiness finding / remaining work | Draft 03 coverage |
 | --- | --- | --- | --- |
 | Site risks, building structure, floor loading, flood/water ingress, seismic exposure, safe access and auxiliary spaces | Room assumptions in #4/#9; application | **Partial:** no full site/structural assessment, route/space sign-off or civil budget. G1. | 3–4 |
 | Rack selection/anchoring, equipment access, blanking/containment, lifting/loading, service clearances | Four 42U racks; assumed dimensions | **Partial:** inventory and installation drawing needed. G1. | 4, 10 |
@@ -52,7 +52,7 @@ These rows are a domain checklist; the level of redundancy is selected against c
 | Customer backups, encryption/access isolation, offline/immutable option, off-site storage, recovery objectives and tested restore | Data backup required by application; monitoring backup only detailed | **Major gap:** customer scope, retention, keys and external destination not designed/quoted. G8. | 17 |
 | Geographic resilience, independent-site dependencies, replication/failover, communications failure and DR exercises | New philosophy; no deployed second site | **Future capability:** identify a separate destination/partner, define RPO/RTO, test restoration/failover; small size alone is not war protection. G8. | 1, 17, 19 |
 | Operations, staffing/on-call and substitute, asset/configuration records, maintenance/spares, controlled changes and supplier support | Distributed instructions across studies | **Partial:** consolidate owner, schedule, response and evidence; do not promise unsupported 24/7 service. G9. | 18 |
-| Integrated acceptance, contractual SLA, customer backup responsibilities, legal/site approvals, privacy and financial viability | Application and subsystem acceptance | **Partial:** risk-based review, test evidence, service contracts, authority requirements, lifecycle and pilot budget still need closure. G9. | 18–19; appendices |
+| Integrated acceptance, contractual SLA, customer backup responsibilities, legal/site approvals, privacy and financial viability | Application and subsystem acceptance | **Partial:** risk-based review, test evidence, service contracts, authority requirements, lifecycle and pilot budget still need closure. G9. | 18–20 |
 
 ## Follow-up work packages identified by the review
 
@@ -91,6 +91,8 @@ Geographic distribution only becomes service resilience with sufficiently indepe
 
 ## Presentation navigation
 
-Slides **1–3**: philosophy, AI-enabled creation, essentials. Slides **4–18**: component-by-component design, execution and acceptance. Slide **19**: the pilot we will build and requested incubator support. Slides **20–24**: issue mapping, gap register, budget, sales scenarios and sources.
+The polished draft 03 keeps philosophy, AI-assisted creation and the essentials on slides **1–3**. Slides **4–18** explain each component with highlighted quantities, materials/equipment, execution, reference cost or unresolved scope, and acceptance criteria. Slide **19** explains the cost-effectiveness model and capital-estimate scope. The **last slide, 20**, shows expected monthly sales by service, the seven running-cost lines, and target/recurring-only/weak-sales cash outcomes.
 
-The 19 main-slide speaking budgets total **900 seconds**. This is a rehearsal schedule, not a guarantee of actual speech length. All notes are embedded in PowerPoint and provided in [the notes file](Hormuz-15min-Draft-02-speaker-notes.md). The five appendices and Q&A are outside that slot.
+There are no audience-facing issue maps, review/status pages, slide-location references or display appendices. The issue mapping and G1–G9 register remain in this document; source URLs and limitations remain in presenter notes. The 20-slide time budget totals **900 seconds**, including 95 seconds for the final financial slide. Rehearsal determines actual speech timing; questions are after the talk.
+
+The notes are embedded in PowerPoint and available as [draft 03 speaker notes](Hormuz-15min-Draft-03-speaker-notes.md). Earlier draft files remain historical. Financial figures and technical design assumptions remain those reviewed above; this polish adds presentation detail and does not establish installed performance, current prices or quantified savings.

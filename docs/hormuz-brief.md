@@ -2,11 +2,17 @@
 
 This repository note preserves the context used for the first presentation draft. It is a project reference, not a claim of permanent assistant memory. Prepared 5 November 2026.
 
+## Presentation polish — draft 03
+
+The current files are [draft 03 PowerPoint](../assets/park/Hormuz-15min-Draft-03.pptx), [PDF](../assets/park/Hormuz-15min-Draft-03.pdf) and [notes](../assets/park/Hormuz-15min-Draft-03-speaker-notes.md), in **/etc/hormuz/assets/park**. The user's latest request removes slides about where other slides are, adds concrete component details, and ends with the revenue and cost-effectiveness model.
+
+Draft 03 has **20 slides, no display appendices, and a 900-second speaking schedule**. The philosophy, AI role and essentials remain first. Component pages highlight quantities/sizes, material or equipment choices, execution, reference cost or unpriced scope, and an acceptance criterion. Issue mappings, source discussions and review/status labels stay in this documentation and presenter notes. The final two slides explain reuse of existing equipment, selective team fabrication and demand-led purchases, then show the five revenue lines and seven running-cost lines. Monthly target sales remain 138 (122 recurring + 16 installations), assumed running cost 100, target cash surplus 38, recurring-only surplus 22, and a weak-sales 75 case with 25 deficit. These remain application scenarios, not new quotations, proven profits or promises of payback. Founder labor and specialist/test costs are not assumed economically free.
+
 ## Presentation revision on 6 November 2026
 
 The user explicitly changed the presentation structure: start with AI/vibe coding and the proposed need for cost-effective, geographically distributed infrastructure; then AI-assisted access to technical knowledge and founder-built components; then a complete essentials map; then each component’s design and implementation plan. AI is an enabling method and demand thesis here, not a newly budgeted GPU/AI-inference service. This direction supersedes the earlier presentation’s opening and the older “do not focus on AI” emphasis for this presentation.
 
-The current files are [draft 02 PowerPoint](../assets/park/Hormuz-15min-Draft-02.pptx), [PDF](../assets/park/Hormuz-15min-Draft-02.pdf) and [notes](../assets/park/Hormuz-15min-Draft-02-speaker-notes.md), under **/etc/hormuz/assets/park**. There are 19 main slides totaling 900 seconds plus five optional appendices. Existing draft 01 files remain historical.
+The revision 02 files were [draft 02 PowerPoint](../assets/park/Hormuz-15min-Draft-02.pptx), [PDF](../assets/park/Hormuz-15min-Draft-02.pdf) and [notes](../assets/park/Hormuz-15min-Draft-02-speaker-notes.md), under **/etc/hormuz/assets/park**. That version had 19 main slides totaling 900 seconds plus five optional appendices. Drafts 01 and 02 are historical.
 
 The bodies and comments of all eight technical issues (#2–#9) were reviewed. The [completeness review](../assets/park/datacenter-completeness-review.md) maps issues to final source files/slides and records G1–G9 follow-up packages: site/rack/cabling, prolonged-outage power, cooling production, water leaks, WAN/network, cyber isolation, compute/storage, off-site data recovery, and integrated operations/acceptance. G identifiers are document rows, not new GitHub issues. New items are proposals, not approved equipment or completed engineering. A single site is the pilot; geographic distribution needs independent dependencies and tested recovery before it becomes a resilience claim.
 
